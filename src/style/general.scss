@@ -2,10 +2,18 @@
 
 @use './partials/mixins' as *;
 
+// inclusione font-awesome
+@use "@fortawesome/fontawesome-free/css/all.min.css";
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    font-family: $main-font, sans-serif;
 }
 
 a {

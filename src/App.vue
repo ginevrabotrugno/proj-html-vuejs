@@ -3,6 +3,9 @@ import AppFooter from "./components/AppFooter.vue";
 import AppHeader from './components/AppHeader.vue';
 import CarouselBig from './components/CarouselBig.vue';
 
+// inclusione font
+import '@fontsource/barlow-condensed';
+
 export default {
   name: 'App',
   components: {
