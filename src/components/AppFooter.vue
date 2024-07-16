@@ -9,9 +9,11 @@ export default {
         <div class="rowUp">
             <div id="up">
                 <div>SUBSCRIBE OUR NEWSLETTER</div>
-                <div>
+                <div class="email">
                     <input type="email" placeholder="your email">
-                    <button type="send">SEND</button>
+                    <div>
+                        <div onclick="sendEmail">SEND</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -48,18 +50,23 @@ export default {
 
 
 .container {
+    position: relative;
+
     .rowUp {
         background-image: url('src/assets/milesim-bg.jpg');
-        width: 90%;
-        margin: 0 auto;
+        width: 60%;
+        position: absolute;
+        top: -13%;
+        left: 20%;
 
         div#up {
+
             width: 90%;
             margin: 0 auto;
-            height: 25vh;
+            height: 18vh;
             // font
             color: white;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: bold;
 
             // flex
@@ -68,8 +75,24 @@ export default {
             align-items: center;
 
             input {
-                font-size: 1.2rem;
-                padding: 20px 40px;
+                font-size: 0.9rem;
+                padding: 15px 120px 15px 30px;
+            }
+
+            div.email {
+                display: flex;
+
+                div {
+                    width: 180px;
+                    font-size: 1.2rem;
+                    background-color: aqua;
+                    cursor: pointer;
+                    // flex
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                }
             }
         }
     }
@@ -82,7 +105,7 @@ export default {
         div#center {
             width: 90%;
             margin: 0 auto;
-            height: 70vh;
+            height: 60vh;
         }
     }
 
@@ -93,7 +116,7 @@ export default {
         div#down {
             width: 90%;
             margin: 0 auto;
-            height: 10vh;
+            height: 8vh;
             // font
             color: white;
             // flex
