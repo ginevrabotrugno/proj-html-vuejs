@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import aboutUs from "./pages/aboutUs.vue"; // Importa la componente aboutUs
-import contact from "./pages/contact.vue"; // Importa la componente contact
-import homepage from "./pages/homepage.vue"; // Importa la componente homepage
+import AboutUs from "./pages/AboutUs.vue"; // Importa la componente aboutUs
+import Contact from "./pages/Contact.vue"; // Importa la componente contact
+import HomePage from "./pages/HomePage.vue"; // Importa la componente homepage
 import NotFound from "./pages/NotFound.vue";  // Importa la componente NotFound
 
 const router = createRouter({
@@ -10,18 +10,18 @@ const router = createRouter({
     routes: [
         {
             path: "/",
-            name: "homepage",
-            component: homepage,
+            name: "HomePage",
+            component: HomePage,
         },
         {
-            path: "/about",
-            name: "aboutUs",
-            component: aboutUs,
+            path: "/About",
+            name: "AboutUs",
+            component: AboutUs,
         },
         {
-            path: "/contact",
-            name: "contact",
-            component: contact,
+            path: "/Contact",
+            name: "Contact",
+            component: Contact,
         },
         {
             path: "/:pathMatch(.*)*",
