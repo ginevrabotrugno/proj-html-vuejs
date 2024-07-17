@@ -13,7 +13,7 @@ export default {
                 <input type="text" name="Name" placeholder="Name*">
                 <input type="email" name="email" placeholder="email*"/>
                 <input type="text" name="Phone" placeholder="Phone*">
-                <textarea rows="15" cols="80" id="TITLE">
+                <textarea rows="18" cols="80" id="TITLE">
                 </textarea>
                 <div id="button">
                     <div onclick="sendMessage">Send Message</div>
@@ -49,7 +49,7 @@ export default {
             display: flex;
             flex-direction: column;
             justify-content: start;
-            gap: 10px;
+            gap: 20px;
 
             span{
                 color: $orange;
@@ -69,7 +69,7 @@ export default {
 
             #button{
                 height: 50px;
-                width: 150px;
+                width: 180px;
                 font-size: 1.1rem;
                 background-color: $orange;
                 color: white;
