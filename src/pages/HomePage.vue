@@ -3,6 +3,8 @@ import CarouselBig from '../components/CarouselBig.vue';
 import ImageSmallCarousel from '../components/ImageSmallCarousel.vue';
 import BestSale25 from '../components/BestSale25.vue';
 import LogoCarousel from '../components/LogoCarousel.vue';
+import ProductCard from '../components/ProductCard.vue';
+import CarouselTestimonial from '../components/CarouselTestimonial.vue';
 
 export default {
     name: 'HomePage',
@@ -11,6 +13,8 @@ export default {
         ImageSmallCarousel,
         BestSale25,
         LogoCarousel,
+        ProductCard,
+        CarouselTestimonial
     },
     data(){
         return {
@@ -41,9 +45,36 @@ export default {
                     discount: '$15',
                     sale: true
                 },
+                {
+                    img: 's4.jpg',
+                    title: 'Fresh Blueberries',
+                    price: '$19',
+                    discount:'$14',
+                    sale: true
+                },
+                {
+                    img: 's10.jpg',
+                    title: 'organic letus',
+                    price: '$18',
+                    discount: '$23',
+                    sale: false
+                },
+                {
+                    img: 's9.jpg',
+                    title: 'Red Gajor',
+                    price: '$28',
+                    discount: '$26',
+                    sale: true
+                },
+                {
+                    img: 's7.jpg',
+                    title: 'Naga pepper',
+                    price: '$21',
+                    sale: false
+                },
             ],
             newsFeed: [
-            {
+                {
                     img:'blo1-390x250.jpg',
                     resp: 'Gogrin',
                     date: '17 Dec 2022',
@@ -102,12 +133,22 @@ export default {
 
         <!-- LIST ITEMS -->
         <section>
-            
+            <div class="container img_bg">
+                <div class="section_title">
+                    <h4 class="orange_txt">Trending Online Store</h4>
+                    <h3>GOGRIN ALL <span class="orange_txt">ORGANIC</span> FOOD</h3>
+                </div>
+                <div class="row">
+                    <ProductCard :info="product" v-for="(product, i) in trendingProds" :key="i" />
+                </div>
+            </div>
         </section>
 
         <!-- QUOTES CAROUSEL -->
         <section>
-            
+            <div class="container">
+                <CarouselTestimonial />
+            </div>
         </section>
 
         <!-- OFFERS -->
@@ -154,26 +195,7 @@ export default {
                 </div>
 
                 <div class="row">
-                    <div class="card" v-for="(prod, i) in trendingProds" :key="i">
-                        <img :src="returnImagePath(`../assets/${prod.img}`)" :alt="prod.title">
-                        <a href="#" class="d_block">
-                            {{ prod.title }}
-                        </a>
-                        <div>
-                            <span class="price" :class="{ barred: prod.sale }">{{ prod.price }}</span>
-                            <span class="price" v-if=" prod.sale === true "> 
-                                {{ prod.discount }}
-                            </span>
-                        </div>
-                        <div class="icons">
-                            <i class="fa-solid fa-heart"></i>
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <i class="fa-solid fa-eye"></i>
-                        </div>
-                        <span class="orange_bg sale" v-if= " prod.sale === true ">
-                            SALE!
-                        </span>
-                    </div>
+                    <ProductCard :info="product" v-for="(product, i) in trendingProds.slice(0, 4)" :key="i" />
                 </div>
             </div>
             
@@ -308,56 +330,6 @@ section {
                 }
             }
 
-            .card {
-                width: calc((100% / 4) - 30px);
-                text-align: center;
-                line-height: 2;
-                box-shadow: 1px 1px 1px 2px rgba($color: #000000, $alpha: 0.2);
-                padding: 20px;
-                position: relative;
-
-                a {
-                    font-size: 30px;
-                    font-weight: 700;
-
-                    &:hover {
-                        color: $orange;
-                    }
-                }
-
-                .price {
-                    font-size: 20px;
-                    margin-right: 10px;
-                }
-
-                .barred {
-                    text-decoration: line-through;
-                    font-size: 18px;
-                }
-
-                .sale {
-                    font-weight: 900;
-                    padding: 5px 15px;
-                    position: absolute;
-                    top: 10px;
-                    right: 10px;
-                }
-
-                .icons {
-                    display: none;
-                    width: 100%;
-                    text-align: center;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                }
-
-                .bottom {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                }
-            }
         }
 
         .section_title {
@@ -445,6 +417,18 @@ section {
                     color: $orange;
                 }
             }
+        }
+
+    }
+
+    .img_bg {
+        background-image: url('../assets/shop-bg-img.jpg');
+        background-position: cover;
+        color: $white;
+
+        .row {
+            padding: 20px;
+            flex-wrap: wrap;
         }
     }
 }
