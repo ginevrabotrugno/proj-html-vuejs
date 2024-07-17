@@ -5,6 +5,43 @@ export default {
     name: 'HomePage',
     components: {
         CarouselBig
+    },
+    data(){
+        return {
+            trendingProds: [
+                {
+                    img: 's5.jpg',
+                    title: 'Fress Apple',
+                    price: '$18',
+                    sale: false
+                },
+                {
+                    img: 's2.jpg',
+                    title: 'Fress Cobies',
+                    price: '$18',
+                    discount: '$17',
+                    sale: true
+                },
+                {
+                    img: 's8.jpg',
+                    title: 'Fresh Watermelon',
+                    price: '$15',
+                    sale: false
+                },
+                {
+                    img: 's1.jpg',
+                    title: 'Organic Juice',
+                    price: '$20',
+                    discount: '$15',
+                    sale: true
+                },
+            ]
+        }
+    },
+    methods: {
+        returnImagePath(imgPath){
+            return new URL (imgPath, import.meta.url).href;
+        }
     }
 }
 </script>
@@ -93,17 +130,25 @@ export default {
                 </div>
 
                 <div class="row">
-                    <div class="card">
-                        <img src="../assets/s5.jpg" alt="item name">
+                    <div class="card" v-for="(prod, i) in trendingProds" :key="i">
+                        <img :src="returnImagePath(`../assets/${prod.img}`)" :alt="prod.title">
                         <a href="#" class="d_block">
-                            Fress Apple
+                            {{ prod.title }}
                         </a>
-                        <span class="d_block">$18</span>
+                        <div>
+                            <span class="price" :class="{ barred: prod.sale }">{{ prod.price }}</span>
+                            <span class="price" v-if=" prod.sale === true "> 
+                                {{ prod.discount }}
+                            </span>
+                        </div>
                         <div class="icons">
                             <i class="fa-solid fa-heart"></i>
                             <i class="fa-solid fa-cart-shopping"></i>
                             <i class="fa-solid fa-eye"></i>
                         </div>
+                        <span class="orange_bg sale" v-if= " prod.sale === true ">
+                            SALE!
+                        </span>
                     </div>
                 </div>
             </div>
@@ -218,8 +263,22 @@ section {
                     }
                 }
 
-                span {
+                .price {
                     font-size: 20px;
+                    margin-right: 10px;
+                }
+
+                .barred {
+                    text-decoration: line-through;
+                    font-size: 18px;
+                }
+
+                .sale {
+                    font-weight: 900;
+                    padding: 5px 15px;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
                 }
 
                 .icons {
