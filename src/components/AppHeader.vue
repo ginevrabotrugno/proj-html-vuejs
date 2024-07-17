@@ -171,7 +171,7 @@ header {
         z-index: 900;
 
         &.scrolled {
-            background: rgba($color: #000000, $alpha: 0.3); /* Colore di sfondo quando si scrolla */
+            background: rgba($color: #000000, $alpha: 0.7); /* Colore di sfondo quando si scrolla */
             color: #fff; /* Cambia anche il colore del testo */
         }
     }
