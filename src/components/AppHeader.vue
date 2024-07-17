@@ -139,6 +139,7 @@ header {
                 border-radius: 50%;
                 color: $green;
                 background-color: $white;
+                margin-right: 15px;
 
                 &::after {
                     content: '0';
