@@ -162,6 +162,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use'/src/style/partials/variables' as*;
 
 section {
     margin-bottom: 100px;
