@@ -2,13 +2,15 @@
 import CarouselBig from '../components/CarouselBig.vue';
 import ImageSmallCarousel from '../components/ImageSmallCarousel.vue';
 import BestSale25 from '../components/BestSale25.vue';
+import LogoCarousel from '../components/LogoCarousel.vue';
 
 export default {
     name: 'HomePage',
     components: {
         CarouselBig,
         ImageSmallCarousel,
-        BestSale25
+        BestSale25,
+        LogoCarousel,
     },
     data(){
         return {
@@ -221,7 +223,7 @@ export default {
         </section>
 
         <section>
-            <!-- LOGO CAROUSEL -->
+            <LogoCarousel />
         </section>
 
 
