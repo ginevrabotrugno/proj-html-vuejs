@@ -15,7 +15,6 @@ export default {
       navigateTimeout: null,
     };
   },
-  // lifecycle hook
   mounted() {
     this.startAutoSlide(6000);
   },
@@ -25,7 +24,6 @@ export default {
     clearTimeout(this.navigateTimeout);
   },
   methods: {
-    // start autoslide
     startAutoSlide(interval) {
       clearInterval(this.autoSlideInterval);
       this.autoSlideInterval = setInterval(() => {
@@ -38,15 +36,13 @@ export default {
       clearInterval(this.autoSlideInterval);
       this.startAutoSlide(interval);
     },
-    // quando si e in mouseover le slides cambieranno ogni 8sec
     handleMouseOver() {
       this.isHovered = true;
-      this.resetAutoSlideTimer(8000); 
+      this.resetAutoSlideTimer(8000);
     },
-    // quando non si e in mouseover in 6 sec
     handleMouseLeave() {
       this.isHovered = false;
-      this.resetAutoSlideTimer(6000); // 
+      this.resetAutoSlideTimer(6000);
     },
     nextSlide() {
       this.currentSlide = (this.currentSlide + 1) % this.slides.length;
@@ -63,6 +59,12 @@ export default {
         this.isNavigating = false;
         this.resetAutoSlideTimer(this.isHovered ? 8000 : 6000);
       }, 10000);
+    },
+    goToAboutUs() {
+      this.$router.push({ name: 'AboutUs' });
+    },
+    goToOurHistory() {
+      this.$router.push({ name: 'OurHistory' });
     }
   }
 };
@@ -71,18 +73,19 @@ export default {
 <!-- CAROUSELBIG -->
 <template>
     <div class="carousel-container" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
-    <div class="carousel-slide" v-for="(slide, index) in slides" :key="index" :style="{ backgroundImage: `url(${slide.image})`, opacity: index === currentSlide ? 1 : 0 }">
-      <div class="carousel-content">
-        <h1 class="carousel-title">{{ slide.title }}</h1>
-        <div class="buttons">
-          <button class="btn-orange">About Us</button>
-          <button class="btn-green">Our History</button>
+      <div class="carousel-slide" v-for="(slide, index) in slides" :key="index" :style="{ backgroundImage: `url(${slide.image})`, opacity: index === currentSlide ? 1 : 0 }">
+        <div class="carousel-content">
+          <h2 class="carousel-subtitle">GOGRIN ORGANIC FOOD STORE</h2>
+          <h1 class="carousel-title">{{ slide.title }}</h1>
+          <div class="buttons">
+            <button class="btn-orange" @click="goToAboutUs">About Us</button>
+            <button class="btn-green" @click="goToOurHistory">Our History</button>
+          </div>
         </div>
       </div>
+      <button class="nav-button prev" @mousedown="prevSlide" @touchstart="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="nav-button next" @mousedown="nextSlide" @touchstart="nextSlide"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
-    <button class="nav-button prev" @mousedown="prevSlide" @touchstart="prevSlide">&#9664;</button>
-    <button class="nav-button next" @mousedown="nextSlide" @touchstart="nextSlide">&#9654;</button>
-  </div>
 </template>
 
 
@@ -126,6 +129,14 @@ export default {
   margin-bottom: 30px; 
 }
 
+.carousel-subtitle { 
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+// SECTION BUTTONS
 .buttons {
   display: flex;
   justify-content: center;
@@ -137,17 +148,17 @@ export default {
 .btn-orange {
   border: none;
   color: white;
-  padding: 20px 30px; 
+  padding: 20px 20px; 
   cursor: pointer;
-  // txt
-  font-size: 1.5rem; 
+  font-size: 12px; 
   font-weight: bold;
-  border-radius: 40px;
   transition: background-color 0.3s ease;
+  text-transform: uppercase;
 }
 
 .btn-green {
   background-color: #067166;
+  border-radius: 0 20px 20px 0; /* Angoli arrotondati personalizzati */
 }
 
 .btn-green:hover {
@@ -156,12 +167,12 @@ export default {
 
 .btn-orange {
   background-color: #ef9e03;
+  border-radius: 20px 0 0 20px; /* Angoli arrotondati personalizzati */
 }
 
 .btn-orange:hover {
   background-color: #d98702;
 }
-
 // Navigation buttons
 .nav-button {
   position: absolute;
