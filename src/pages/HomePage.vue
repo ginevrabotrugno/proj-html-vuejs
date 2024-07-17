@@ -21,15 +21,18 @@ export default {
                         <h2 class="green_txt"><span class="orange_txt">Look what</span> consumer power has done with <span class="orange_txt">organic food;</span> we can do the same with clothes.</h2>
                     </div>
                     <div class="div col_50">
-                        <p class="top">
-                            I have a need to make these sorts of connections literal sometimes, and a vehicle often helps to do that. I have a relationship to hosting culture. <span class="orange_txt">It isn't really about it helps to do that. I have a relationship to hosting culture.</span>
-                        </p>
-                        <p class="bottom">
-                            Need to make these sorts of connections literal sometimes, and a vehicle often helps to do that. I have a relationship to hosting culture. 
-                        </p>
+                        <div class="text-container">
+                            <p class="top">
+                                I have a need to make these sorts of connections literal sometimes, and a vehicle often helps to do that. I have a relationship to hosting culture. <span class="orange_txt">It isn't really about it helps to do that. I have a relationship to hosting culture.</span>
+                            </p>
+                            <p class="bottom">
+                                Need to make these sorts of connections literal sometimes, and a vehicle often helps to do that. I have a relationship to hosting culture. 
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- CAROUSEL SMALL -->
         </section>
   
     </main>
@@ -47,29 +50,34 @@ section {
         .row {
             display: flex;
             justify-content: space-between;
-            gap: 25px;
-            align-items: center;
+            gap: 40px;
+            align-items: stretch; 
 
             .col_50 {
-                width: calc((100% / 2) - 25px);
-                position: relative;
-                height: 100%;
+                width: calc((100% / 2) - 40px);
+                display: flex;
+                flex-direction: column; 
+                justify-content: space-between; 
 
                 h2 {
                     font-size: 50px;
                     font-weight: 900;
                 }
 
-                .top {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                }
+                .text-container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    flex: 1; 
+                    font-size: 20px;
 
-                .bottom {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
+                    .top {
+                        align-self: flex-start;
+                    }
+
+                    .bottom {
+                        align-self: flex-end;
+                    }
                 }
             }
         }
