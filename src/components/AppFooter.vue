@@ -27,11 +27,6 @@ export default {
                         <div><i class="fa-brands fa-google-plus-g"></i></div>
                         <div><i class="fa-brands fa-twitter"></i></div>
                         <div><i class="fa-brands fa-pinterest-p"></i></div>
-                        
-                        
-                        
-                        
-
                     </div>
                 </div>
 
@@ -130,17 +125,25 @@ export default {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
 
-            input {
-                font-size: 0.9rem;
-                padding: 15px 120px 15px 30px;
-            }
+            
 
             div.email {
+                width: 400px;
+                // flex
                 display: flex;
+                flex-wrap: wrap;
+
+                input {
+                    width: 70%;
+                    min-width: 220px;
+                    font-size: 0.9rem;
+                    padding: 15px 120px 15px 30px;
+                }
 
                 div#button {
-                    width: 150px;
+                    width: 30%;
                     font-size: 1.1rem;
                     background-color: $green;
                     cursor: pointer;
@@ -197,6 +200,7 @@ export default {
                     display: flex;
                     justify-content: start;
                     align-items: center;
+                    flex-wrap: wrap;
                     gap: 15px;
 
                     div{
