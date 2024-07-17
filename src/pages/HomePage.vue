@@ -34,11 +34,50 @@ export default {
             </div>
             <!-- CAROUSEL SMALL -->
         </section>
+
+        <section>
+            <!-- LIST ITEMS -->
+        </section>
+
+        <section>
+            <!-- QUOTES CAROUSEL -->
+        </section>
+
+        <section>
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col_50">
+                        <div class="label left">
+
+                            <h3>Fresh gurden tomato combo offer... $37</h3>
+                            <a href="#">SHOP NOW</a>
+    
+                        </div>
+                    </div>
+
+                    <div class="col_50">
+
+                        <div class="label rigth">
+
+                            <h3>Some ogranic healty fruits combo offer... $49</h3>
+                            <a href="#">SHOP NOW</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
   
     </main>
 </template>
 
 <style scoped lang="scss">
+@use '../style/partials/variables' as *;
 
 section {
     margin-bottom: 100px;
@@ -50,11 +89,11 @@ section {
         .row {
             display: flex;
             justify-content: space-between;
-            gap: 40px;
+            gap: 30px;
             align-items: stretch; 
 
             .col_50 {
-                width: calc((100% / 2) - 40px);
+                width: calc((100% / 2) - 30px);
                 display: flex;
                 flex-direction: column; 
                 justify-content: space-between; 
@@ -79,8 +118,44 @@ section {
                         align-self: flex-end;
                     }
                 }
+
+                .left {
+                    background-image: url('../assets/offer-img01.jpg');
+                }
+
+                .rigth {
+                    background-image: url('../assets/offer-img02.jpg');
+                }
+
+                .label {
+                    background-size: cover;
+                    background-position: center;
+                    aspect-ratio: 5 / 2;
+                    padding: 20px;
+                    color: $white;
+                    position: relative;
+                    font-weight: bold;
+
+                    a {
+                        position: absolute;
+                        left: 20px;
+                        bottom: 20px;
+                        font-size: 20px;
+
+                        &:hover {
+                            color: $orange;
+                        }
+                    }
+
+                    h3 {
+                        max-width: 80%;
+                        font-size: 40px;
+                    }
+                }
             }
         }
     }
 }
+
+
 </style>
