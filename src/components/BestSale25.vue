@@ -1,12 +1,38 @@
 <script>
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+
 export default {
-    name: 'BestSale25'
-}
+    name: 'BestSale25',
+    setup() {
+        const route = useRoute();
+        
+        const backgroundImages = {
+            Home: 'src/assets/call-to-bg.jpg',
+            About: 'src/assets/fe1.jpg',
+        };
+        const backgroundImageStyle = computed(() => {
+            const routeName = route.name;
+            const backgroundImage = backgroundImages[routeName] || backgroundImages.default;
+
+            return {
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+            };
+        });
+
+        return {
+            backgroundImageStyle
+        };
+
+    }
+}   
 </script>
 
 <template>
     <div class="container">
-        <div class="row">
+        <div class="row" :style="backgroundImageStyle">
             <div class="col">
                 <span>HERE YOU CAN GET 100% FRESH ORGANIC FOOD</span>
                 <h2>Best organic food up to 25% off for all product</h2>
@@ -32,9 +58,10 @@ export default {
 @use '../style/partials/variables' as *;
 
 .container{
+    width: 80%;
+    margin: 0 auto;
 
     .row{
-        background-image: url('src/assets/call-to-bg.jpg');
         background-size: cover;
         background-position: center;
         width: 100%;

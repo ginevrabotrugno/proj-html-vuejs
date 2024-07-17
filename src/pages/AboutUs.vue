@@ -1,7 +1,7 @@
 <script>
 import CarouselTestimonial from "../components/CarouselTestimonial.vue";
 import FormMaps from "../components/FormMaps.vue";
-import BestSale25AboutUs from "../components/BestSale25AboutUs.vue";
+import BestSale25 from "../components/BestSale25.vue";
 import JumbotronMini from "../components/JumbotronMini.vue";
 
 export default {
@@ -9,7 +9,7 @@ export default {
     components:{
         CarouselTestimonial,
         FormMaps,
-        BestSale25AboutUs,
+        BestSale25,
         JumbotronMini,
     }
 }
@@ -25,7 +25,7 @@ export default {
             <CarouselTestimonial/>  
         </section>
         <section>
-            <BestSale25AboutUs />
+            <BestSale25 />
         </section>
         <section>
             <FormMaps />
