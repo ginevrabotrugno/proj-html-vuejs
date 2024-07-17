@@ -73,7 +73,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <!-- CAROUSEL SMALL -->
+            <ImageSmallCarousel/>
         </section>
 
         <!-- LIST ITEMS -->
@@ -154,10 +154,6 @@ export default {
             </div>
         </section>
 
-        <section>
-            <ImageSmallCarousel/>
-        </section>
-  
     </main>
 </template>
 
