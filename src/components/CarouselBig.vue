@@ -75,6 +75,7 @@ export default {
     <div class="carousel-container" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
       <div class="carousel-slide" v-for="(slide, index) in slides" :key="index" :style="{ backgroundImage: `url(${slide.image})`, opacity: index === currentSlide ? 1 : 0 }">
         <div class="carousel-content">
+          <h2 class="carousel-subtitle">GOGRIN ORGANIC FOOD STORE</h2>
           <h1 class="carousel-title">{{ slide.title }}</h1>
           <div class="buttons">
             <button class="button orange_bg">About Us</button>
