@@ -1,11 +1,19 @@
 <script>
+import FormMaps from "../components/FormMaps.vue";
+
 export default {
-    name: 'Contact'
+    name: 'Contact',
+    components:{
+        FormMaps,
+    }
 }
 </script>
 
 <template>
     <main>
+        <section>
+            <FormMaps />
+        </section>
 
     </main>
 </template>

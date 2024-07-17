@@ -1,9 +1,11 @@
 <script>
 import CarouselTestimonial from "../components/CarouselTestimonial.vue";
+import FormMaps from "../components/FormMaps.vue";
 export default {
     name: 'AboutUs',
     components:{
         CarouselTestimonial,
+        FormMaps,
     }
 }
 </script>
@@ -13,6 +15,9 @@ export default {
         <!-- CAROUSEL TESTIMONIAL-->
         <section>
             <CarouselTestimonial/>  
+        </section>
+        <section>
+            <FormMaps />
         </section>
     </main>
 </template>

@@ -20,7 +20,6 @@ export default {
 <template>
 
   <AppHeader />
-  <FormMaps />
   <router-view></router-view>
   <AppFooter />
 
