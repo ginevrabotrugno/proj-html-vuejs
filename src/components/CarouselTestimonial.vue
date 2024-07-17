@@ -80,7 +80,7 @@ export default {
   <div class="carousel-container" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
     <div class="carousel-slide" v-for="(testimonial, index) in testimonials" :key="index" :style="{ opacity: index === currentIndex ? 1 : 0 }">
       <div class="carousel-content">
-        <div class="quote-icon">“</div>
+        <div class="quote-icon"></div>
         <p class="quote-text">{{ testimonial.text }}</p>
         <div class="author">
           <p class="name">{{ testimonial.name }}</p>
@@ -140,9 +140,11 @@ export default {
 // icons
 
 .quote-icon {
-  font-size: 15rem;
-  color: #008744;
- 
+    width: 200px; 
+    height: 200px; 
+    background-image: url('/src/assets/iconCarouselTestimonial.png');
+    background-size: contain; 
+    background-repeat: no-repeat; 
 }
 // txt
 .quote-text {
