@@ -181,7 +181,7 @@ export default {
             #gogrin{
                 width: calc(100% / 20 * 3);
                 margin-left: 60px;
-                margin-top: 200px;
+                // margin-top: 200px;
                 
                 div#gogrinText{
                     margin: 25px 0;
@@ -226,7 +226,7 @@ export default {
 
             #emergencyLink{
                 width: calc(100% / 20 * 2);
-                margin-top: 200px;
+                // margin-top: 200px;
                 span{
                     font-size: 1.3rem;
                     font-weight: bold;
@@ -247,7 +247,7 @@ export default {
 
             #ourLatestBlog{
                 width: calc(100% / 20 * 4);
-                margin-top: 200px;
+                // margin-top: 200px;
                 
                 span:first-child{
                     font-size: 1.3rem;
@@ -282,7 +282,7 @@ export default {
 
             #ourGallery{
                 width: calc(100% / 20 * 4);
-                margin-top: 200px;
+                // margin-top: 200px;
                 span{
                     font-size: 1.3rem;
                     font-weight: bold;
