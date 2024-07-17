@@ -2,6 +2,7 @@
 import CarouselTestimonial from "../components/CarouselTestimonial.vue";
 import FormMaps from "../components/FormMaps.vue";
 import BestSale25AboutUs from "../components/BestSale25AboutUs.vue";
+import JumbotronMini from "../components/JumbotronMini.vue";
 
 export default {
     name: 'AboutUs',
@@ -9,12 +10,16 @@ export default {
         CarouselTestimonial,
         FormMaps,
         BestSale25AboutUs,
+        JumbotronMini,
     }
 }
 </script>
 
 <template>
     <main>
+        <section>
+            <JumbotronMini />
+        </section>
         <!-- CAROUSEL TESTIMONIAL-->
         <section>
             <CarouselTestimonial/>  
