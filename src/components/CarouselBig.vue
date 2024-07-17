@@ -191,4 +191,66 @@ export default {
 .next {
   right: 30px; 
 }
+
+// Responsive styles
+@media (max-width: 1200px) {
+  .carousel-title {
+    font-size: 3rem;
+  }
+
+  .carousel-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .buttons {
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .nav-button {
+    padding: 15px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-title {
+    font-size: 2rem;
+  }
+
+  .carousel-subtitle {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .nav-button {
+    padding: 10px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-title {
+    font-size: 1.5rem;
+  }
+
+  .carousel-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .buttons {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-button {
+    padding: 8px;
+    font-size: 1rem;
+  }
+}
 </style>

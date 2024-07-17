@@ -97,7 +97,8 @@ export default {
 
   @import '/src/style/partials/variables';
 
-  // general carousel container
+ 
+// general carousel container
 .carousel-container {
   position: relative;
   width: 100vw;
@@ -133,25 +134,27 @@ export default {
   text-align: center;
   padding: 20px;
   background: url('/src/assets/testi-icon.png') no-repeat;
-  background-position:  90% center;
+  background-position: 90% center;
   background-size: 70% contain;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-// icons
 
+// icons
 .quote-icon {
-    width: 200px; 
-    height: 200px; 
-    background-image: url('/src/assets/iconCarouselTestimonial.png');
-    background-size: contain; 
-    background-repeat: no-repeat; 
+  width: 200px; 
+  height: 200px; 
+  background-image: url('/src/assets/iconCarouselTestimonial.png');
+  background-size: contain; 
+  background-repeat: no-repeat; 
 }
+
 // txt
 .quote-text {
   font-size: 2rem;
   margin: 20px 80px 200px;
   max-width: 80%;
 }
+
 // author
 .author {
   text-align: center;
@@ -169,7 +172,6 @@ export default {
 }
 
 // section nav buttons
-
 .nav-button {
   position: absolute;
   top: 50%;
@@ -199,4 +201,93 @@ export default {
   right: 30px;
   background-color: #008744;
 }
+
+// Responsive styles
+@media (max-width: 1200px) {
+  .carousel-content {
+    padding: 15px;
+  }
+
+  .quote-icon {
+    width: 150px;
+    height: 150px;
+  }
+
+  .quote-text {
+    font-size: 1.5rem;
+    margin: 15px 60px 150px;
+  }
+
+  .name {
+    font-size: 1.25rem;
+  }
+
+  .position {
+    font-size: 1rem;
+  }
+
+  .nav-button {
+    padding: 15px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-content {
+    padding: 10px;
+  }
+
+  .quote-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .quote-text {
+    font-size: 1.25rem;
+    margin: 10px 40px 100px;
+  }
+
+  .name {
+    font-size: 1rem;
+  }
+
+  .position {
+    font-size: 0.875rem;
+  }
+
+  .nav-button {
+    padding: 10px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-content {
+    padding: 5px;
+  }
+
+  .quote-icon {
+    width: 75px;
+    height: 75px;
+  }
+
+  .quote-text {
+    font-size: 1rem;
+    margin: 5px 20px 75px;
+  }
+
+  .name {
+    font-size: 0.875rem;
+  }
+
+  .position {
+    font-size: 0.75rem;
+  }
+
+  .nav-button {
+    padding: 8px;
+    font-size: 1rem;
+  }
+}
 </style>
+

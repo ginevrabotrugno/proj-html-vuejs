@@ -9,7 +9,6 @@ export default {
         '/src/assets/fe3.jpg',
         '/src/assets/fe1.jpg',
         '/src/assets/fe2.jpg',
-       
       ],
       currentIndex: 0,
       autoScrollInterval: null,
@@ -29,7 +28,7 @@ export default {
   },
   methods: {
     startAutoScroll() {
-      this.autoScrollInterval = setInterval(this.nextAuto, 6000); 
+      this.autoScrollInterval = setInterval(this.nextAuto, 6000);
     },
     stopAutoScroll() {
       clearInterval(this.autoScrollInterval);
@@ -59,7 +58,6 @@ export default {
 };
 </script>
 
-
 <template>
   <div class="carousel-container">
     <button @click="prev" class="carousel-button prev"><i class="fa-solid fa-chevron-left"></i></button>
@@ -78,6 +76,7 @@ export default {
 
 <style scoped lang="scss">
 @use '/src/style/general.scss' as *;
+
 .carousel-container {
   position: relative;
   display: flex;
@@ -90,11 +89,11 @@ export default {
 .carousel {
   display: flex;
   overflow: hidden;
-  width: 80%; 
+  width: 80%;
 }
 
 .carousel-item {
-  flex: 1 0 25%; 
+  flex: 1 0 25%;
   margin: 0 5px;
 }
 
@@ -108,14 +107,13 @@ export default {
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
   color: white;
-  padding: 20px;
   cursor: pointer;
   font-size: 24px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, padding 0.3s, font-size 0.3s;
 }
 
 .carousel-button:hover {
@@ -123,12 +121,58 @@ export default {
 }
 
 .carousel-button.prev {
-  left: 9rem;
+  left: -50px;
   background-color: #ffa500;
 }
 
 .carousel-button.next {
-  right: 9rem;
+  right: -50px;
   background-color: #ffa500;
+}
+
+// Responsive styles
+@media (max-width: 1200px) {
+  .carousel-item {
+    flex: 1 0 33.33%;
+  }
+
+  .carousel-button {
+    font-size: 20px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    width: 90%;
+  }
+
+  .carousel-item {
+    flex: 1 0 50%;
+  }
+
+  .carousel-button {
+    font-size: 18px;
+    padding: 10px;
+    left: -40px; 
+    right: -40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    width: 100%;
+  }
+
+  .carousel-item {
+    flex: 1 0 100%;
+  }
+
+  .carousel-button {
+    font-size: 16px;
+    padding: 8px;
+    left: -30px; /* Adjust left and right positions for the smallest screens */
+    right: -30px;
+  }
 }
 </style>

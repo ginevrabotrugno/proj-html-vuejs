@@ -146,7 +146,7 @@ export default {
 
         <!-- QUOTES CAROUSEL -->
         <section>
-            <div class="container">
+            <div>
                 <CarouselTestimonial />
             </div>
         </section>
