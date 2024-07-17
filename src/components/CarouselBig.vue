@@ -73,16 +73,17 @@ export default {
 <!-- CAROUSELBIG -->
 <template>
     <div class="carousel-container" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
-    <div class="carousel-slide" v-for="(slide, index) in slides" :key="index" :style="{ backgroundImage: `url(${slide.image})`, opacity: index === currentSlide ? 1 : 0 }">
-      <div class="carousel-content">
-        <h1 class="carousel-title">{{ slide.title }}</h1>
-        <div class="buttons">
-          <button class="button orange_bg">About Us</button>
-          <button class="button green_bg">Our History</button>
+      <div class="carousel-slide" v-for="(slide, index) in slides" :key="index" :style="{ backgroundImage: `url(${slide.image})`, opacity: index === currentSlide ? 1 : 0 }">
+        <div class="carousel-content">
+          <h1 class="carousel-title">{{ slide.title }}</h1>
+          <div class="buttons">
+            <button class="button orange_bg">About Us</button>
+            <button class="button green_bg">Our History</button>
+          </div>
         </div>
-      </div>
-      <button class="nav-button prev" @mousedown="prevSlide" @touchstart="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
-      <button class="nav-button next" @mousedown="nextSlide" @touchstart="nextSlide"><i class="fa-solid fa-chevron-right"></i></button>
+        <button class="nav-button prev" @mousedown="prevSlide" @touchstart="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="nav-button next" @mousedown="nextSlide" @touchstart="nextSlide"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
     </div>
 </template>
 
