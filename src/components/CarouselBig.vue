@@ -7,8 +7,8 @@ export default {
     return {
       currentSlide: 0,
       slides: [
-        { title: 'Eating naturally & organic is always be healthy.', image: '/src/assets/slider.jpg' },
-        { title: 'Eating naturally & organic is always be healthy.', image: '/src/assets/H3-slider3.jpg' },
+        {  image: '/src/assets/slider.jpg' },
+        {  image: '/src/assets/H3-slider3.jpg' },
       ],
       isHovered: false,
       isNavigating: false,
@@ -80,7 +80,10 @@ export default {
     <div class="carousel-slide" v-for="(slide, index) in slides" :key="index" :style="{ backgroundImage: `url(${slide.image})`, opacity: index === currentSlide ? 1 : 0 }">
       <div class="carousel-content">
         <h2 class="carousel-subtitle">GOGRIN ORGANIC FOOD STORE</h2>
-        <h1 class="carousel-title">{{ slide.title }}</h1>
+        <h1 class="carousel-title">
+          Eating naturally & organic is<br>
+          always be healthy.
+        </h1>
         <div class="buttons">
           <button class="button orange_bg" @click="goToAboutUs">About Us</button>
           <button class="button green_bg" @click="goToOurHistory">Our History</button>
@@ -97,7 +100,7 @@ export default {
 @use '/src/style/general.scss' as *;
 @import '/src/style/partials/variables';
 
-// general container
+// General container
 .carousel-container {
   position: relative;
   width: 100vw;
@@ -131,6 +134,7 @@ export default {
 .carousel-title {
   font-size: 4rem; 
   margin-bottom: 30px; 
+  line-height: 1.2;
 }
 
 .carousel-subtitle { 
@@ -139,16 +143,13 @@ export default {
   font-weight: bold;
 }
 
-
-// SECTION BUTTONS
+// Section buttons
 .buttons {
   display: flex;
   justify-content: center;
   gap: 30px; 
   margin-top: 30px; 
 }
-
-
 
 .btn-green {
   background-color: #067166;
@@ -167,6 +168,7 @@ export default {
 .btn-orange:hover {
   background-color: #d98702;
 }
+
 // Navigation buttons
 .nav-button {
   position: absolute;
@@ -190,4 +192,3 @@ export default {
   right: 30px; 
 }
 </style>
-

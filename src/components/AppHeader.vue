@@ -100,7 +100,7 @@ header {
         padding: 20px 0;
 
         .container {
-            width: 85%;
+            width: 90%;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -139,6 +139,7 @@ header {
                 border-radius: 50%;
                 color: $green;
                 background-color: $white;
+                margin-right: 15px;
 
                 &::after {
                     content: '0';
