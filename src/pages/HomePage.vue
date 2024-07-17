@@ -39,6 +39,27 @@ export default {
                     discount: '$15',
                     sale: true
                 },
+            ],
+            newsFeed: [
+            {
+                    img:'blo1-390x250.jpg',
+                    resp: 'Gogrin',
+                    date: '17 Dec 2022',
+                    tite:'Where I live, I am surrounded by fresh, organic food, so I eat really well.',
+                },
+                {
+                    img:'blo2-390x250.jpg',
+                    resp: 'Gogrin',
+                    date: '16 Dec 2022',
+                    tite:'What we get at home is 100% organic food. We are also 90% vegetarian.',
+                },
+                {
+                    img:'blo3-390x250.jpg',
+                    resp: 'Gogrin',
+                    date: '15 Dec 2022',
+                    tite:'If we as a society are willing to have a preference for organic food farmer',
+                },
+                
             ]
         }
     },
@@ -55,6 +76,7 @@ export default {
         <section>
             <CarouselBig />  
         </section>
+
         <section>
             <div class="container">
                 <div class="row">
@@ -153,6 +175,52 @@ export default {
                 </div>
             </div>
         </section>
+
+        <!-- LATEST NEWS -->
+        <section>
+            <div class="container">
+                <div class="section_title">
+                    <h4 class="orange_txt">The news whatwe have</h4>
+                    <h3 class="green_txt">GOGRIN LATEST<span class="orange_txt">NEWS</span> FEED</h3>
+                </div>
+
+                <div class="row">
+                    <div class="news_card" v-for="(news, i) in newsFeed" :key="i">
+                        <div class="img">
+                            <img :src="returnImagePath(`../assets/${news.img}`)" alt="picture">
+                            <div class="overlay"></div>
+                        </div>
+                        <div>
+                            <span>
+                                <i class="fa-solid fa-user orange_txt"></i>
+                                {{ news.resp }}
+                            </span>
+                            <span>
+                                <i class="fa-regular fa-clock orange_txt"></i>
+                                {{ news.date }}
+                            </span>
+                        </div>
+
+                        <h4 class="green_txt">
+                            {{ news.tite }}
+                        </h4>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio reiciendis error recusandae saepe exercitationem, commodi sunt veniam hic! Cupiditate, optio earum. 
+                        </p>
+
+                        <a href="#" class="green_txt">READ MORE...</a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <!-- LOGO CAROUSEL -->
+        </section>
+
+
 
     </main>
 </template>
@@ -282,6 +350,93 @@ section {
                     position: absolute;
                     bottom: 0;
                     left: 0;
+                }
+            }
+        }
+
+        .section_title {
+            text-align: center;
+            line-height: 1.5;
+            padding: 20px;
+            position: relative;
+            font-weight: 900;
+                &::after {
+                    content: url('../assets/title-shap.png');
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                h4 {
+                    font-size: 30px;
+                }
+                h3 {
+                    font-size: 40px;
+                }
+        }
+
+        .news_card {
+            width: calc((100% / 2) - 30px);
+            line-height: 1.5;
+
+            .img {
+                width: 100%;
+                height: 250px;
+                overflow: hidden;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.3s ease-in-out;
+                }
+
+                .overlay {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    transition: width 0.3s ease-in-out, height 0.3s ease-in-out, top 0.3s ease-in-out, left 0.3s ease-in-out;
+                    transform: translate(-50%, -50%);
+                }
+
+                &:hover img {
+                    transform: scale(1.1);
+                }
+
+                &:hover .overlay {
+                    width: 100%;
+                    height: 100%;
+                    top: 50%;
+                    left: 50%;
+                }
+            }
+
+            span {
+                margin-right: 10px;
+                font-size: 15px;
+            }
+
+            h4 {
+                font-size: 25px;
+                font-weight: 900;
+                margin: 20px 0;
+            }
+
+            p {
+                margin: 20px 0;
+                padding-right: 15px;
+            }
+
+            a {
+                font-weight: 900;
+                font-size: 20px;
+
+                &:hover {
+                    color: $orange;
                 }
             }
         }
