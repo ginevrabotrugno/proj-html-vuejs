@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: 'BestSale25'
+    name: 'BestSale25AboutUs'
 }
 </script>
 
@@ -32,9 +32,11 @@ export default {
 @use '../style/partials/variables' as *;
 
 .container{
+    width: 80%;
+    margin: 0 auto;
 
     .row{
-        background-image: url('src/assets/call-to-bg.jpg');
+        background-image: url('src/assets/fe1.jpg');
         background-size: cover;
         background-position: center;
         width: 100%;
