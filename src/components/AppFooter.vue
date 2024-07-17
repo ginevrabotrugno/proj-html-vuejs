@@ -19,9 +19,9 @@ export default {
         </div>
         <div class="rowCenter">
             <div id="center">
-                <div id="Gogrin">
+                <div id="gogrin">
                     <img src="../assets/footer-logo.png" alt="footer-logo">
-                    <div>War should never be entered upon until every agency of peace has failed not to be good</div>
+                    <div id="gogrinText">War should never be entered upon until every agency of peace has failed not to be good</div>
                     <div id="logoSocial">
                         <div><i class="fa-brands fa-facebook-f"></i></div>
                         <div><i class="fa-brands fa-google-plus-g"></i></div>
@@ -68,7 +68,7 @@ export default {
                 </div>
                 <div id="ourGallery">
                     <span>Our Gallery</span>
-                    <div>
+                    <div id="galleryImg">
                         <img src="../assets/blo1-100x100.jpg" alt="">
                         <img src="../assets/blo9-100x100.jpg" alt="">
                         <img src="../assets/blo8-100x100.jpg" alt="">
@@ -140,8 +140,8 @@ export default {
                 display: flex;
 
                 div {
-                    width: 180px;
-                    font-size: 1.2rem;
+                    width: 150px;
+                    font-size: 1.1rem;
                     background-color: #007166;
                     cursor: pointer;
                     // flex
@@ -169,31 +169,37 @@ export default {
         div#center {
             width: 90%;
             margin: 0 auto;
-            height: 60vh;
+            height: 50vh;
             color: white;
             
             // flex
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: start;
             gap: 20px;
 
-            #Gogrin{
+            #gogrin{
                 width: calc(100% / 20 * 3);
                 margin-left: 60px;
+                margin-top: 200px;
                 
+                div#gogrinText{
+                    margin: 25px 0;
+                }
 
                 div#logoSocial{
+
+                    
                     
 
                     // flex
                     display: flex;
                     justify-content: start;
                     align-items: center;
-                    gap: 10px;
+                    gap: 15px;
 
                     div{
-                        background-color: #007166;
+                        background-color: $green;
                         height: 40px;
                         width: 40px;
                         border-radius: 5px;
@@ -202,6 +208,11 @@ export default {
                         display: flex;
                         justify-content: center;
                         align-items: center;
+
+                        &:hover{
+                        background-color: $orange;
+                        transition-duration: 0.65s;
+                    }
 
                     }
                 }
@@ -215,7 +226,7 @@ export default {
 
             #emergencyLink{
                 width: calc(100% / 20 * 2);
-
+                margin-top: 200px;
                 span{
                     font-size: 1.3rem;
                     font-weight: bold;
@@ -224,36 +235,61 @@ export default {
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
+
+                a{
+                    &:hover{
+                        color: $orange;
+                        transition-duration: 0.65s;
+                    }
+                }
+                
             }
 
             #ourLatestBlog{
                 width: calc(100% / 20 * 4);
-
+                margin-top: 200px;
+                
                 span:first-child{
                     font-size: 1.3rem;
                     font-weight: bold;
+                    margin-bottom: 10px;
                 }
 
                 // flex
                 display: flex;
                 flex-direction: column;
+                gap: 15px;
 
                 &>div{
                     display: flex;
+                    gap: 10px;
                 }
 
                 img{
                     height: 70px;
                     width: 70px;
                 }
+
+                a{
+                    font-weight: bold;
+
+                    &:hover{
+                        color: $orange;
+                        transition-duration: 0.65s;
+                    }
+                }
             }
 
             #ourGallery{
                 width: calc(100% / 20 * 4);
-
+                margin-top: 200px;
                 span{
                     font-size: 1.3rem;
                     font-weight: bold;
+                }
+
+                div#galleryImg{
+                   margin-top: 20px;
                 }
 
                 img{
@@ -290,6 +326,11 @@ export default {
                     font-size: 1.2rem;
                     color: white;
                     margin: 20px;
+
+                    &:hover{
+                        color: $orange;
+                        transition-duration: 0.65s;
+                    }
 
                     // &:last-child {
                     //     margin-right: 50px;
