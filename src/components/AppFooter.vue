@@ -11,7 +11,7 @@ export default {
                 <div>SUBSCRIBE OUR NEWSLETTER</div>
                 <div class="email">
                     <input type="email" placeholder="your email">
-                    <div>
+                    <div id="button">
                         <div onclick="sendEmail">SEND</div>
                     </div>
                 </div>
@@ -139,17 +139,17 @@ export default {
             div.email {
                 display: flex;
 
-                div {
+                div#button {
                     width: 150px;
                     font-size: 1.1rem;
-                    background-color: #007166;
+                    background-color: $green;
                     cursor: pointer;
                     // flex
                     display: flex;
                     justify-content: center;
                     align-items: center;
 
-                    &:hover, &:hover div{
+                    &:hover{
                         background-color: #050e62;
                         transition-duration: 0.8s;
                     }
