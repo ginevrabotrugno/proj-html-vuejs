@@ -8,6 +8,44 @@ export default {
     components: {
         CarouselBig,
         ImageSmallCarousel,
+        CarouselBig
+    },
+    data(){
+        return {
+            trendingProds: [
+                {
+                    img: 's5.jpg',
+                    title: 'Fress Apple',
+                    price: '$18',
+                    sale: false
+                },
+                {
+                    img: 's2.jpg',
+                    title: 'Fress Cobies',
+                    price: '$18',
+                    discount: '$17',
+                    sale: true
+                },
+                {
+                    img: 's8.jpg',
+                    title: 'Fresh Watermelon',
+                    price: '$15',
+                    sale: false
+                },
+                {
+                    img: 's1.jpg',
+                    title: 'Organic Juice',
+                    price: '$20',
+                    discount: '$15',
+                    sale: true
+                },
+            ]
+        }
+    },
+    methods: {
+        returnImagePath(imgPath){
+            return new URL (imgPath, import.meta.url).href;
+        }
     }
 }
 </script>
@@ -24,12 +62,93 @@ export default {
                         <h2 class="green_txt"><span class="orange_txt">Look what</span> consumer power has done with <span class="orange_txt">organic food;</span> we can do the same with clothes.</h2>
                     </div>
                     <div class="div col_50">
-                        <p class="top">
-                            I have a need to make these sorts of connections literal sometimes, and a vehicle often helps to do that. I have a relationship to hosting culture. <span class="orange_txt">It isn't really about it helps to do that. I have a relationship to hosting culture.</span>
-                        </p>
-                        <p class="bottom">
-                            Need to make these sorts of connections literal sometimes, and a vehicle often helps to do that. I have a relationship to hosting culture. 
-                        </p>
+                        <div class="text-container">
+                            <p class="top">
+                                I have a need to make these sorts of connections literal sometimes, and a vehicle often helps to do that. I have a relationship to hosting culture. <span class="orange_txt">It isn't really about it helps to do that. I have a relationship to hosting culture.</span>
+                            </p>
+                            <p class="bottom">
+                                Need to make these sorts of connections literal sometimes, and a vehicle often helps to do that. I have a relationship to hosting culture. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CAROUSEL SMALL -->
+        </section>
+
+        <!-- LIST ITEMS -->
+        <section>
+            
+        </section>
+
+        <!-- QUOTES CAROUSEL -->
+        <section>
+            
+        </section>
+
+        <!-- OFFERS -->
+        <section>
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col_50">
+                        <div class="label left">
+
+                            <h3>Fresh gurden tomato combo offer... $37</h3>
+                            <a href="#">SHOP NOW</a>
+    
+                        </div>
+                    </div>
+
+                    <div class="col_50">
+
+                        <div class="label rigth">
+
+                            <h3>Some ogranic healty fruits combo offer... $49</h3>
+                            <a href="#">SHOP NOW</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        
+        <!-- COUNTER -->
+        <section>
+        </section>
+
+        <!-- TOP TRENDING -->
+        <section>
+            <div class="container">
+                <div class="section_title">
+                    <h4 class="orange_txt">Running week top selling</h4>
+                    <h3 class="green_txt">TOP <span class="orange_txt">TRENDING</span> ORGANIC FOOD</h3>
+                </div>
+
+                <div class="row">
+                    <div class="card" v-for="(prod, i) in trendingProds" :key="i">
+                        <img :src="returnImagePath(`../assets/${prod.img}`)" :alt="prod.title">
+                        <a href="#" class="d_block">
+                            {{ prod.title }}
+                        </a>
+                        <div>
+                            <span class="price" :class="{ barred: prod.sale }">{{ prod.price }}</span>
+                            <span class="price" v-if=" prod.sale === true "> 
+                                {{ prod.discount }}
+                            </span>
+                        </div>
+                        <div class="icons">
+                            <i class="fa-solid fa-heart"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <span class="orange_bg sale" v-if= " prod.sale === true ">
+                            SALE!
+                        </span>
                     </div>
                 </div>
             </div>
@@ -67,7 +186,96 @@ section {
                     font-weight: 900;
                 }
 
-                .top {
+                .text-container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    flex: 1; 
+                    font-size: 20px;
+
+                    .top {
+                        align-self: flex-start;
+                    }
+
+                    .bottom {
+                        align-self: flex-end;
+                    }
+                }
+
+                .left {
+                    background-image: url('../assets/offer-img01.jpg');
+                }
+
+                .rigth {
+                    background-image: url('../assets/offer-img02.jpg');
+                }
+
+                .label {
+                    background-size: cover;
+                    background-position: center;
+                    aspect-ratio: 5 / 2;
+                    padding: 20px;
+                    color: $white;
+                    position: relative;
+                    font-weight: bold;
+
+                    a {
+                        position: absolute;
+                        left: 20px;
+                        bottom: 20px;
+                        font-size: 20px;
+
+                        &:hover {
+                            color: $orange;
+                        }
+                    }
+
+                    h3 {
+                        max-width: 80%;
+                        font-size: 40px;
+                    }
+                }
+            }
+
+            .card {
+                width: calc((100% / 4) - 30px);
+                text-align: center;
+                line-height: 2;
+                box-shadow: 1px 1px 1px 2px rgba($color: #000000, $alpha: 0.2);
+                padding: 20px;
+                position: relative;
+
+                a {
+                    font-size: 30px;
+                    font-weight: 700;
+
+                    &:hover {
+                        color: $orange;
+                    }
+                }
+
+                .price {
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
+
+                .barred {
+                    text-decoration: line-through;
+                    font-size: 18px;
+                }
+
+                .sale {
+                    font-weight: 900;
+                    padding: 5px 15px;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                }
+
+                .icons {
+                    display: none;
+                    width: 100%;
+                    text-align: center;
                     position: absolute;
                     top: 0;
                     left: 0;
