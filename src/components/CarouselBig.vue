@@ -75,8 +75,8 @@ export default {
       <div class="carousel-content">
         <h1 class="carousel-title">{{ slide.title }}</h1>
         <div class="buttons">
-          <button class="btn-orange">About Us</button>
-          <button class="btn-green">Our History</button>
+          <button class="button orange_bg">About Us</button>
+          <button class="button green_bg">Our History</button>
         </div>
       </div>
     </div>
@@ -133,18 +133,18 @@ export default {
   margin-top: 30px; 
 }
 
-.btn-green,
-.btn-orange {
-  border: none;
-  color: white;
-  padding: 20px 30px; 
-  cursor: pointer;
-  // txt
-  font-size: 1.5rem; 
-  font-weight: bold;
-  border-radius: 40px;
-  transition: background-color 0.3s ease;
-}
+// .btn-green,
+// .btn-orange {
+//   border: none;
+//   color: white;
+//   padding: 20px 30px; 
+//   cursor: pointer;
+//   // txt
+//   font-size: 1.5rem; 
+//   font-weight: bold;
+//   border-radius: 40px;
+//   transition: background-color 0.3s ease;
+// }
 
 .btn-green {
   background-color: #067166;

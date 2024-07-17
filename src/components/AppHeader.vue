@@ -28,30 +28,30 @@ export default {
         <section class="green_bg">
             <div class="container">
                 <div>
-                    <a href="#">
+                    <a href="#" class="header_i">
                         <i class="fa-solid fa-location-dot"></i>
                         North baukhula, tala, USA
                     </a>
-                    <a href="#">
+                    <a href="#" class="header_i">
                         <i class="fa-solid fa-envelope"></i>
                         demo@example.com
                     </a>
                 </div>
                 <div>
-                    <a href="#">
+                    <a href="#" class="header_i">
                         <i class="fa-regular fa-clock"></i>
                         8.30AM-8.30PM
                     </a>
-                    <a href="#">
+                    <a href="#" class="header_i">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
-                    <a href="#">
+                    <a href="#" class="header_i">
                         <i class="fa-brands fa-twitter"></i>
                     </a>
-                    <a href="#">
+                    <a href="#" class="header_i">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
-                    <a href="#">
+                    <a href="#" class="header_i">
                         <i class="fa-brands fa-pinterest-p"></i>
                     </a>
                 </div>
@@ -74,10 +74,10 @@ export default {
                 </nav>
 
                 <div class="shop">
-                    <a href="#">
+                    <a href="#" class="header_i">
                         <i class="fa-solid fa-magnifying-glass orange_bg"></i>
                     </a>
-                    <a href="#">
+                    <a href="#" class="header_i">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
                     <a href="#" class="button orange_bg">ORDER NOW</a>
@@ -106,7 +106,7 @@ header {
             justify-content: space-between;
             align-items: center;
 
-            a {
+            .header_i {
                 padding: 0 10px
             }
 
@@ -153,11 +153,6 @@ header {
                 }
             }
 
-            .button {
-                padding: 15px 30px;
-                border-radius: 0 20px;
-                font-weight: bold;
-            }
         }
 
     }
