@@ -1,14 +1,14 @@
 <script>
 import CarouselBig from '../components/CarouselBig.vue';
 import ImageSmallCarousel from '../components/ImageSmallCarousel.vue';
-
+import BestSale25 from '../components/BestSale25.vue';
 
 export default {
     name: 'HomePage',
     components: {
         CarouselBig,
         ImageSmallCarousel,
-        CarouselBig
+        BestSale25
     },
     data(){
         return {
@@ -152,6 +152,10 @@ export default {
                     </div>
                 </div>
             </div>
+            
+        </section>
+        <section>
+            <BestSale25 />
         </section>
 
     </main>
