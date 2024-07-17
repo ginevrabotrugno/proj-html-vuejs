@@ -168,6 +168,7 @@ header {
         &.scrolled {
             background: rgba($color: #000000, $alpha: 0.7); /* Colore di sfondo quando si scrolla */
             color: #fff; /* Cambia anche il colore del testo */
+            top: 0;
         }
     }
 }
