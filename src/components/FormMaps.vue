@@ -13,19 +13,14 @@ export default {
                 <input type="text" name="Name" placeholder="Name*">
                 <input type="email" name="email" placeholder="email*"/>
                 <input type="text" name="Phone" placeholder="Phone*">
-                <textarea rows="18" cols="80" id="TITLE">
-                </textarea>
+                <textarea rows="18" cols="80" id="TITLE" placeholder="Your Comment*"></textarea>
                 <div id="button">
                     <div onclick="sendMessage">Send Message</div>
                 </div>
             </form>
-             <iframe loading="lazy" src="https://maps.google.com/maps?q=webitrangpur&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near" title="webitrangpur" aria-label="webitrangpur"></iframe>
-
+            <iframe loading="lazy" src="https://maps.google.com/maps?q=webitrangpur&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near" title="webitrangpur" aria-label="webitrangpur"></iframe>
         </div>
     </div>
-    
-    
-
 </template>
 
 <style scoped lang="scss">
@@ -45,7 +40,6 @@ export default {
             padding: 50px;
             border-radius: 5px;
             box-shadow: 10px 10px 15px 15px rgb(249, 249, 249);
-            // flex
             display: flex;
             flex-direction: column;
             justify-content: start;
@@ -53,6 +47,7 @@ export default {
 
             span{
                 color: $orange;
+                font-weight: bold;
             }
 
             h2{
@@ -62,9 +57,12 @@ export default {
                 border-radius: 5px;
                 padding: 10px;
                 border: 1px solid rgb(238, 238, 238);
+                padding: 10px 10px 10px 30px;
             }
             textarea{
+                font-size: 0.9rem;
                 border: 1px solid rgb(238, 238, 238);
+                padding: 10px 10px 10px 30px;
             }
 
             #button{
@@ -74,7 +72,6 @@ export default {
                 background-color: $orange;
                 color: white;
                 cursor: pointer;
-                // flex
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -83,7 +80,6 @@ export default {
                     background-color: $green;
                     transition-duration: 0.8s;
                 }
-
             }
         }
 
@@ -92,13 +88,6 @@ export default {
             width: 550px;
             border: 1px solid white;
         }
-
-
     }
-
 }
-
-
-
-
 </style>
