@@ -1,4 +1,6 @@
 <script>
+
+
 export default {
   name: 'CarouselBig',
   data() {
@@ -61,31 +63,33 @@ export default {
       }, 10000);
     },
     goToAboutUs() {
-      this.$router.push({ name: 'AboutUs' });
-    },
-    goToOurHistory() {
-      this.$router.push({ name: 'OurHistory' });
-    }
+    console.log('Navigating to About Us');
+    this.$router.push({ name: 'About' });
+  },
+  goToOurHistory() {
+    console.log('Navigating to Our History');
+    this.$router.push({ name: 'Contact' });
   }
+}
 };
 </script>
 
 <!-- CAROUSELBIG -->
 <template>
-    <div class="carousel-container" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
-      <div class="carousel-slide" v-for="(slide, index) in slides" :key="index" :style="{ backgroundImage: `url(${slide.image})`, opacity: index === currentSlide ? 1 : 0 }">
-        <div class="carousel-content">
-          <h2 class="carousel-subtitle">GOGRIN ORGANIC FOOD STORE</h2>
-          <h1 class="carousel-title">{{ slide.title }}</h1>
-          <div class="buttons">
-            <button class="button orange_bg">About Us</button>
-            <button class="button green_bg">Our History</button>
-          </div>
+  <div class="carousel-container" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
+    <div class="carousel-slide" v-for="(slide, index) in slides" :key="index" :style="{ backgroundImage: `url(${slide.image})`, opacity: index === currentSlide ? 1 : 0 }">
+      <div class="carousel-content">
+        <h2 class="carousel-subtitle">GOGRIN ORGANIC FOOD STORE</h2>
+        <h1 class="carousel-title">{{ slide.title }}</h1>
+        <div class="buttons">
+          <button class="button orange_bg" @click="goToAboutUs">About Us</button>
+          <button class="button green_bg" @click="goToOurHistory">Our History</button>
         </div>
-        <button class="nav-button prev" @mousedown="prevSlide" @touchstart="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
-        <button class="nav-button next" @mousedown="nextSlide" @touchstart="nextSlide"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+      <button class="nav-button prev" @mousedown="prevSlide" @touchstart="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="nav-button next" @mousedown="nextSlide" @touchstart="nextSlide"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
-    </div>
+  </div>
 </template>
 
 
@@ -144,22 +148,11 @@ export default {
   margin-top: 30px; 
 }
 
-// .btn-green,
-// .btn-orange {
-//   border: none;
-//   color: white;
-//   padding: 20px 30px; 
-//   cursor: pointer;
-//   // txt
-//   font-size: 1.5rem; 
-//   font-weight: bold;
-//   border-radius: 40px;
-//   transition: background-color 0.3s ease;
-// }
+
 
 .btn-green {
   background-color: #067166;
-  border-radius: 0 20px 20px 0; /* Angoli arrotondati personalizzati */
+  border-radius: 0 20px 20px 0; 
 }
 
 .btn-green:hover {
@@ -168,7 +161,7 @@ export default {
 
 .btn-orange {
   background-color: #ef9e03;
-  border-radius: 20px 0 0 20px; /* Angoli arrotondati personalizzati */
+  border-radius: 20px 0 0 20px; 
 }
 
 .btn-orange:hover {
@@ -190,11 +183,11 @@ export default {
 }
 
 .prev {
-  left: 30px; /* Aumenta la distanza dal bordo sinistro */
+  left: 30px; 
 }
 
 .next {
-  right: 30px; /* Aumenta la distanza dal bordo destro */
+  right: 30px; 
 }
 </style>
 
