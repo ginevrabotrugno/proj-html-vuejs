@@ -11,9 +11,13 @@ export default {
 
 <template>
     <main>
+
+        <!-- CAROUSEL BIG -->
         <section>
             <CarouselBig />  
         </section>
+
+        <!-- INFO -->
         <section>
             <div class="container">
                 <div class="row">
@@ -35,14 +39,17 @@ export default {
             <!-- CAROUSEL SMALL -->
         </section>
 
+        <!-- LIST ITEMS -->
         <section>
-            <!-- LIST ITEMS -->
+            
         </section>
 
+        <!-- QUOTES CAROUSEL -->
         <section>
-            <!-- QUOTES CAROUSEL -->
+            
         </section>
 
+        <!-- OFFERS -->
         <section>
             <div class="container">
 
@@ -72,6 +79,46 @@ export default {
             </div>
 
         </section>
+        
+        <!-- COUNTER -->
+        <section>
+        </section>
+
+        <!-- TOP TRENDING -->
+        <section>
+            <div class="container">
+                <div class="section_title">
+                    <h4 class="orange_txt">Running week top selling</h4>
+                    <h3 class="green_txt">TOP <span class="orange_txt">TRENDING</span> ORGANIC FOOD</h3>
+                </div>
+
+                <div class="row">
+                    <div class="card">
+                        <img src="../assets/s5.jpg" alt="item name">
+                        <a href="#" class="d_block">
+                            Fress Apple
+                        </a>
+                        <span class="d_block">$18</span>
+                        <div class="icons">
+                            <i class="fa-solid fa-heart"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT US -->
+         <section>
+
+         </section>
+
+        <!-- LATEST NEWS -->
+        <section></section>
+
+        <!-- BRAND CAROUSEL -->
+         <section></section>
   
     </main>
 </template>
@@ -152,6 +199,82 @@ section {
                         font-size: 40px;
                     }
                 }
+            }
+
+            .card {
+                width: calc((100% / 4) - 30px);
+                text-align: center;
+                line-height: 2;
+                box-shadow: 1px 1px 1px 2px rgba($color: #000000, $alpha: 0.2);
+                padding: 20px;
+                position: relative;
+
+                a {
+                    font-size: 30px;
+                    font-weight: 700;
+
+                    &:hover {
+                        color: $orange;
+                    }
+                }
+
+                span {
+                    font-size: 20px;
+                }
+
+                .icons {
+                    display: none;
+                    width: 100%;
+                    text-align: center;
+                    position: absolute;
+                    top: 55%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    i {
+                        display: inline-block;
+                        border-radius: 50%;
+                        background-color: $white;
+                        padding: 10px;
+                        margin-right: 10px;
+                        box-shadow: 3px 3px 15 rgba($color: #000000, $alpha: 0.3);
+
+                        &:hover {
+                            background-color: $orange;
+                            color: $white;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .icons {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .section_title {
+            text-align: center;
+            line-height: 1.5;
+            padding: 20px;
+            position: relative;
+            font-weight: 900;
+
+            &::after {
+                content: url('../assets/title-shap.png');
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            h4 {
+                font-size: 30px;
+            }
+
+            h3 {
+                font-size: 40px;
             }
         }
     }
