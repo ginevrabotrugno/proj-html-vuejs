@@ -1,6 +1,13 @@
 <script>
+import { router } from '../router';
+
 export default {
     name: 'AppHeader',
+    data() {
+        return {
+            routes: router.options.routes.slice(0, 3),
+        };
+    },
 }
 </script>
 
@@ -28,13 +35,9 @@ export default {
                         <img src="../assets/logo.png" alt="logo">
                     </a>
                     <ul>
-                        <li>HOME</li>
-                        <li>ABOUT</li>
-                        <li>SERVICE</li>
-                        <li>PORTFOLIO</li>
-                        <li>SHOP</li>
-                        <li>BLOG</li>
-                        <li>CONTACT</li>
+                        <li v-for="(route, i) in routes" :key="i">
+                            <router-link :to="route.path">{{ route.name }}</router-link>
+                        </li>
                     </ul>
                 </nav>
 
