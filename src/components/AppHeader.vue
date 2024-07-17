@@ -6,7 +6,19 @@ export default {
     data() {
         return {
             routes: router.options.routes.slice(0, 3),
+            isScrolled: false,
         };
+    },
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    beforeUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
+    methods: {
+        handleScroll() {
+        this.isScrolled = window.scrollY > 50;
+        },
     },
 }
 </script>
@@ -16,17 +28,37 @@ export default {
         <section class="green_bg">
             <div class="container">
                 <div>
-                    <a href="#">North baukhula, tala, USA</a>
-                    <a href="#">demo@example.com</a>
+                    <a href="#">
+                        <i class="fa-solid fa-location-dot"></i>
+                        North baukhula, tala, USA
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-envelope"></i>
+                        demo@example.com
+                    </a>
                 </div>
                 <div>
-                    <a href="#">8.30AM-8.30PM</a>
-                    <a href="#">socials</a>
+                    <a href="#">
+                        <i class="fa-regular fa-clock"></i>
+                        8.30AM-8.30PM
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section :class="{ fixed: true, scrolled: isScrolled }">
 
             <div class="container">
                     
@@ -42,6 +74,12 @@ export default {
                 </nav>
 
                 <div class="shop">
+                    <a href="#">
+                        <i class="fa-solid fa-magnifying-glass orange_bg"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
                     <a href="#" class="button orange_bg">ORDER NOW</a>
                 </div>
             </div>
@@ -54,37 +92,90 @@ export default {
 <style scoped lang="scss">
 @use '../style/partials/variables' as *;
 
-section {
-    padding: 20px 0;
+header {
+    background-color: $white;
+    height: 150px;
 
-    .container {
-        width: 85%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    section {
+        padding: 20px 0;
 
-        a {
-            padding: 0 10px
-        }
-
-        nav {
+        .container {
+            width: 85%;
+            margin: 0 auto;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 20px;
-            
-            ul {
-                display: flex;
-                gap: 10px;
+
+            a {
+                padding: 0 10px
             }
 
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                
+                ul {
+                    display: flex;
+                    gap: 10px;
+
+                    li {
+                        text-transform: uppercase;
+                    }
+                }
+
+            }
+
+            .fa-magnifying-glass {
+                padding: 10px;
+                border-radius: 50%;
+            }
+
+            .fa-cart-shopping {
+                position: absolute;
+                padding: 10px;
+                position: relative;
+                padding: 10px;
+                border-radius: 50%;
+                color: $green;
+                background-color: $white;
+
+                &::after {
+                    content: '0';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: $orange;
+                    color: $white;
+                    padding: 5px;
+                    border-radius: 50%;
+                    font-size: small;
+                }
+            }
+
+            .button {
+                padding: 15px 30px;
+                border-radius: 0 20px;
+                font-weight: bold;
+            }
         }
 
-        .button {
-            padding: 15px 30px;
-        }
     }
 
+
+    .fixed {
+        width: 100%;
+        position: fixed;
+        top: 59px;
+        left: 0;
+        z-index: 900;
+
+        &.scrolled {
+            background: rgba($color: #000000, $alpha: 0.3); /* Colore di sfondo quando si scrolla */
+            color: #fff; /* Cambia anche il colore del testo */
+        }
+    }
 }
+
 
 </style>
