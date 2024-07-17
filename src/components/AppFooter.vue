@@ -169,8 +169,9 @@ export default {
         div#center {
             width: 90%;
             margin: 0 auto;
-            height: 50vh;
+            // height: 50vh;
             color: white;
+            padding: 180px 0 65px;
             
             // flex
             display: flex;
