@@ -1,7 +1,6 @@
 <script>
 import AppFooter from "./components/AppFooter.vue";
 import AppHeader from './components/AppHeader.vue';
-import CarouselBig from './components/CarouselBig.vue';
 
 // inclusione font
 import '@fontsource/barlow-condensed';
@@ -10,7 +9,6 @@ export default {
   name: 'App',
   components: {
     AppHeader,
-    CarouselBig,
     AppFooter,
 
    
@@ -21,9 +19,7 @@ export default {
 <template>
 
   <AppHeader />
-  <div>
-    <CarouselBig/>
-  </div>
+  <router-view></router-view>
   <AppFooter />
 
 

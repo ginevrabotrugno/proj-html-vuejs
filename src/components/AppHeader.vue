@@ -100,7 +100,7 @@ header {
         padding: 20px 0;
 
         .container {
-            width: 85%;
+            width: 90%;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
