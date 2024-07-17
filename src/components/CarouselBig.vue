@@ -3,100 +3,186 @@ export default {
   name: 'CarouselBig',
   data() {
     return {
-        // creazione data arrai img carosello
-      images: [
-        new URL('/src/assets/slider.jpg', import.meta.url).href,
+      currentSlide: 0,
+      slides: [
+        { title: 'Eating naturally & organic is always be healthy.', image: '/src/assets/slider.jpg' },
+        { title: 'Eating naturally & organic is always be healthy.', image: '/src/assets/H3-slider3.jpg' },
       ],
-      currentImageIndex: 0
+      isHovered: false,
+      isNavigating: false,
+      autoSlideInterval: null,
+      hoverTimeout: null,
+      navigateTimeout: null,
     };
   },
-    //   metodo per iterare attraverso l array le img next e prev
+  // lifecycle hook
+  mounted() {
+    this.startAutoSlide(6000);
+  },
+  beforeDestroy() {
+    clearInterval(this.autoSlideInterval);
+    clearTimeout(this.hoverTimeout);
+    clearTimeout(this.navigateTimeout);
+  },
   methods: {
-    nextImage() {
-      this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
+    // start autoslide
+    startAutoSlide(interval) {
+      clearInterval(this.autoSlideInterval);
+      this.autoSlideInterval = setInterval(() => {
+        if (!this.isNavigating) {
+          this.nextSlide();
+        }
+      }, interval);
     },
-    prevImage() {
-      this.currentImageIndex = (this.currentImageIndex - 1 + this.images.length) % this.images.length;
+    resetAutoSlideTimer(interval) {
+      clearInterval(this.autoSlideInterval);
+      this.startAutoSlide(interval);
+    },
+    // quando si e in mouseover le slides cambieranno ogni 8sec
+    handleMouseOver() {
+      this.isHovered = true;
+      this.resetAutoSlideTimer(8000); 
+    },
+    // quando non si e in mouseover in 6 sec
+    handleMouseLeave() {
+      this.isHovered = false;
+      this.resetAutoSlideTimer(6000); // 
+    },
+    nextSlide() {
+      this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+      this.handleNavigation();
+    },
+    prevSlide() {
+      this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+      this.handleNavigation();
+    },
+    handleNavigation() {
+      this.isNavigating = true;
+      clearTimeout(this.navigateTimeout);
+      this.navigateTimeout = setTimeout(() => {
+        this.isNavigating = false;
+        this.resetAutoSlideTimer(this.isHovered ? 8000 : 6000);
+      }, 10000);
     }
   }
-}
-
+};
 </script>
 
 <!-- CAROUSELBIG -->
 <template>
-    <div class="carousel-container">
-        <div class="carousel-slide">
-            <img :src="images[currentImageIndex]" :alt="'Carousel Image ' + (currentImageIndex + 1)">
-            <div class="carousel-caption">
-                <h1>Mangiare naturale e biologico è sempre salutare.</h1>
-                <div class="button-group">
-                    <button>Chi Siamo</button>
-                    <button>La Nostra Storia</button>
-                </div>
-            </div>
+    <div class="carousel-container" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
+    <div class="carousel-slide" v-for="(slide, index) in slides" :key="index" :style="{ backgroundImage: `url(${slide.image})`, opacity: index === currentSlide ? 1 : 0 }">
+      <div class="carousel-content">
+        <h1 class="carousel-title">{{ slide.title }}</h1>
+        <div class="buttons">
+          <button class="btn-orange">About Us</button>
+          <button class="btn-green">Our History</button>
         </div>
+      </div>
     </div>
+    <button class="nav-button prev" @mousedown="prevSlide" @touchstart="prevSlide">&#9664;</button>
+    <button class="nav-button next" @mousedown="nextSlide" @touchstart="nextSlide">&#9654;</button>
+  </div>
 </template>
+
 
 <style scoped lang="scss">
 @use '/src/style/general.scss' as *;
+@import '/src/style/partials/variables';
 
+// general container
 .carousel-container {
   position: relative;
-  width: 100%;
-  max-width: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 
+// Slide styles
 .carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  opacity: 0;
+  transition: opacity 1s;
 }
 
-.carousel-slide img {
-  width: 100%;
-  height: auto;
-}
-
-.carousel-caption {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
+.carousel-content {
   text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.carousel-caption h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+.carousel-title {
+  font-size: 4rem; 
+  margin-bottom: 30px; 
 }
 
-.button-group {
+.buttons {
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  gap: 30px; 
+  margin-top: 30px; 
 }
 
-.button-group button {
-  background-color: #ffc107; 
+.btn-green,
+.btn-orange {
   border: none;
   color: white;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  padding: 20px 30px; 
   cursor: pointer;
+  // txt
+  font-size: 1.5rem; 
+  font-weight: bold;
+  border-radius: 40px;
   transition: background-color 0.3s ease;
 }
 
-.button-group button:last-child {
-  background-color: #4caf50; 
+.btn-green {
+  background-color: #067166;
 }
 
-.button-group button:hover {
-  opacity: 0.8;
+.btn-green:hover {
+  background-color: #04574f;
 }
 
+.btn-orange {
+  background-color: #ef9e03;
+}
+
+.btn-orange:hover {
+  background-color: #d98702;
+}
+
+// Navigation buttons
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 2rem; 
+  line-height: 1;
+  z-index: 1;
+}
+
+.prev {
+  left: 30px; /* Aumenta la distanza dal bordo sinistro */
+}
+
+.next {
+  right: 30px; /* Aumenta la distanza dal bordo destro */
+}
 </style>
+
