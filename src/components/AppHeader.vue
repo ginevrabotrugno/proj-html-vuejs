@@ -143,8 +143,8 @@ header {
                 &::after {
                     content: '0';
                     position: absolute;
-                    top: 0;
-                    left: 0;
+                    top: -5px;
+                    right: -5px;
                     background-color: $orange;
                     color: $white;
                     padding: 5px;
