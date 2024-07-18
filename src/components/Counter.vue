@@ -93,7 +93,6 @@ export default {
   align-items: center;
   width: 100%;
   height: 300px;
-  margin-left: 10px;
   color: #ef9e03;
 }
 

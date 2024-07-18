@@ -193,7 +193,7 @@ export default {
 }
 
 .prev {
-  left: 30px;
+  left: 5px;
   background-color: #ffa500;
 }
 
