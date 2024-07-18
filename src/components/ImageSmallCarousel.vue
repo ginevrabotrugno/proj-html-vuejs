@@ -32,17 +32,20 @@ export default {
         return this.images.slice(start, end);
       }
     },
+    carouselWidth() {
+      return this.images.length * 100 + '%';
+    }
   },
   methods: {
     startAutoScroll() {
-      this.autoScrollInterval = setInterval(this.nextAuto, 6000);
+      this.autoScrollInterval = setInterval(this.nextAuto, 3000);
     },
     stopAutoScroll() {
       clearInterval(this.autoScrollInterval);
     },
     nextAuto() {
       if (!this.userInteracted) {
-        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+        this.next();
       } else {
         this.userInteracted = false;
       }
@@ -70,14 +73,19 @@ export default {
 </script>
 
 <template>
- <div class="carousel-container">
+  <div class="carousel-container">
     <button @click="prev" class="carousel-button prev"><i class="fa-solid fa-chevron-left"></i></button>
     <div class="carousel">
-      <div class="carousel-item"v-for="(image, index) in visibleImages":key="index">
-        <img :src="image" :alt="'Image ' + index" />
-        <div class="overlay"></div>
-        <div class="text-overlay">
-          {{ getTextForImage(index) }}
+      <div
+        class="carousel-inner"
+        :style="{ width: carouselWidth, transform: `translateX(-${currentIndex * 25}%)` }"
+      >
+        <div class="carousel-item" v-for="(image, index) in images.concat(images.slice(0, 4))" :key="index">
+          <img :src="image" :alt="'Image ' + index" />
+          <div class="overlay"></div>
+          <div class="text-overlay">
+            {{ getTextForImage(index) }}
+          </div>
         </div>
       </div>
     </div>
@@ -87,6 +95,7 @@ export default {
 
 <style scoped lang="scss">
 @use '/src/style/general.scss' as *;
+
 
 .carousel-container {
   position: relative;
@@ -101,37 +110,24 @@ export default {
 }
 
 .carousel {
-  display: flex;
   overflow: hidden;
   width: 80%;
+  display: flex;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-  flex: 1 0 25%;
-  margin: 0 10px;
-  overflow: hidden;
+  flex: 0 0 25%;
   position: relative;
+  transition: transform 0.3s ease-in-out;
+}
 
-  &:hover img {
-    transform: scale(1.1);
-  }
-
-  &:hover .overlay {
-    width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-  }
-
-  &:hover .text-overlay {
-    transform: translateY(0);
-    opacity: 1;
-    font-size: 2rem; 
-  }
-
-  &:hover .text-overlay:hover {
-    color: #FFA500; 
-  }
+.carousel-item:hover {
+  transform: scale(1.05);
 }
 
 .carousel img {
@@ -144,13 +140,17 @@ export default {
 
 .overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: width 0.3s ease-in-out, height 0.3s ease-in-out, top 0.3s ease-in-out, left 0.3s ease-in-out;
-  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.carousel-item:hover .overlay {
+  opacity: 1;
 }
 
 .text-overlay {
@@ -167,9 +167,18 @@ export default {
   font-weight: bold;
   display: flex;
   align-items: center;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   opacity: 0;
   cursor: pointer;
+}
+
+.carousel-item:hover .text-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.carousel-item:hover .text-overlay:hover {
+  color: #FFA500;
 }
 
 .carousel-button {
@@ -241,7 +250,7 @@ export default {
   .carousel-button {
     font-size: 16px;
     padding: 8px;
-    left: -30px; 
+    left: -30px;
     right: -30px;
   }
 }
