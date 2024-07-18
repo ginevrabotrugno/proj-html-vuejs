@@ -117,8 +117,11 @@ export default {
             <JumbotronMini />
         </section>
         <section>
-            <HealthIsWealth />
+            <HealthIsWealth 
+            imageSrc="src/assets/image1project.jpg" 
+            />
         </section>
+        
 
         <!-- LIST ITEMS -->
         <section>
@@ -140,6 +143,14 @@ export default {
                     <ProductCard :info="product" :cardClass="cardClass1" v-for="(product, i) in filteredProducts()" :key="i" />
                 </div>
             </div>
+        </section>
+
+        <section>
+            <HealthIsWealth 
+            imageSrc="src/assets/image2project.jpg" 
+            :inverse="true"
+            :showContactInfo="false"
+            />
         </section>
 
         <!-- features list -->
@@ -177,6 +188,7 @@ export default {
 
 section {
     margin-bottom: 100px;
+    overflow-x: hidden;
 
     .container {
         width: 80%;

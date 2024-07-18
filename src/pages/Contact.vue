@@ -27,6 +27,7 @@ export default {
 // provvisorio per dividere le sezioni
 section{
     margin-bottom: 50px;
+    overflow-x: hidden;
 }
 
 </style>
