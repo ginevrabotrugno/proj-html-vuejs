@@ -38,6 +38,7 @@ button {
     font-family: inherit;
     border: 0;
     cursor: pointer;
+    transition: background-color $time;
 
 }
 

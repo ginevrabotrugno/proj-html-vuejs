@@ -151,10 +151,10 @@ export default {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    transition: background-color $time;
 
                     &:hover{
                         background-color: #050e62;
-                        transition-duration: 0.8s;
                     }
 
                 }
@@ -213,10 +213,11 @@ export default {
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        transition: background-color $time;
 
                         &:hover{
                         background-color: $orange;
-                        transition-duration: 0.65s;
+                        
                     }
 
                     }
@@ -242,9 +243,9 @@ export default {
                 gap: 20px;
 
                 a{
+                    transition: color $time;
                     &:hover{
                         color: $orange;
-                        transition-duration: 0.65s;
                     }
                 }
                 
@@ -277,10 +278,10 @@ export default {
 
                 a{
                     font-weight: bold;
+                    transition: color $time;
 
                     &:hover{
                         color: $orange;
-                        transition-duration: 0.65s;
                     }
                 }
             }
@@ -331,10 +332,10 @@ export default {
                     font-size: 1.2rem;
                     color: white;
                     margin: 20px;
+                    transition: color $time;
 
                     &:hover{
                         color: $orange;
-                        transition-duration: 0.65s;
                     }
 
                     // &:last-child {

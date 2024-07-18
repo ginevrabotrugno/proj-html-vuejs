@@ -105,6 +105,11 @@ export default {
                 #btn {
                     width: 150px;
                     margin-top: 30px;
+                    // transition: background-color $time;
+
+                    &:hover{
+                        background-color: $green;
+                    }
                 }
 
                 .d-flex {
