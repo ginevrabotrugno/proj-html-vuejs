@@ -28,58 +28,85 @@ export default {
                     img: 's5.jpg',
                     title: 'Fress Apple',
                     price: '$18',
-                    sale: false
+                    sale: false,
+                    categories: ['Apple']
                 },
                 {
                     img: 's2.jpg',
                     title: 'Fress Cobies',
                     price: '$18',
                     discount: '$17',
-                    sale: true
+                    sale: true,
+                    categories: ['Vegetable']
+
                 },
                 {
                     img: 's8.jpg',
                     title: 'Fresh Watermelon',
                     price: '$15',
-                    sale: false
+                    sale: false,
+                    categories: ['Food', 'Orange']
+
                 },
                 {
                     img: 's1.jpg',
                     title: 'Organic Juice',
                     price: '$20',
                     discount: '$15',
-                    sale: true
+                    sale: true,
+                    categories: ['Apple', 'Orange']
                 },
                 {
                     img: 's4.jpg',
                     title: 'Fresh Blueberries',
                     price: '$19',
                     discount:'$14',
-                    sale: true
+                    sale: true,
+                    categories: ['Apple', 'Food']
                 },
                 {
                     img: 's10.jpg',
                     title: 'organic letus',
                     price: '$18',
                     discount: '$23',
-                    sale: false
+                    sale: false,
+                    categories: ['Food', 'Vegetable']
                 },
                 {
                     img: 's9.jpg',
                     title: 'Red Gajor',
                     price: '$28',
                     discount: '$26',
-                    sale: true
+                    sale: true,
+                    categories: ['Food', 'Vegetable']
                 },
                 {
                     img: 's7.jpg',
                     title: 'Naga pepper',
                     price: '$21',
-                    sale: false
+                    sale: false,
+                    categories: ['Apple', 'Orange']
                 },
             ],
+            prodCategories: ['All Products', 'Apple', 'Food', 'Orange', 'Vegetable'],
+            selectedCategory: 'All Products',
+            cardClass1: 'list_items',
+
         }
     },
+    methods: {
+        // Metodo per aggiornare la categoria selezionata
+        selectCategory(category) {
+            this.selectedCategory = category;
+        },
+        // Metodo per filtrare i prodotti in base alla categoria selezionata
+        filteredProducts() {
+            if (this.selectedCategory === 'All Products') {
+                return this.trendingProds;
+            }
+            return this.trendingProds.filter(product => product.categories.includes(this.selectedCategory));
+        }
+    }
 
 }
 </script>
@@ -94,14 +121,23 @@ export default {
         </section>
 
         <!-- LIST ITEMS -->
-        <section class="list_items">
+        <section>
             <div class="container img_bg">
                 <div class="section_title">
                     <h4 class="orange_txt">Trending Online Store</h4>
                     <h3>GOGRIN ALL <span class="orange_txt">ORGANIC</span> FOOD</h3>
                 </div>
+                <nav>
+                    <ul>
+                        <li v-for="(category, i) in prodCategories" :key="i">
+                            <a href="#" @click.prevent="selectCategory(category)">
+                                {{ prodCategories[i] }}
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
                 <div class="row">
-                    <ProductCard :info="product" v-for="(product, i) in trendingProds" :key="i" />
+                    <ProductCard :info="product" :cardClass="cardClass1" v-for="(product, i) in filteredProducts()" :key="i" />
                 </div>
             </div>
         </section>
@@ -186,6 +222,23 @@ section {
             padding: 20px;
             flex-wrap: wrap;
         }
+
+        ul {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+
+            li {
+                font-size: 20px;
+
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+
     }
 }
 
