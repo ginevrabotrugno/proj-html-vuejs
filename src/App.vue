@@ -33,4 +33,6 @@ window.alert("---> PULLATE SEMPRE APPENA ENTRATE XD <---")
 
 <style lang="scss">
 @use './style/general.scss' as *;
+
+
 </style>
