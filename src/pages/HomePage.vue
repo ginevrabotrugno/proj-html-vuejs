@@ -180,6 +180,7 @@ export default {
                 <div class="row">
                     <ProductCard :info="product" :cardClass="cardClass1" v-for="(product, i) in filteredProducts()" :key="i" />
                 </div>
+                <a href="#" class="button orange_bg" @click.prevent="selectCategory('All Products')">ALL PRODUCTS</a>
             </div>
         </section>
 
@@ -387,6 +388,8 @@ section {
         background-image: url('../assets/shop-bg-img.jpg');
         background-position: cover;
         color: $white;
+        text-align: center;
+        padding: 20px 0 100px;
 
         .row {
             padding: 20px;
