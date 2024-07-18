@@ -5,6 +5,7 @@ export default {
     name: 'ProductCard',
     props: {
         info: Object,
+        cardClass: String,
     },
     methods: {
         returnImagePath(imgPath){
@@ -15,13 +16,13 @@ export default {
 </script>
 
 <template>
-    <div class="card">
+    <div class="card" :class="cardClass">
         <img :src="returnImagePath(`../assets/${info.img}`)" :alt="info.title">
         <a href="#" class="d_block">
             {{ info.title }}
         </a>
         <div>
-            <span class="price" :class="{ barred: info.sale }">{{ info.price }}</span>
+            <span class="price" :class="{ discount: info.sale }">{{ info.price }}</span>
             <span class="price" v-if=" info.sale === true "> 
                 {{ info.discount }}
             </span>
@@ -46,7 +47,7 @@ export default {
     width: calc((100% / 4) - 30px);
     text-align: center;
     line-height: 2;
-    box-shadow: 1px 1px 1px 2px rgba($color: #000000, $alpha: 0.2);
+    // box-shadow: 1px 1px 1px 2px rgba($color: #000000, $alpha: 0.2);
     padding: 20px;
     position: relative;
 
@@ -54,9 +55,9 @@ export default {
         font-size: 30px;
         font-weight: 700;
 
-        &:hover {
-            color: $orange;
-        }
+        // &:hover {
+        //     color: $orange;
+        // }
     }
 
     .price {
@@ -65,8 +66,7 @@ export default {
         font-weight: 900;
     }
 
-    .barred {
-        text-decoration: line-through;
+    .discount {
         font-size: 18px;
     }
 
@@ -109,10 +109,32 @@ export default {
         }
     }
 
-    .bottom {
-        position: absolute;
-        bottom: 0;
-        left: 0;
+}
+
+.list_items {
+    .price {
+        color: $orange;
+    }
+
+    .discount {
+        color: #ef9c03a0
+    }
+
+}
+
+.trending_products {
+    box-shadow: 1px 1px 1px 2px rgba($color: #000000, $alpha: 0.2);
+
+    a {
+
+        &:hover {
+            color: $orange;
+        }
+
+    }
+
+    .discount {
+        text-decoration: line-through;
     }
 }
 

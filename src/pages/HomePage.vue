@@ -95,7 +95,9 @@ export default {
                     tite:'If we as a society are willing to have a preference for organic food farmer',
                 },
                 
-            ]
+            ],
+            cardClass1: 'list_items',
+            cardClass2: 'trending_products'
         }
     },
     methods: {
@@ -134,14 +136,14 @@ export default {
         </section>
 
         <!-- LIST ITEMS -->
-        <section class="list_items">
+        <section>
             <div class="container img_bg">
                 <div class="section_title">
                     <h4 class="orange_txt">Trending Online Store</h4>
                     <h3>GOGRIN ALL <span class="orange_txt">ORGANIC</span> FOOD</h3>
                 </div>
                 <div class="row">
-                    <ProductCard :info="product" v-for="(product, i) in trendingProds" :key="i" />
+                    <ProductCard :info="product" :cardClass="cardClass1" v-for="(product, i) in trendingProds" :key="i" />
                 </div>
             </div>
         </section>
@@ -193,7 +195,7 @@ export default {
         </section>
 
         <!-- TOP TRENDING -->
-        <section class="top_trending">
+        <section>
             <div class="container">
                 <div class="section_title">
                     <h4 class="orange_txt">Running week top selling</h4>
@@ -201,7 +203,7 @@ export default {
                 </div>
 
                 <div class="row">
-                    <ProductCard :info="product" v-for="(product, i) in trendingProds.slice(0, 4)" :key="i" />
+                    <ProductCard :info="product" :cardClass="cardClass2" v-for="(product, i) in trendingProds.slice(0, 4)" :key="i" />
                 </div>
             </div>
             
