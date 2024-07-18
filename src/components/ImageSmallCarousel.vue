@@ -68,6 +68,7 @@ export default {
         :key="index"
       >
         <img :src="image" :alt="'Image ' + index" />
+        <div class="overlay"></div>
       </div>
     </div>
     <button @click="next" class="carousel-button next"><i class="fa-solid fa-chevron-right"></i></button>
@@ -84,6 +85,11 @@ export default {
   justify-content: center;
   width: 100%;
   margin: 20px 0;
+
+  &:hover .carousel-button {
+    display: block;
+  }
+  
 }
 
 .carousel {
@@ -95,12 +101,38 @@ export default {
 .carousel-item {
   flex: 1 0 25%;
   margin: 0 5px;
+  overflow: hidden;
+  position: relative;
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+
+  &:hover .overlay {
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+  }
 }
 
 .carousel img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out, top 0.3s ease-in-out, left 0.3s ease-in-out;
+  transform: translate(-50%, -50%);
 }
 
 .carousel-button {
@@ -114,6 +146,7 @@ export default {
   transform: translateY(-50%);
   z-index: 1;
   transition: opacity 0.3s, padding 0.3s, font-size 0.3s;
+  display: none;
 }
 
 .carousel-button:hover {
