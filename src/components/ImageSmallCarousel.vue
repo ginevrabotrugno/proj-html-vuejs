@@ -10,6 +10,13 @@ export default {
         '/src/assets/fe1.jpg',
         '/src/assets/fe2.jpg',
       ],
+      texts: [
+        'Fresh Juice',
+        'Fresh Fruits',
+        'Dairy Items',
+        'Vegetable',
+        'Organic Orange'
+      ],
       currentIndex: 0,
       autoScrollInterval: null,
       userInteracted: false,
@@ -48,6 +55,10 @@ export default {
       this.userInteracted = true;
       this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
     },
+    getTextForImage(index) {
+      const textsIndex = (this.currentIndex + index) % this.texts.length;
+      return this.texts[textsIndex];
+    },
   },
   mounted() {
     this.startAutoScroll();
@@ -59,16 +70,15 @@ export default {
 </script>
 
 <template>
-  <div class="carousel-container">
+ <div class="carousel-container">
     <button @click="prev" class="carousel-button prev"><i class="fa-solid fa-chevron-left"></i></button>
     <div class="carousel">
-      <div
-        class="carousel-item"
-        v-for="(image, index) in visibleImages"
-        :key="index"
-      >
+      <div class="carousel-item"v-for="(image, index) in visibleImages":key="index">
         <img :src="image" :alt="'Image ' + index" />
         <div class="overlay"></div>
+        <div class="text-overlay">
+          {{ getTextForImage(index) }}
+        </div>
       </div>
     </div>
     <button @click="next" class="carousel-button next"><i class="fa-solid fa-chevron-right"></i></button>
@@ -77,7 +87,6 @@ export default {
 
 <style scoped lang="scss">
 @use '/src/style/general.scss' as *;
-
 
 .carousel-container {
   position: relative;
@@ -113,6 +122,16 @@ export default {
     top: 50%;
     left: 50%;
   }
+
+  &:hover .text-overlay {
+    transform: translateY(0);
+    opacity: 1;
+    font-size: 2rem; /* Increased font size */
+  }
+
+  &:hover .text-overlay:hover {
+    color: #FFA500; /* Change text color to orange on hover */
+  }
 }
 
 .carousel img {
@@ -132,6 +151,25 @@ export default {
   background-color: rgba(0, 0, 0, 0.5);
   transition: width 0.3s ease-in-out, height 0.3s ease-in-out, top 0.3s ease-in-out, left 0.3s ease-in-out;
   transform: translate(-50%, -50%);
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-align: left; /* Align text to the left */
+  padding: 10px 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align text to the left */
+  opacity: 0;
 }
 
 .carousel-button {
