@@ -7,17 +7,15 @@ export default {
       testimonials: [
         {
           text: 'Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread. Fruitcake biscuit cheesecake. Cookie topping sweets muffin pudding tart bear claw sugar plum croissant. We started as a small legal consultancy. We have proved our competence and had many satisfied clients.',
-          name: 'parvin Khan',
+          name: 'Parvin Khan',
           position: 'Co-Of Officer',
           backgroundImage: "/src/assets/testi-icon.png",
         },
-
         {
           text: 'Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread. Fruitcake biscuit cheesecake. Cookie topping sweets muffin pudding tart bear claw sugar plum croissant. We started as a small legal consultancy. We have proved our competence and had many satisfied clients.',
           name: 'Martha Alex',
           position: 'Manager'
-        },
-        
+        }
       ],
       isHovered: false,
       isNavigating: false,
@@ -77,8 +75,8 @@ export default {
 
 
 <template>
-  <div class="carousel-container" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
-    <div class="carousel-slide" v-for="(testimonial, index) in testimonials" :key="index" :style="{ opacity: index === currentIndex ? 1 : 0 }">
+   <div class="carousel-container" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
+    <div class="carousel-slide" v-for="(testimonial, index) in testimonials" :key="index" :class="{ 'carousel-slide-active': index === currentIndex, 'carousel-slide-left': index < currentIndex, 'carousel-slide-right': index > currentIndex }">
       <div class="carousel-content">
         <div class="quote-icon"></div>
         <p class="quote-text">{{ testimonial.text }}</p>
@@ -97,9 +95,7 @@ export default {
 
   @import '/src/style/partials/variables';
 
- 
-// general carousel container
-.carousel-container {
+ .carousel-container {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -114,14 +110,25 @@ export default {
 .carousel-slide {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 100%;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 1s;
+  transition: left 1s ease;
+}
+
+.carousel-slide-active {
+  left: 0;
+}
+
+.carousel-slide-left {
+  left: -100%;
+}
+
+.carousel-slide-right {
+  left: 100%;
 }
 
 .carousel-content {
@@ -139,7 +146,6 @@ export default {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-// icons
 .quote-icon {
   width: 200px; 
   height: 200px; 
@@ -148,14 +154,12 @@ export default {
   background-repeat: no-repeat; 
 }
 
-// txt
 .quote-text {
   font-size: 2rem;
   margin: 20px 80px 200px;
   max-width: 80%;
 }
 
-// author
 .author {
   text-align: center;
 }
@@ -171,7 +175,6 @@ export default {
   font-size: 1.2rem;
 }
 
-// section nav buttons
 .nav-button {
   position: absolute;
   top: 50%;
@@ -202,7 +205,6 @@ export default {
   background-color: #008744;
 }
 
-// Responsive styles
 @media (max-width: 1200px) {
   .carousel-content {
     padding: 15px;
