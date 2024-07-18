@@ -24,7 +24,7 @@ ul {
     list-style: none;
 }
 
-img { 
+img {
     max-width: 100%;
 }
 
@@ -37,17 +37,31 @@ img {
 button {
     font-family: inherit;
     border: 0;
+    cursor: pointer;
+
 }
 
 .green_bg {
     background-color: $green;
     color: $white;
+
+    // &:hover {
+    //     background-color: $orange;
+    //     transition-duration: 0.8s;
+    // }
 }
 
 .orange_bg {
     background-color: $orange;
     color: $white;
+
+    // &:hover {
+    //     background-color: $green;
+    //     transition-duration: 0.8s;
+    // }
 }
+
+
 
 .green_txt {
     color: $green;

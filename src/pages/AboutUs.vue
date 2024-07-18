@@ -6,6 +6,7 @@ import JumbotronMini from "../components/JumbotronMini.vue";
 import ProductCard from "../components/ProductCard.vue";
 import FeatureLists from "../components/FeatureLists.vue";
 import Counter from '../components/Counter.vue';
+import HealthIsWealth from '../components/HealthIsWealth.vue';
 
 
 export default {
@@ -18,6 +19,7 @@ export default {
         ProductCard,
         FeatureLists,
         Counter,
+        HealthIsWealth
     },
     data(){
         return {
@@ -86,6 +88,9 @@ export default {
     <main>
         <section>
             <JumbotronMini />
+        </section>
+        <section>
+            <HealthIsWealth />
         </section>
 
         <!-- LIST ITEMS -->
