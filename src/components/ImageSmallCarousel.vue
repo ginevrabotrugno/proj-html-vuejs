@@ -78,6 +78,7 @@ export default {
 <style scoped lang="scss">
 @use '/src/style/general.scss' as *;
 
+
 .carousel-container {
   position: relative;
   display: flex;
@@ -85,11 +86,9 @@ export default {
   justify-content: center;
   width: 100%;
   margin: 20px 0;
-
   &:hover .carousel-button {
-    display: block;
+    opacity: 1;
   }
-  
 }
 
 .carousel {
@@ -100,7 +99,7 @@ export default {
 
 .carousel-item {
   flex: 1 0 25%;
-  margin: 0 5px;
+  margin: 0 10px;
   overflow: hidden;
   position: relative;
 
@@ -146,11 +145,7 @@ export default {
   transform: translateY(-50%);
   z-index: 1;
   transition: opacity 0.3s, padding 0.3s, font-size 0.3s;
-  display: none;
-}
-
-.carousel-button:hover {
-  opacity: 1;
+  opacity: 0;
 }
 
 .carousel-button.prev {
@@ -167,7 +162,7 @@ export default {
   height: 50px;
 }
 
-// Responsive styles
+// Stili responsivi
 @media (max-width: 1200px) {
   .carousel-item {
     flex: 1 0 33.33%;
@@ -191,7 +186,7 @@ export default {
   .carousel-button {
     font-size: 18px;
     padding: 10px;
-    left: -40px; 
+    left: -40px;
     right: -40px;
   }
 }
@@ -208,7 +203,7 @@ export default {
   .carousel-button {
     font-size: 16px;
     padding: 8px;
-    left: -30px; /* Adjust left and right positions for the smallest screens */
+    left: -30px; 
     right: -30px;
   }
 }

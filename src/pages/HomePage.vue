@@ -308,6 +308,8 @@ export default {
 
 section {
     margin-bottom: 100px;
+    // da rivedere per togliere la sporcatura orizzontale
+    overflow-x: hidden;
 
     .container {
         width: 80%;
