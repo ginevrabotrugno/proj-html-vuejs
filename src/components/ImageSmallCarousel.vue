@@ -77,6 +77,7 @@ export default {
 <style scoped lang="scss">
 @use '/src/style/general.scss' as *;
 
+
 .carousel-container {
   position: relative;
   display: flex;
@@ -97,7 +98,7 @@ export default {
 
 .carousel-item {
   flex: 1 0 25%;
-  margin: 0 5px;
+  margin: 0 10px; 
 }
 
 .carousel img {
