@@ -134,7 +134,7 @@ export default {
         </section>
 
         <!-- LIST ITEMS -->
-        <section>
+        <section class="list_items">
             <div class="container img_bg">
                 <div class="section_title">
                     <h4 class="orange_txt">Trending Online Store</h4>
@@ -194,7 +194,7 @@ export default {
         </section>
 
         <!-- TOP TRENDING -->
-        <section>
+        <section class="top_trending">
             <div class="container">
                 <div class="section_title">
                     <h4 class="orange_txt">Running week top selling</h4>
@@ -439,4 +439,5 @@ section {
         }
     }
 }
+
 </style>
