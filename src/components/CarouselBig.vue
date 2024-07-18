@@ -198,7 +198,7 @@ export default {
 }
 
 .next {
-  right: 10px; 
+  right: 30px; 
 }
 
 // Responsive styles
