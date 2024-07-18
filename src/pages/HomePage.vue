@@ -137,7 +137,8 @@ export default {
             <CarouselBig />  
         </section>
 
-        <section>
+        <!-- info -->
+        <section class="floating_img">
             <div class="container">
                 <div class="row">
                     <div class="div col_50">
@@ -292,6 +293,18 @@ export default {
 
 <style scoped lang="scss">
 @use'/src/style/partials/variables' as*;
+
+@keyframes float {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
 section {
     margin-bottom: 100px;
@@ -486,4 +499,19 @@ section {
     }
 }
 
+.floating_img {
+    position: relative;
+
+    &::after {
+        content: url("../assets/fe-shap1-1.png");
+        position: absolute;
+        top: 0;
+        right: -50px;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .container {
+        width: 60%;
+    }
+}
 </style>
