@@ -82,7 +82,7 @@ export default {
         <section>
             <JumbotronMini />
         </section>
-        <!-- CAROUSEL TESTIMONIAL-->
+
         <!-- LIST ITEMS -->
         <section class="list_items">
             <div class="container img_bg">

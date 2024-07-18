@@ -7,6 +7,7 @@ export default {
         return {
             routes: router.options.routes.slice(0, 3),
             isScrolled: false,
+            showScrollToTop: false,
         };
     },
     mounted() {
@@ -17,9 +18,17 @@ export default {
     },
     methods: {
         handleScroll() {
-        this.isScrolled = window.scrollY > 50;
+            this.isScrolled = window.scrollY > 50;
+            this.showScrollToTop = window.scrollY > 200;
         },
-    },
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    }
+
 }
 </script>
 
@@ -85,6 +94,10 @@ export default {
             </div>
 
         </section>
+
+        <a href="#" id="scroll-to-top" class="orange_bg" @click.prevent="scrollToTop" v-if="showScrollToTop">
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
     </header>
 
 </template>
@@ -95,6 +108,17 @@ export default {
 header {
     background-color: $white;
     height: 150px;
+
+    #scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+        z-index: 900;
+    }
 
     section {
         padding: 20px 0;
