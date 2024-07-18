@@ -121,13 +121,17 @@ export default {
 }
 
 .carousel-button.prev {
-  left: -50px;
+  left: 150px;
   background-color: #ffa500;
+  width: 50px;
+  height: 50px;
 }
 
 .carousel-button.next {
-  right: -50px;
+  right: 150px;
   background-color: #ffa500;
+  width: 50px;
+  height: 50px;
 }
 
 // Responsive styles
