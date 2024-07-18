@@ -126,11 +126,11 @@ export default {
   &:hover .text-overlay {
     transform: translateY(0);
     opacity: 1;
-    font-size: 2rem; /* Increased font size */
+    font-size: 2rem; 
   }
 
   &:hover .text-overlay:hover {
-    color: #FFA500; /* Change text color to orange on hover */
+    color: #FFA500; 
   }
 }
 
@@ -158,9 +158,8 @@ export default {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
   color: white;
-  text-align: left; /* Align text to the left */
+  text-align: left;
   padding: 10px 20px;
   transform: translateY(100%);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -168,8 +167,9 @@ export default {
   font-weight: bold;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align text to the left */
+  justify-content: flex-start; 
   opacity: 0;
+  cursor: pointer;
 }
 
 .carousel-button {

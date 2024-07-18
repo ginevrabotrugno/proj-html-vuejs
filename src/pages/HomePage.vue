@@ -223,7 +223,7 @@ export default {
         
         <!-- COUNTER -->
         <section>
-            <Counter />
+            <Counter backgroundClass="home-counter" labelTextColor="#fff"  />
         </section>
 
         <!-- TOP TRENDING -->

@@ -105,10 +105,10 @@ export default {
                     cursor: pointer;
                     padding: 15px 25px;
                     border-radius: 5px;
+                    transition: background-color $time;
 
                     &:hover{
                         background-color: $green;
-                        transition-duration: 0.8s;
                     }
                 }
 
@@ -118,10 +118,10 @@ export default {
                     cursor: pointer;
                     padding: 15px 25px;
                     border-radius: 5px;
+                    transition: background-color $time;
 
                     &:hover{
                         background-color: $orange;
-                        transition-duration: 0.8s ;
                     }
                 }
                 

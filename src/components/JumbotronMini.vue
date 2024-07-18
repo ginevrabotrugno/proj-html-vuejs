@@ -60,9 +60,12 @@ export default {
                 float: left;
                 margin-right: 5px;
 
+                a{
+                    transition: color $time;
+                }
+                
                 a:hover{
                     color: $orange;
-                    transition-duration: 0.8s;
 
                 }
 

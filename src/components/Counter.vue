@@ -2,6 +2,16 @@
 <script>
 export default {
   name: 'Counter',
+  props: {
+    backgroundClass: {
+      type: String,
+      default: ''
+    },
+    labelTextColor: {
+      type: String,
+      default: '#000'
+    }
+  },
   mounted() {
     this.setupIntersectionObserver();
   },
@@ -59,25 +69,25 @@ export default {
 </script>
 
 <template>
- <div class="banner">
+   <div class="banner" :class="backgroundClass">
     <div class="counter-container">
-      <div class="counter" id="counter1" data-target="29">0+</div>
-      <div class="label">Years of Experienced</div>
+      <div class="counter" id="counter1" data-target="29" :style="{ color: '#ef9e03' }">0+</div>
+      <div class="label" :style="{ color: labelTextColor }">Years of Experienced</div>
     </div>
     <img class="separator" src="/src/assets/counter-shap1.png" alt="separator">
     <div class="counter-container">
-      <div class="counter" id="counter2" data-target="200">0+</div>
-      <div class="label">Everyday Online Delivery</div>
+      <div class="counter" id="counter2" data-target="200" :style="{ color: '#ef9e03' }">0+</div>
+      <div class="label" :style="{ color: labelTextColor }">Everyday Online Delivery</div>
     </div>
     <img class="separator" src="/src/assets/counter-shap1.png" alt="separator">
     <div class="counter-container">
-      <div class="counter" id="counter3" data-target="20">0k</div>
-      <div class="label">Client Satisfaction</div>
+      <div class="counter" id="counter3" data-target="20" :style="{ color: '#ef9e03' }">0k</div>
+      <div class="label" :style="{ color: labelTextColor }">Client Satisfaction</div>
     </div>
     <img class="separator" src="/src/assets/counter-shap1.png" alt="separator">
     <div class="counter-container">
-      <div class="counter" id="counter4" data-target="30">0+</div>
-      <div class="label">Award Winning</div>
+      <div class="counter" id="counter4" data-target="30" :style="{ color: '#ef9e03' }">0+</div>
+      <div class="label" :style="{ color: labelTextColor }">Award Winning</div>
     </div>
   </div>
 </template>
@@ -86,14 +96,23 @@ export default {
 <style scoped lang="scss">
 @use '../style/partials/variables' as *;
 
+
 .banner {
-  background-image: url('src/assets/milesim-bg.jpg');
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
   height: 300px;
-  color: #ef9e03;
+}
+
+.home-counter {
+  background-image: url('src/assets/milesim-bg.jpg');
+  color: #ef9e03; /* Colore arancione per il testo */
+}
+
+.about-counter {
+  background-color: #fff;
+  color: #ef9e03; /* Colore arancione per il testo */
 }
 
 .counter-container {
@@ -112,13 +131,13 @@ export default {
 .label {
   margin-top: 10px;
   font-size: 2.2rem;
-  color: #fff;
   font-weight: bold;
 }
 
 .separator {
-  height: 200px; 
+  height: 200px;
   width: 20px;
   margin: 0 10px;
 }
+
 </style>

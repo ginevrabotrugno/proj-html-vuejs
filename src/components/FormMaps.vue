@@ -75,10 +75,10 @@ export default {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                transition: background-color $time;
 
                 &:hover {
                     background-color: $green;
-                    transition-duration: 0.8s;
                 }
             }
         }
