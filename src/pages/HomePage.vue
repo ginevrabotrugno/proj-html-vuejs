@@ -188,10 +188,7 @@ export default {
         
         <!-- COUNTER -->
         <section>
-            <div class="container">
                 <Counter />
-            </div>
-           
         </section>
 
         <!-- TOP TRENDING -->
