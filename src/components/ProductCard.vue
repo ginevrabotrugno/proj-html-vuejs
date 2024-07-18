@@ -46,7 +46,7 @@ export default {
     width: calc((100% / 4) - 30px);
     text-align: center;
     line-height: 2;
-    // box-shadow: 1px 1px 1px 2px rgba($color: #000000, $alpha: 0.2);
+    box-shadow: 1px 1px 1px 2px rgba($color: #000000, $alpha: 0.2);
     padding: 20px;
     position: relative;
 
@@ -62,7 +62,6 @@ export default {
     .price {
         font-size: 20px;
         margin-right: 10px;
-        color: $orange;
         font-weight: 900;
     }
 
