@@ -74,8 +74,6 @@ export default {
         font-weight: 900;
         padding: 5px 15px;
         position: absolute;
-        top: 10px;
-        right: 10px;
     }
 
     .icons {
@@ -120,6 +118,12 @@ export default {
         color: #ef9c03a0
     }
 
+    .sale {
+        top: 25px;
+        right: 25px;
+    }
+
+
 }
 
 .trending_products {
@@ -135,6 +139,11 @@ export default {
 
     .discount {
         text-decoration: line-through;
+    }
+
+    .sale {
+        top: 5px;
+        right: 5px;
     }
 }
 
