@@ -24,7 +24,7 @@ export default {
             <div class="col" :class="{ 'inverse-row': inverse }">
                 <div class="box">
                     <span>Running week top selling</span>
-                    <h2>Health is wealth - eat natural, eat organic, be healthy.</h2>
+                    <h2>Health is wealth - eat <span>natural,</span> eat <span>organic,</span> be healthy.</h2>
                     <p>Organic is loaded with a sense of rightness, with a set of rules. I would much rather someone bought food that was local and sustainable but not organic than bought organic food that had to be shipped across the world.</p>
                     <div class="d-flex">
                         <div>
@@ -37,7 +37,7 @@ export default {
                         </div>
                     </div>
                     <div v-if="showContactInfo">
-                        <h4>Call us for order: +088012345 678 906</h4>
+                        <h4>Call us for order: <span>+088012345 678 906</span></h4>
                         <p>Organic is loaded with a sense of rightness, with a set of rules. I would much rather someone bought food that was local and sustainable but not organic</p>
                     </div>
                     <button id="btn" class="button orange_bg" @click="goToAboutUs">About Us</button>
@@ -77,6 +77,10 @@ export default {
                 align-items: baseline;
                 gap: 10px;
 
+                &>span:first-child{
+                    font-size: 1.3rem;
+                }
+
                 span {
                     color: $orange;
                     font-weight: bold;
@@ -95,10 +99,12 @@ export default {
 
                 h4 {
                     margin-bottom: 10px;
+                    font-size: 1.4rem;
                 }
 
                 #btn {
                     width: 150px;
+                    margin-top: 30px;
                 }
 
                 .d-flex {
@@ -112,6 +118,7 @@ export default {
 
                         &:nth-child(1), &:nth-child(2) {
                             margin-top: 20px;
+                            line-height: 30px;
                         }
                     }
                 }
