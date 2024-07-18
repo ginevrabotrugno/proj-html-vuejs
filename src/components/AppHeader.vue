@@ -145,6 +145,11 @@ header {
 
                     li {
                         text-transform: uppercase;
+                        transition: color $time;
+
+                        &:hover{
+                            color: $orange;
+                        }
                     }
                 }
 
@@ -175,6 +180,25 @@ header {
                     padding: 5px;
                     border-radius: 50%;
                     font-size: small;
+                }
+            }
+
+            .shop{
+
+                & a:last-child{
+                    transition: background-color $time;
+
+                    &:hover{
+                        background-color: $green;
+                    }
+                }
+            }
+
+            .fa-brands{
+                transition: color $time;
+
+                &:hover{
+                    color: black;
                 }
             }
 
