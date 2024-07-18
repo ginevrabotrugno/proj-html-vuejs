@@ -169,7 +169,7 @@ export default {
         <!-- COUNTER -->
         <section>
             <div class="container">
-                <Counter />
+                <Counter  backgroundClass="about-counter"  labelTextColor="#000"/>
             </div>
            
         </section>
