@@ -5,6 +5,7 @@ import BestSale25 from '../components/BestSale25.vue';
 import LogoCarousel from '../components/LogoCarousel.vue';
 import ProductCard from '../components/ProductCard.vue';
 import CarouselTestimonial from '../components/CarouselTestimonial.vue';
+import FeatureLists from '../components/FeatureLists.vue';
 
 export default {
     name: 'HomePage',
@@ -14,7 +15,8 @@ export default {
         BestSale25,
         LogoCarousel,
         ProductCard,
-        CarouselTestimonial
+        CarouselTestimonial,
+        FeatureLists,
     },
     data(){
         return {
@@ -184,6 +186,11 @@ export default {
         
         <!-- COUNTER -->
         <section>
+            <!-- messo qui solo per test da spostare -->
+            <div class="container">
+                <FeatureLists/>
+            </div>
+           
         </section>
 
         <!-- TOP TRENDING -->
