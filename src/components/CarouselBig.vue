@@ -174,7 +174,8 @@ export default {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: -25px;
+  background-color: rgba(0, 0, 0, 0.0);
   color: white;
   border: none;
   padding: 20px;
@@ -182,14 +183,22 @@ export default {
   font-size: 2rem; 
   line-height: 1;
   z-index: 1;
+  transition: all 0.7s ease;
+  border-radius: 10%; 
+}
+
+.nav-button:hover {
+  background-color: white;
+  color: #FFA500;
+  transform: scale(1.2); 
 }
 
 .prev {
-  left: 30px; 
+  left: 10px; 
 }
 
 .next {
-  right: 30px; 
+  right: 10px; 
 }
 
 // Responsive styles
@@ -253,4 +262,5 @@ export default {
     font-size: 1rem;
   }
 }
+
 </style>
