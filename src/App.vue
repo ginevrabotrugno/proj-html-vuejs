@@ -25,8 +25,12 @@ window.alert("---> PULLATE SEMPRE APPENA ENTRATE XD <---")
 
 
   <AppHeader />
+  
   <router-view></router-view>
-  <AppFooter />
+
+  <footer>
+    <AppFooter />
+  </footer>
 
 
 </template>
