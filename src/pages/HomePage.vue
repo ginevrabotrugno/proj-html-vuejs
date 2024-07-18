@@ -5,7 +5,7 @@ import BestSale25 from '../components/BestSale25.vue';
 import LogoCarousel from '../components/LogoCarousel.vue';
 import ProductCard from '../components/ProductCard.vue';
 import CarouselTestimonial from '../components/CarouselTestimonial.vue';
-import FeatureLists from '../components/FeatureLists.vue';
+import Counter from '../components/Counter.vue';
 
 export default {
     name: 'HomePage',
@@ -16,7 +16,7 @@ export default {
         LogoCarousel,
         ProductCard,
         CarouselTestimonial,
-        FeatureLists,
+        Counter,
     },
     data(){
         return {
@@ -186,9 +186,8 @@ export default {
         
         <!-- COUNTER -->
         <section>
-            <!-- messo qui solo per test da spostare -->
             <div class="container">
-                <FeatureLists/>
+                <Counter />
             </div>
            
         </section>

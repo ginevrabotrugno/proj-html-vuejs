@@ -4,6 +4,9 @@ import FormMaps from "../components/FormMaps.vue";
 import BestSale25 from "../components/BestSale25.vue";
 import JumbotronMini from "../components/JumbotronMini.vue";
 import ProductCard from "../components/ProductCard.vue";
+import FeatureLists from "../components/FeatureLists.vue";
+import Counter from '../components/Counter.vue';
+
 
 export default {
     name: 'AboutUs',
@@ -13,6 +16,8 @@ export default {
         BestSale25,
         JumbotronMini,
         ProductCard,
+        FeatureLists,
+        Counter,
     },
     data(){
         return {
@@ -96,9 +101,27 @@ export default {
             </div>
         </section>
 
+        <!-- features list -->
+         <section>
+
+            <div class="container">
+                <FeatureLists/>
+            </div>
+
+         </section>
+
         <section>
             <CarouselTestimonial/>  
         </section>
+        
+        <!-- COUNTER -->
+        <section>
+            <div class="container">
+                <Counter />
+            </div>
+           
+        </section>
+
         <section>
             <BestSale25 />
         </section>
