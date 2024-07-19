@@ -48,7 +48,7 @@ export default {
 
             span{
                 color: $orange;
-                font-weight: bold;
+                font-weight: 600;
             }
 
             h2{

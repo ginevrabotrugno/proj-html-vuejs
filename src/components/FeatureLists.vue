@@ -92,7 +92,7 @@ export default {
 
 .feature-title {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 

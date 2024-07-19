@@ -121,7 +121,7 @@ export default {
             // font
             color: white;
             font-size: 2.2rem;
-            font-weight: bold;
+            font-weight: 600;
 
             // flex
             display: flex;
@@ -238,7 +238,7 @@ export default {
                 // margin-top: 200px;
                 span{
                     font-size: 1.3rem;
-                    font-weight: bold;
+                    font-weight: 600;
                 }
                 // flex
                 display: flex;
@@ -260,7 +260,7 @@ export default {
                 
                 span:first-child{
                     font-size: 1.3rem;
-                    font-weight: bold;
+                    font-weight: 600;
                     margin-bottom: 10px;
                 }
 
@@ -280,7 +280,7 @@ export default {
                 }
 
                 a{
-                    font-weight: bold;
+                    font-weight: 600;
                     transition: color $time;
 
                     &:hover{
@@ -294,7 +294,7 @@ export default {
                 // margin-top: 200px;
                 span{
                     font-size: 1.3rem;
-                    font-weight: bold;
+                    font-weight: 600;
                 }
 
                 div#galleryImg{

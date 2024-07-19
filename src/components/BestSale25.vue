@@ -99,7 +99,7 @@ export default {
 
                 &:nth-child(1){
                     background-color: $orange;
-                    font-weight: bold;
+                    font-weight: 600;
                     cursor: pointer;
                     padding: 15px 25px;
                     border-radius: 5px;
