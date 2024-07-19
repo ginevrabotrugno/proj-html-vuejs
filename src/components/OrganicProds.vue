@@ -93,9 +93,10 @@ export default {
         }
 
         a {
+            transition: $time;
+
             &:hover {
                 background-color: $green;
-                transition: $time;
             }
         }
 
@@ -117,10 +118,10 @@ export default {
                 margin: 20px 0;
                 cursor: pointer;
                 font-size: 18px;
+                transition: $time;
 
                 &:hover {
                     color: $orange;
-                    transition: $time;
                 }
             }
         }
