@@ -1,8 +1,8 @@
 <script>
-import ListitemIcon1 from '../assets/ListitemIcon1.png';
-import Icon2 from '../assets/ListitemIcon2.png';
-import Icon3 from '../assets/ListitemIcon3.png';
-import Icon4 from '../assets/ListitemIcon4.png';
+import ListitemIcon1 from '../assets/H2-fe1.png';
+import Icon2 from '../assets/H2-fe2.png';
+import Icon3 from '../assets/H2-fe3.png';
+import Icon4 from '../assets/H2-fe4.png';
 
 export default {
   name: 'FeatureLists',
@@ -52,27 +52,36 @@ export default {
 <style scoped lang="scss">
 @use'/src/style/general.scss'as*;
 
+.feature-list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  background-color: #FBF4E6;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 .feature-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
 }
 
 .feature-item {
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: left;
   flex: 1;
   padding: 20px;
-  text-align: left;
 }
 
 .feature-icon {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
 }
 
 .feature-text {
