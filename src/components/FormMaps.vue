@@ -52,6 +52,7 @@ export default {
 
             h2{
                 font-size: 2.5rem;
+                font-weight: 900;
             }
             input{
                 border-radius: 5px;
