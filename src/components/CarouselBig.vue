@@ -231,7 +231,7 @@ export default {
 
 .nav-button:hover {
   background-color: white;
-  color: #FFA500;
+  color: $orange;
   transform: scale(1.2); 
 }
 

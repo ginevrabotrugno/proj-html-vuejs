@@ -244,7 +244,6 @@ export default {
                     <ProductCard :info="product" :cardClass="cardClass2" v-for="(product, i) in trendingProds.slice(0, 4)" :key="i" />
                 </div>
             </div>
-            
         </section>
 
         <section>
