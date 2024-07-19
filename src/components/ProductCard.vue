@@ -36,8 +36,6 @@ export default {
             SALE!
         </span>
     </div>
-
-
 </template>
 
 <style scoped lang="scss">
@@ -131,7 +129,7 @@ export default {
 
     .sale {
         top: 25px;
-        right: 25px;
+        right: 45px;
     }
 
 
