@@ -258,7 +258,7 @@ export default {
                     <h3 class="green_txt">GOGRIN LATEST<span class="orange_txt">NEWS</span> FEED</h3>
                 </div>
 
-                <div class="row">
+                <div class="row small">
                     <NewsCard :info="news" v-for="(news, i) in newsFeed" :key="i" />
                 </div>
             </div>
