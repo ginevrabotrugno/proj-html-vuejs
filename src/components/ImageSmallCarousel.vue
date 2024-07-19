@@ -149,8 +149,9 @@ export default {
 .overlay {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 10px;
+  width: calc(100% - 20px);
+  margin: 0 auto;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s ease-in-out;
