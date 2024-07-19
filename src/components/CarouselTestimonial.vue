@@ -6,13 +6,13 @@ export default {
       currentIndex: 0,
       testimonials: [
         {
-          text: 'Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread. Fruitcake biscuit cheesecake. Cookie topping sweets muffin pudding tart bear claw sugar plum croissant. We started as a small legal consultancy. We have proved our competence and had many satisfied clients.',
+          text: '"Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread. Fruitcake biscuit cheesecake. Cookie topping sweets muffin pudding tart bear claw sugar plum croissant .". We started as a small legal consultancy. We have proved our competence and had many satisfied clients.',
           name: 'Parvin Khan',
           position: 'Co-Of Officer',
           backgroundImage: "/src/assets/testi-icon.png",
         },
         {
-          text: 'Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread. Fruitcake biscuit cheesecake. Cookie topping sweets muffin pudding tart bear claw sugar plum croissant. We started as a small legal consultancy. We have proved our competence and had many satisfied clients.',
+          text: '"Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread. Fruitcake biscuit cheesecake. Cookie topping sweets muffin pudding tart bear claw sugar plum croissant .". We started as a small legal consultancy. We have proved our competence and had many satisfied clients.',
           name: 'Martha Alex',
           position: 'Manager'
         }
@@ -156,7 +156,8 @@ export default {
 }
 
 .quote-text {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  margin: 10px 20px; 
   max-width: 100%;
   font-weight: 600; 
 }
