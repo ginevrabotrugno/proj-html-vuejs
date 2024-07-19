@@ -20,7 +20,7 @@ export default {
         Counter,
         NewsCard
     },
-    data(){
+    data() {
         return {
             trendingProds: [
                 {
@@ -28,7 +28,8 @@ export default {
                     title: 'Fress Apple',
                     price: '$18',
                     sale: false,
-                    categories: ['Apple']
+                    categories: ['Apple'],
+                    id: 1
                 },
                 {
                     img: 's2.jpg',
@@ -36,16 +37,16 @@ export default {
                     price: '$18',
                     discount: '$17',
                     sale: true,
-                    categories: ['Vegetable']
-
+                    categories: ['Vegetable'],
+                    id: 2
                 },
                 {
                     img: 's8.jpg',
                     title: 'Fresh Watermelon',
                     price: '$15',
                     sale: false,
-                    categories: ['Food', 'Orange']
-
+                    categories: ['Food', 'Orange'],
+                    id: 3
                 },
                 {
                     img: 's1.jpg',
@@ -53,15 +54,17 @@ export default {
                     price: '$20',
                     discount: '$15',
                     sale: true,
-                    categories: ['Apple', 'Orange']
+                    categories: ['Apple', 'Orange'],
+                    id: 4
                 },
                 {
                     img: 's4.jpg',
                     title: 'Fresh Blueberries',
                     price: '$19',
-                    discount:'$14',
+                    discount: '$14',
                     sale: true,
-                    categories: ['Apple', 'Food']
+                    categories: ['Apple', 'Food'],
+                    id: 5
                 },
                 {
                     img: 's10.jpg',
@@ -69,7 +72,8 @@ export default {
                     price: '$18',
                     discount: '$23',
                     sale: false,
-                    categories: ['Food', 'Vegetable']
+                    categories: ['Food', 'Vegetable'],
+                    id: 6
                 },
                 {
                     img: 's9.jpg',
@@ -77,38 +81,40 @@ export default {
                     price: '$28',
                     discount: '$26',
                     sale: true,
-                    categories: ['Food', 'Vegetable']
+                    categories: ['Food', 'Vegetable'],
+                    id: 7
                 },
                 {
                     img: 's7.jpg',
                     title: 'Naga pepper',
                     price: '$21',
                     sale: false,
-                    categories: ['Apple', 'Orange']
+                    categories: ['Apple', 'Orange'],
+                    id: 8
                 },
             ],
             prodCategories: ['All Products', 'Apple', 'Food', 'Orange', 'Vegetable'],
             selectedCategory: 'All Products',
             newsFeed: [
                 {
-                    img:'blo1-390x250.jpg',
+                    img: 'blo1-390x250.jpg',
                     resp: 'Gogrin',
                     date: '17 Dec 2022',
-                    tite:'Where I live, I am surrounded by fresh, organic food, so I eat really well.',
+                    tite: 'Where I live, I am surrounded by fresh, organic food, so I eat really well.',
                 },
                 {
-                    img:'blo2-390x250.jpg',
+                    img: 'blo2-390x250.jpg',
                     resp: 'Gogrin',
                     date: '16 Dec 2022',
-                    tite:'What we get at home is 100% organic food. We are also 90% vegetarian.',
+                    tite: 'What we get at home is 100% organic food. We are also 90% vegetarian.',
                 },
                 {
-                    img:'blo3-390x250.jpg',
+                    img: 'blo3-390x250.jpg',
                     resp: 'Gogrin',
                     date: '15 Dec 2022',
-                    tite:'If we as a society are willing to have a preference for organic food farmer',
+                    tite: 'If we as a society are willing to have a preference for organic food farmer',
                 },
-                
+
             ],
             cardClass1: 'list_items',
             cardClass2: 'trending_products'
