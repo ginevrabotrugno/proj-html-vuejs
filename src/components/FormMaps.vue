@@ -7,6 +7,7 @@ export default {
 <template>
     <div class="container">
         <div class="row">
+            <!-- Form di contatto -->
             <form action="">
                 <span>Our Contact</span>
                 <h2>Get In A Touch</h2>
@@ -18,6 +19,7 @@ export default {
                     <div onclick="sendMessage">Send Message</div>
                 </div>
             </form>
+            <!-- Mappa di Google -->
             <iframe loading="lazy" src="https://maps.google.com/maps?q=webitrangpur&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near" title="webitrangpur" aria-label="webitrangpur"></iframe>
         </div>
     </div>
@@ -26,16 +28,16 @@ export default {
 <style scoped lang="scss">
 @use '../style/partials/variables' as *;
 
-.container{
+.container {
     margin-top: 50px;
     margin-bottom: 100px;
 
-    .row{
+    .row {
         display: flex;
         justify-content: center;
         gap: 20px;
 
-        form{
+        form {
             height: 800px;
             width: 550px;
             padding: 50px;
@@ -46,29 +48,31 @@ export default {
             justify-content: start;
             gap: 20px;
 
-            span{
+            span {
                 color: $orange;
                 font-weight: 600;
             }
 
-            h2{
+            h2 {
                 font-size: 2.5rem;
                 font-weight: 600;
             }
-            input{
+
+            input {
                 border-radius: 5px;
                 padding: 10px;
                 border: 1px solid rgb(238, 238, 238);
                 padding: 10px 10px 10px 30px;
             }
-            textarea{
+
+            textarea {
                 font-size: 0.9rem;
                 border: 1px solid rgb(238, 238, 238);
                 padding: 10px 10px 10px 30px;
                 letter-spacing: -0.05rem;
             }
 
-            #button{
+            #button {
                 height: 50px;
                 width: 180px;
                 font-size: 1.1rem;
@@ -86,7 +90,7 @@ export default {
             }
         }
 
-        iframe{
+        iframe {
             height: 700px;
             width: 550px;
             border: 1px solid white;

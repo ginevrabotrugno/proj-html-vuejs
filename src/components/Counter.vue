@@ -12,7 +12,7 @@ export default {
     }
   },
   mounted() {
-    this.setupIntersectionObserver();
+    this.setupIntersectionObserver(); // Imposta l'osservatore di intersezione quando il componente è montato
   },
   methods: {
     setupIntersectionObserver() {
@@ -26,18 +26,17 @@ export default {
     handleIntersection(entries) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          this.startCounters();
+          this.startCounters(); // Avvia i contatori quando l'elemento è visibile
         }
       });
     },
     startCounters() {
       const counters = this.$el.querySelectorAll('.counter');
-
       const speeds = {
-        counter1: 5000, // Years of Experience
-        counter2: 2000, // Everyday Online Delivery (più veloce)
-        counter3: 5000, // Client Satisfaction
-        counter4: 5000  // Award Winning
+        counter1: 5000, // Anni di esperienza
+        counter2: 2000, // Consegne quotidiane (più veloce)
+        counter3: 5000, // Soddisfazione del cliente
+        counter4: 5000  // Premi vinti
       };
 
       counters.forEach(counter => {
@@ -48,8 +47,6 @@ export default {
 
           if (counter.id === 'counter3') {
             increment = (target * 1000) / speeds[counter.id] / 100; // Dividere per 1000 per contatore K
-          } else if (counter.id === 'counter2') {
-            increment = (target / speeds[counter.id]) * 100;
           } else {
             increment = (target / speeds[counter.id]) * 100;
           }
@@ -77,7 +74,7 @@ export default {
       <div class="counter" id="counter1" data-target="29" :style="{ color: '$orange' }">0+</div>
       <div class="label" :style="{ color: labelTextColor }">Years of Experienced</div>
     </div>
-      <img class="separator" src="/src/assets/counter-shap1.png" alt="separator">
+    <img class="separator" src="/src/assets/counter-shap1.png" alt="separator">
     <div class="counter-container">
       <div class="counter" id="counter2" data-target="200" :style="{ color: '$orange' }">0+</div>
       <div class="label" :style="{ color: labelTextColor }">Everyday Online Delivery</div>
