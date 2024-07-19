@@ -1,7 +1,7 @@
 <script>
 import AppFooter from "./components/AppFooter.vue";
 import AppHeader from './components/AppHeader.vue';
-import FormMaps from './components/FormMaps.vue';
+import FormMaps from './components/others/FormMaps.vue';
 // inclusione font
 import '@fontsource/barlow-condensed';
 

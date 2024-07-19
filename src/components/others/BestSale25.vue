@@ -55,7 +55,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
-@use '../style/partials/variables' as *;
+@use '/src/style/partials/variables' as *;
 
 .container{
     width: 80%;
