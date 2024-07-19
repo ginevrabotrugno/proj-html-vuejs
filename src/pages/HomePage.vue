@@ -302,7 +302,7 @@ section {
 
         .row {
             display: flex;
-            justify-content: space-between;
+            justify-content: start;
             gap: 25px;
             align-items: center;
 
