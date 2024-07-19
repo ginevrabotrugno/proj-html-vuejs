@@ -196,13 +196,13 @@ export default {
                 <transition-group
                     name="list"
                     tag="div"
-                    class="row"
+                    class="row small"
                     enter-active-class="animate__animated animate__rotateIn animate__fadeIn"
                     leave-active-class="animate__animated animate__rotateOut animate__fadeOut"
                 >
                     <ProductCard 
                         v-for="(product, i) in filteredProducts()" 
-                        :key="i" 
+                        :key="product.id" 
                         :info="product" 
                         :cardClass="cardClass1"
                     />
@@ -429,7 +429,7 @@ section {
         .row {
             padding: 20px;
             flex-wrap: wrap;
-            justify-content: flex-start;
+            justify-content: center;
         }
 
         ul {

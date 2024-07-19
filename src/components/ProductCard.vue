@@ -53,6 +53,7 @@ export default {
 
     img{
         cursor: pointer;
+        display: block;
     }
         
 
