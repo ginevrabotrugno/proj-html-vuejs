@@ -215,7 +215,7 @@ section {
             line-height: 1.5;
             padding: 20px;
             position: relative;
-            font-weigth: 600;
+            font-weight: 600;
                 &::after {
                     content: url('../assets/title-shap.png');
                     position: absolute;
