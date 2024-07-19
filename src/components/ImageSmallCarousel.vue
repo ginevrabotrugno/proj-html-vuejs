@@ -132,6 +132,7 @@ export default {
 
 .carousel-item:hover {
   transform: scale(1.05);
+  
 }
 
 .carousel img {
@@ -140,6 +141,7 @@ export default {
   display: block;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
+  
 }
 
 // SECTION OVERLAY
@@ -169,7 +171,7 @@ export default {
   padding: 10px 20px;
   transform: translateY(100%);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -187,6 +189,7 @@ export default {
 .carousel-item:hover .text-overlay:hover {
   color: $orange;
 }
+
 
 // SECTION BUTTONS
 

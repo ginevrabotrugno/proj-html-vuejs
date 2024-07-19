@@ -195,7 +195,9 @@ export default {
   right: 30px; 
 }
 
-// Responsive styles
+// Responsive styles 
+
+// MEDIA Q DESKTOP 
 @media (max-width: 1200px) {
   .carousel-title {
     font-size: 3rem;
@@ -215,6 +217,8 @@ export default {
     font-size: 1.5rem;
   }
 }
+
+// MEDIA Q SCHERMI TABLET
 
 @media (max-width: 768px) {
   .carousel-title {
@@ -237,6 +241,7 @@ export default {
   }
 }
 
+// MEDIA Q SCHERMI PICCOLI 
 @media (max-width: 480px) {
   .carousel-title {
     font-size: 1.5rem;
