@@ -171,7 +171,7 @@ export default {
 }
 
 .position {
-  color: #ffa500;
+  color: $orange;
   font-size: 1.2rem;
 }
 
@@ -197,12 +197,22 @@ export default {
 
 .prev {
   left: 5px;
-  background-color: #ffa500;
+  background-color: $orange;
+  transition: background-color $time;
+
+  &:hover{
+    background-color: $green;
+  }
 }
 
 .next {
   right: 30px;
-  background-color: #008744;
+  background-color: $orange;
+  transition: background-color $time;
+
+  &:hover{
+    background-color: $green;
+  }
 }
 
 @media (max-width: 1200px) {

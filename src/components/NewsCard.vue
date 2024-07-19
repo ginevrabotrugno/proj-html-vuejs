@@ -38,9 +38,7 @@ export default {
     </p>
 
     <a href="#" class="green_txt">READ MORE...</a>
-
-    </div>
-
+</div>
 </template>
 
 <style scoped lang="scss">
@@ -49,12 +47,16 @@ export default {
 .news_card {
     width: calc((100% / 2) - 30px);
     line-height: 1.5;
+    position: relative; // Assicurati che gli elementi siano posizionati correttamente
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 
     .img {
         width: 100%;
         height: 250px;
         overflow: hidden;
         position: relative;
+        cursor: default;
 
         img {
             width: 100%;
@@ -73,28 +75,43 @@ export default {
             transition: width 0.3s ease-in-out, height 0.3s ease-in-out, top 0.3s ease-in-out, left 0.3s ease-in-out;
             transform: translate(-50%, -50%);
         }
+    }
 
-        &:hover img {
-            transform: scale(1.1);
-        }
+    &:hover .img img {
+        transform: scale(1.1);
+    }
 
-        &:hover .overlay {
-            width: 100%;
-            height: 100%;
-            top: 50%;
-            left: 50%;
-        }
+    &:hover .img .overlay {
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
     }
 
     span {
         margin-right: 10px;
         font-size: 15px;
+
+        &:first-child{
+            cursor: pointer;
+        }
+
+        i{
+            cursor: pointer;
+        }
+        
     }
 
     h4 {
         font-size: 25px;
         font-weight: 900;
         margin: 20px 0;
+        cursor: pointer;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            color: $orange;
+        }
     }
 
     p {
@@ -105,11 +122,11 @@ export default {
     a {
         font-weight: 900;
         font-size: 20px;
+        transition: color 0.3s ease-in-out;
 
         &:hover {
             color: $orange;
         }
     }
 }
-
 </style>

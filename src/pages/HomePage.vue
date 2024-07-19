@@ -347,6 +347,7 @@ section {
                         left: 20px;
                         bottom: 20px;
                         font-size: 20px;
+                        transition: $time;
 
                         &:hover {
                             color: $orange;

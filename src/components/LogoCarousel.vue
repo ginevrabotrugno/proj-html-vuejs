@@ -86,6 +86,7 @@ export default {
 
 <style scoped lang="scss">
 @use '/src/style/general.scss' as *;
+@use '/src/style/partials/variables' as *;
 
 .carousel-container {
   position: relative;
@@ -139,10 +140,20 @@ export default {
 .carousel-button.prev {
   left: 8rem;
   background-color: #ffa500;
+  transition: $time;
+
+  &:hover{
+    background-color: $green;
+  }
 }
 
 .carousel-button.next {
   right: 8rem;
   background-color: #ffa500;
+  transition: $time;
+
+  &:hover{
+    background-color: $green;
+  }
 }
 </style>

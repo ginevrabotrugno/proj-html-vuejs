@@ -50,15 +50,11 @@ export default {
     // box-shadow: 1px 1px 1px 2px rgba($color: #000000, $alpha: 0.2);
     padding: 20px;
     position: relative;
-    
+    cursor: pointer;    
 
     a {
         font-size: 30px;
         font-weight: 700;
-
-        // &:hover {
-        //     color: $orange;
-        // }
     }
 
     .price {
@@ -89,6 +85,7 @@ export default {
         transform: translate(-50%, 70%);
         transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
         color: #000000;
+        cursor: pointer;
         
         i {
             display: inline-block;
@@ -137,6 +134,7 @@ export default {
     box-shadow: 1px 1px 1px 2px rgba($color: #000000, $alpha: 0.2);
 
     a {
+        transition: $time;
 
         &:hover {
             color: $orange;
