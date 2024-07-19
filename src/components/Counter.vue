@@ -108,6 +108,8 @@ export default {
 
 .home-counter {
   background-image: url('src/assets/milesim-bg.jpg');
+  background-size: cover;
+  background-position: center;
   color: $orange;
 }
 
