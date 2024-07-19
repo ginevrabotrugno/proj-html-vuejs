@@ -154,7 +154,7 @@ export default {
             <CarouselBig />  
         </section>
 
-        <!-- info -->
+        <!-- Info Section -->
         <section class="floating_img">
             <div class="container">
                 <div class="row">
@@ -177,7 +177,7 @@ export default {
             <ImageSmallCarousel/>
         </section>
 
-        <!-- LIST ITEMS -->
+        <!-- List Items Section -->
         <section>
             <div class="container img_bg">
                 <div class="section_title">
@@ -211,120 +211,102 @@ export default {
             </div>
         </section>
 
-        <!-- QUOTES CAROUSEL -->
+        <!-- Quotes Carousel Section -->
         <section>
             <div>
                 <CarouselTestimonial />
             </div>
         </section>
 
-        <!-- OFFERS -->
+        <!-- Offers Section -->
         <section>
-            <div  id="offers" class="container">
-
+            <div id="offers" class="container">
                 <div class="row">
-
                     <div class="col_50">
                         <div class="label left">
-
                             <h3>Fresh gurden tomato combo offer... $37</h3>
                             <a href="#">SHOP NOW</a>
-    
                         </div>
                     </div>
-
                     <div class="col_50">
-
                         <div class="label rigth">
-
-                            <h3>Some ogranic healty fruits combo offer... $49</h3>
+                            <h3>Some organic healthy fruits combo offer... $49</h3>
                             <a href="#">SHOP NOW</a>
-
                         </div>
-
                     </div>
                 </div>
-
             </div>
-
         </section>
         
-        <!-- COUNTER -->
+        <!-- Counter Section -->
         <section>
             <div class="container_90">
-
-                <Counter backgroundClass="home-counter" labelTextColor="#fff"  />
-  
+                <Counter backgroundClass="home-counter" labelTextColor="#fff" />
             </div>
         </section>
 
-        <!-- TOP TRENDING -->
+        <!-- Top Trending Section -->
         <section>
             <div class="container">
                 <div class="section_title">
                     <h4 class="orange_txt">Running week top selling</h4>
                     <h3 class="green_txt">TOP <span class="orange_txt">TRENDING</span> ORGANIC FOOD</h3>
                 </div>
-
                 <div class="row small">
                     <ProductCard :info="product" :cardClass="cardClass2" v-for="(product, i) in trendingProds.slice(0, 4)" :key="i" />
                 </div>
             </div>
         </section>
 
+        <!-- Best Sale Section -->
         <section>
             <BestSale25 />
         </section>
 
-        <!-- LATEST NEWS -->
+        <!-- Latest News Section -->
         <section>
             <div class="container">
                 <div class="section_title">
                     <h4 class="orange_txt">The news whatwe have</h4>
                     <h3 class="green_txt">GOGRIN LATEST<span class="orange_txt">NEWS</span> FEED</h3>
                 </div>
-
                 <div class="row small">
                     <NewsCard :info="news" v-for="(news, i) in newsFeed" :key="i" />
                 </div>
             </div>
         </section>
 
+        <!-- Logo Carousel Section -->
         <section>
             <div class="container">
-            <LogoCarousel />
+                <LogoCarousel />
             </div>
         </section>
-
-
-
     </main>
 </template>
 
 <style scoped lang="scss">
-@use'/src/style/partials/variables' as*;
+@use '/src/style/partials/variables' as *;
 
 @keyframes float {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
-#offers{
+#offers {
     width: 60%;
 }
 
 section {
     margin-bottom: 100px;
-    // da rivedere per togliere la sporcatura orizzontale
     overflow-x: hidden;
-    // padding-bottom: 50px;
 
     .container {
         width: 80%;
@@ -357,8 +339,6 @@ section {
                     .top {
                         margin-bottom: 30px;
                     }
-
-                    
                 }
 
                 .left {
@@ -397,7 +377,6 @@ section {
                     }
                 }
             }
-
         }
 
         .section_title {
@@ -406,19 +385,21 @@ section {
             padding: 20px;
             position: relative;
             font-weight: 600;
-                &::after {
-                    content: url('../assets/title-shap.png');
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
-                h4 {
-                    font-size: 30px;
-                }
-                h3 {
-                    font-size: 40px;
-                }
+
+            &::after {
+                content: url('../assets/title-shap.png');
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            h4 {
+                font-size: 30px;
+            }
+            h3 {
+                font-size: 40px;
+            }
         }
     }
 
@@ -452,9 +433,11 @@ section {
                 }
             }
         }
-        #btn_allproduct{
+
+        #btn_allproduct {
             transition: background-color $time;
-            &:hover{
+
+            &:hover {
                 background-color: $green;
             }
         }
@@ -464,7 +447,7 @@ section {
 .floating_img {
     position: relative;
     width: 70%;
-    margin:0 auto;
+    margin: 0 auto;
     overflow-x: visible;
 
     &::after {
