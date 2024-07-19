@@ -172,7 +172,7 @@ export default {
 
 .name {
   font-size: 1.5rem;
-  font-weigth: 600;
+  font-weight: 600;
   color: #333;
   margin-bottom: 5px;
   
