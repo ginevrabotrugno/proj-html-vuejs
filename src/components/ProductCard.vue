@@ -78,7 +78,6 @@ export default {
     }
     
     .icons {
-        // display: none;
         opacity: 0;
         visibility: hidden;
         transition: opacity $time, visibility $time;
