@@ -3,7 +3,7 @@ export default {
   name: 'CarouselTestimonial',
   data() {
     return {
-      currentIndex: 0,
+      currentIndex: 0, 
       testimonials: [
         {
           text: '"Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread. Fruitcake biscuit cheesecake. Cookie topping sweets muffin pudding tart bear claw sugar plum croissant .". We started as a small legal consultancy. We have proved our competence and had many satisfied clients.',
@@ -17,22 +17,27 @@ export default {
           position: 'Manager'
         }
       ],
-      isHovered: false,
-      isNavigating: false,
-      autoSlideInterval: null,
-      hoverTimeout: null,
-      navigateTimeout: null,
+      isHovered: false, // Flag per indicare se il carosello è in stato di hover
+      isNavigating: false, // Flag per indicare se è in corso una navigazione tra testimonianze
+      autoSlideInterval: null, // Intervallo per il cambio automatico delle testimonianze
+      hoverTimeout: null, // Timeout per l'hover
+      navigateTimeout: null, // Timeout per la navigazione
     };
   },
   mounted() {
-    this.startAutoSlide(6000);
+    // Avvia il cambio automatico delle testimonianze ogni 6 secondi
+    this.startAutoSlide(6000); 
   },
   beforeDestroy() {
-    clearInterval(this.autoSlideInterval);
-    clearTimeout(this.hoverTimeout);
+    // Pulisce l'intervallo del cambio automatico
+    clearInterval(this.autoSlideInterval); 
+    // Pulisce il timeout dell'hover
+    clearTimeout(this.hoverTimeout); 
+     // Pulisce il timeout della navigazione
     clearTimeout(this.navigateTimeout);
   },
   methods: {
+    // Avvia il cambio automatico delle testimonianze
     startAutoSlide(interval) {
       clearInterval(this.autoSlideInterval);
       this.autoSlideInterval = setInterval(() => {
@@ -41,26 +46,32 @@ export default {
         }
       }, interval);
     },
+    // Resetta il timer per il cambio automatico delle testimonianze
     resetAutoSlideTimer(interval) {
       clearInterval(this.autoSlideInterval);
       this.startAutoSlide(interval);
     },
+    // Gestisce l'evento di mouse over sul carosello
     handleMouseOver() {
       this.isHovered = true;
       this.resetAutoSlideTimer(8000);
     },
+    // Gestisce l'evento di mouse leave sul carosello
     handleMouseLeave() {
       this.isHovered = false;
       this.resetAutoSlideTimer(6000);
     },
+    // Passa alla testimonianza successiva
     nextTestimonial() {
       this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
       this.handleNavigation();
     },
+    // Torna alla testimonianza precedente
     prevTestimonial() {
       this.currentIndex = (this.currentIndex - 1 + this.testimonials.length) % this.testimonials.length;
       this.handleNavigation();
     },
+    // Gestisce la navigazione tra le testimonianze
     handleNavigation() {
       this.isNavigating = true;
       clearTimeout(this.navigateTimeout);
@@ -73,9 +84,8 @@ export default {
 };
 </script>
 
-
 <template>
-   <div class="carousel-container" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
+  <div class="carousel-container" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
     <div class="carousel-slide" v-for="(testimonial, index) in testimonials" :key="index" :class="{ 'carousel-slide-active': index === currentIndex, 'carousel-slide-left': index < currentIndex, 'carousel-slide-right': index > currentIndex }">
       <div class="carousel-content">
         <div class="quote-icon"></div>
@@ -92,10 +102,10 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@import '/src/style/partials/variables';
 
-  @import '/src/style/partials/variables';
-
-  .carousel-container {
+// Stile per il container del carosello
+.carousel-container {
   position: relative;
   width: 80vw; 
   height: 50vh; 
@@ -103,11 +113,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
-  color: #333;
+  background-color: #fff; 
+  color: #333; 
   margin: 0 auto; 
 }
 
+// Stile per ogni slide del carosello
 .carousel-slide {
   position: absolute;
   top: 0;
@@ -117,21 +128,25 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: left 1s ease;
+  transition: left 1s ease; 
 }
 
+// Slide attiva
 .carousel-slide-active {
   left: 0;
 }
 
+// Slide precedente
 .carousel-slide-left {
   left: -100%;
 }
 
+// Slide successiva
 .carousel-slide-right {
   left: 100%;
 }
 
+// Contenuto del carosello
 .carousel-content {
   width: 80%; 
   height: auto; 
@@ -141,12 +156,12 @@ export default {
   justify-content: center;
   text-align: center;
   padding: 20px;
-  background: url('/src/assets/testi-icon.png') no-repeat;
+  background: url('/src/assets/testi-icon.png') no-repeat; 
   background-position: 100% center;
   background-size: 50% contain; 
- 
 }
 
+// Icona della citazione
 .quote-icon {
   width: 100px; 
   height: 100px; 
@@ -155,6 +170,7 @@ export default {
   background-repeat: no-repeat; 
 }
 
+// Testo della citazione
 .quote-text {
   font-size: 1.5rem;
   margin: 10px 20px; 
@@ -162,32 +178,33 @@ export default {
   font-weight: 600; 
 }
 
+// Autore della citazione
 .author {
-
   text-align: center;
   margin-top:10px;
   font-weight: 600;
- 
 }
 
+// Nome dell'autore
 .name {
   font-size: 1.5rem;
   font-weight: 600;
   color: #333;
   margin-bottom: 5px;
-  
 }
 
+// Posizione dell'autore
 .position {
   color: $orange;
   font-size: 0.875rem; 
 }
 
+// Pulsanti di navigazione
 .nav-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); 
   color: white;
   border: none;
   padding: 10px; 
@@ -196,13 +213,15 @@ export default {
   line-height: 1;
   z-index: 1;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s; 
 }
 
+// Mostra i pulsanti di navigazione quando il container è in hover
 .carousel-container:hover .nav-button {
   opacity: 1;
 }
 
+// Pulsante di navigazione precedente
 .prev {
   left: 5px;
   width: 60px;
@@ -215,6 +234,7 @@ export default {
   }
 }
 
+// Pulsante di navigazione successivo
 .next {
   right: 5px;
   width: 60px;
@@ -227,6 +247,7 @@ export default {
   }
 }
 
+// Stile per schermi più piccoli di 1200px
 @media (max-width: 1200px) {
   .carousel-container {
     width: 90vw;
@@ -261,6 +282,7 @@ export default {
   }
 }
 
+// Stile per schermi più piccoli di 768px
 @media (max-width: 768px) {
   .carousel-container {
     width: 100vw;
@@ -295,6 +317,7 @@ export default {
   }
 }
 
+// Stile per schermi più piccoli di 480px
 @media (max-width: 480px) {
   .carousel-container {
     width: 100vw;
@@ -329,4 +352,3 @@ export default {
   }
 }
 </style>
-

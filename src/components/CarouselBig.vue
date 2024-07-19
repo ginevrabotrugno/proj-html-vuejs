@@ -3,7 +3,7 @@ export default {
   name: 'CarouselBig',
   data() {
     return {
-      currentSlide: 0,
+      currentSlide: 0, // Slide corrente
       slides: [
         {  
           image: '/src/assets/slider.jpg',
@@ -14,22 +14,25 @@ export default {
           id: 2
         },
       ],
-      isHovered: false,
-      isNavigating: false,
-      isAboutUsHovered: false,
-      isOurHistoryHovered: false,
-      autoSlideInterval: null,
-      hoverTimeout: null,
-      navigateTimeout: null,
+      isHovered: false, // Flag per indicare se il carosello è in stato di hover
+      isNavigating: false, // Flag per indicare se è in corso una navigazione tra slide
+      isAboutUsHovered: false, // Flag per hover sul pulsante "About Us"
+      isOurHistoryHovered: false, // Flag per hover sul pulsante "Our History"
+      autoSlideInterval: null, // Intervallo per il cambio automatico delle slide
+      hoverTimeout: null, // Timeout per l'hover
+      navigateTimeout: null, // Timeout per la navigazione
     };
   },
   mounted() {
-    this.startAutoSlide(6000);
+    // Avvia il cambio automatico delle slide dopo 6 secondi
+    this.startAutoSlide(6000); 
   },
   beforeDestroy() {
-    this.clearAllTimers();
+    // Pulisce tutti i timer quando il componente viene distrutto
+    this.clearAllTimers(); 
   },
   methods: {
+    // Avvia il cambio automatico delle slide
     startAutoSlide(interval) {
       this.clearAutoSlideTimer();
       this.autoSlideInterval = setInterval(() => {
@@ -38,26 +41,32 @@ export default {
         }
       }, interval);
     },
+    // Resetta il timer per il cambio automatico delle slide
     resetAutoSlideTimer(interval) {
       this.clearAutoSlideTimer();
       this.startAutoSlide(interval);
     },
+    // Gestisce l'evento di mouse over sul carosello
     handleMouseOver() {
       this.isHovered = true;
       this.resetAutoSlideTimer(8000);
     },
+    // Gestisce l'evento di mouse leave sul carosello
     handleMouseLeave() {
       this.isHovered = false;
       this.resetAutoSlideTimer(6000);
     },
+    // Passa alla slide successiva
     nextSlide() {
       this.currentSlide = (this.currentSlide + 1) % this.slides.length;
       this.handleNavigation();
     },
+    // Torna alla slide precedente
     prevSlide() {
       this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
       this.handleNavigation();
     },
+    // Gestisce la navigazione tra le slide
     handleNavigation() {
       this.isNavigating = true;
       this.clearNavigateTimeout();
@@ -66,26 +75,31 @@ export default {
         this.resetAutoSlideTimer(this.isHovered ? 8000 : 6000);
       }, 10000);
     },
+    // Naviga alla sezione "About Us"
     goToAboutUs() {
       console.log('Navigating to About Us');
       this.$router.push({ name: 'About' });
     },
+    // Naviga alla sezione "Our History"
     goToOurHistory() {
       console.log('Navigating to Our History');
       this.$router.push({ name: 'Contact' });
     },
+    // Pulisce il timer per il cambio automatico delle slide
     clearAutoSlideTimer() {
       if (this.autoSlideInterval) {
         clearInterval(this.autoSlideInterval);
         this.autoSlideInterval = null;
       }
     },
+    // Pulisce il timeout per la navigazione
     clearNavigateTimeout() {
       if (this.navigateTimeout) {
         clearTimeout(this.navigateTimeout);
         this.navigateTimeout = null;
       }
     },
+    // Pulisce tutti i timer
     clearAllTimers() {
       this.clearAutoSlideTimer();
       if (this.hoverTimeout) {
@@ -94,15 +108,19 @@ export default {
       }
       this.clearNavigateTimeout();
     },
+    // Gestisce l'hover sul pulsante "About Us"
     handleAboutUsMouseOver() {
       this.isAboutUsHovered = true;
     },
+    // Gestisce il leave dell'hover sul pulsante "About Us"
     handleAboutUsMouseLeave() {
       this.isAboutUsHovered = false;
     },
+    // Gestisce l'hover sul pulsante "Our History"
     handleOurHistoryMouseOver() {
       this.isOurHistoryHovered = true;
     },
+    // Gestisce il leave dell'hover sul pulsante "Our History"
     handleOurHistoryMouseLeave() {
       this.isOurHistoryHovered = false;
     }
@@ -190,7 +208,7 @@ export default {
   gap: 30px; 
   margin-top: 30px;
 
-  button{
+  button {
     padding: 18px 60px;
     font-weight: 600;
     font-size: 20px;
