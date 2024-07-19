@@ -27,6 +27,7 @@ export default {
 @use '../style/partials/variables' as *;
 
 .container{
+    margin-top: 50px;
     margin-bottom: 100px;
 
     .row{
@@ -38,8 +39,8 @@ export default {
             height: 800px;
             width: 550px;
             padding: 50px;
-            border-radius: 5px;
-            box-shadow: 10px 10px 15px 15px rgb(249, 249, 249);
+            border-radius: 15px;
+            box-shadow: 0px 0px 30px 10px rgb(243, 243, 243);
             display: flex;
             flex-direction: column;
             justify-content: start;
