@@ -64,6 +64,7 @@ export default {
                 font-size: 0.9rem;
                 border: 1px solid rgb(238, 238, 238);
                 padding: 10px 10px 10px 30px;
+                letter-spacing: -0.05rem;
             }
 
             #button{

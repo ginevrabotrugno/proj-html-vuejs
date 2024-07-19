@@ -118,16 +118,25 @@ export default {
         returnImagePath(imgPath){
             return new URL (imgPath, import.meta.url).href;
         },
-        // Metodo per aggiornare la categoria selezionata
         selectCategory(category) {
             this.selectedCategory = category;
         },
-        // Metodo per filtrare i prodotti in base alla categoria selezionata
         filteredProducts() {
             if (this.selectedCategory === 'All Products') {
                 return this.trendingProds;
             }
-            return this.trendingProds.filter(product => product.categories.includes(this.selectedCategory));
+            const filtered = this.trendingProds.filter(product => product.categories.includes(this.selectedCategory));
+            return this.reorderProducts(filtered);
+        },
+        reorderProducts(products) {
+            if (this.selectedCategory === 'Apple') {
+                const order = ['Fress Apple', 'Organic Juice', 'Fresh Blueberries', 'Naga pepper'];
+                return order.map(title => products.find(product => product.title === title)).filter(Boolean);
+            } else if (this.selectedCategory === 'Orange') {
+                const order = ['Fresh Watermelon', 'Organic Juice', 'Naga pepper'];
+                return order.map(title => products.find(product => product.title === title)).filter(Boolean);
+            }
+            return products;
         }
     }
 }
@@ -178,9 +187,20 @@ export default {
                         </li>
                     </ul>
                 </nav>
-                <div class="row small">
-                    <ProductCard :info="product" :cardClass="cardClass1" v-for="(product, i) in filteredProducts()" :key="i" />
-                </div>
+                <transition-group
+                    name="list"
+                    tag="div"
+                    class="row"
+                    enter-active-class="animate__animated animate__rotateIn animate__fadeIn"
+                    leave-active-class="animate__animated animate__rotateOut animate__fadeOut"
+                >
+                    <ProductCard 
+                        v-for="(product, i) in filteredProducts()" 
+                        :key="product.id" 
+                        :info="product" 
+                        :cardClass="cardClass1"
+                    />
+                </transition-group>
                 <a href="#" id="btn_allproduct" class="button orange_bg" @click.prevent="selectCategory('All Products')">ALL PRODUCTS</a>
             </div>
         </section>
