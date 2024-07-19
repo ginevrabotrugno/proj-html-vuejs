@@ -50,6 +50,8 @@ export default {
     // box-shadow: 1px 1px 1px 2px rgba($color: #000000, $alpha: 0.2);
     padding: 20px;
     position: relative;
+    margin-top: 20px;
+    margin-bottom: 80px;
 
     img{
         cursor: pointer;
@@ -135,7 +137,7 @@ export default {
 }
 
 .trending_products {
-    box-shadow: 1px 1px 1px 2px rgba($color: #000000, $alpha: 0.2);
+    box-shadow: 0px 0px 10px 0px rgba($color: #757575, $alpha: 0.2);
 
     a {
         transition: $time;
