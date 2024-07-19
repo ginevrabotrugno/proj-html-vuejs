@@ -220,7 +220,7 @@ export default {
 
         <!-- OFFERS -->
         <section>
-            <div class="container">
+            <div  id="offers" class="container">
 
                 <div class="row">
 
@@ -314,6 +314,10 @@ export default {
   100% {
     transform: translateX(0);
   }
+}
+
+#offers{
+    width: 60%;
 }
 
 section {
