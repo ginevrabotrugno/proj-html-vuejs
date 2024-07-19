@@ -95,7 +95,7 @@ export default {
 
 <style scoped lang="scss">
 @use '/src/style/general.scss' as *;
-
+@use '/src/style/partials/variables' as *;
 
 .carousel-container {
   position: relative;
@@ -170,6 +170,7 @@ export default {
   justify-content: flex-start;
   opacity: 0;
   cursor: pointer;
+  transition: color $time;
 }
 
 .carousel-item:hover .text-overlay {
@@ -178,7 +179,7 @@ export default {
 }
 
 .carousel-item:hover .text-overlay:hover {
-  color: #FFA500;
+  color: $orange;
 }
 
 .carousel-button {
@@ -193,20 +194,31 @@ export default {
   z-index: 1;
   transition: opacity 0.3s, padding 0.3s, font-size 0.3s;
   opacity: 0;
+  
 }
 
 .carousel-button.prev {
   left: 150px;
-  background-color: #ffa500;
+  background-color: $orange;
   width: 50px;
   height: 50px;
+  transition: background-color $time;
+
+  &:hover{
+    background-color: $green;
+  }
 }
 
 .carousel-button.next {
   right: 150px;
-  background-color: #ffa500;
+  background-color: $orange;
   width: 50px;
   height: 50px;
+  transition: background-color $time;
+
+  &:hover{
+    background-color: $green;
+  }
 }
 
 // Stili responsivi

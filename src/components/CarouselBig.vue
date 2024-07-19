@@ -163,24 +163,6 @@ export default {
   }
 }
 
-// .btn-green {
-//   background-color: #067166;
-//   border-radius: 0 20px 20px 0; 
-// }
-
-// .btn-green:hover {
-//   background-color: #04574f;
-// }
-
-// .btn-orange {
-//   background-color: #ef9e03;
-//   border-radius: 20px 0 0 20px; 
-// }
-
-// .btn-orange:hover {
-//   background-color: #d98702;
-// }
-
 // Navigation buttons
 .nav-button {
   position: absolute;
