@@ -202,7 +202,7 @@ export default {
                 >
                     <ProductCard 
                         v-for="(product, i) in filteredProducts()" 
-                        :key="product.id" 
+                        :key="i" 
                         :info="product" 
                         :cardClass="cardClass1"
                     />
@@ -421,6 +421,7 @@ section {
     .img_bg {
         background-image: url('../assets/shop-bg-img.jpg');
         background-position: cover;
+        background-repeat: no-repeat;
         color: $white;
         text-align: center;
         padding: 20px 0 100px;
