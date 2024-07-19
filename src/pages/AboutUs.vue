@@ -9,10 +9,9 @@ import Counter from '../components/Counter.vue';
 import HealthIsWealth from '../components/HealthIsWealth.vue';
 import OrganicProds from "../components/OrganicProds.vue";
 
-
 export default {
     name: 'AboutUs',
-    components:{
+    components: {
         CarouselTestimonial,
         FormMaps,
         BestSale25,
@@ -117,19 +116,21 @@ export default {
                     date: '15 Dec 2022',
                     tite: 'If we as a society are willing to have a preference for organic food farmer',
                 },
-
             ],
             cardClass1: 'list_items',
             cardClass2: 'trending_products'
         }
     },
     methods: {
-        returnImagePath(imgPath){
-            return new URL (imgPath, import.meta.url).href;
+        // Metodo per restituire il percorso dell'immagine
+        returnImagePath(imgPath) {
+            return new URL(imgPath, import.meta.url).href;
         },
+        // Metodo per selezionare la categoria
         selectCategory(category) {
             this.selectedCategory = category;
         },
+        // Metodo per filtrare i prodotti in base alla categoria selezionata
         filteredProducts() {
             if (this.selectedCategory === 'All Products') {
                 return this.trendingProds;
@@ -137,6 +138,7 @@ export default {
             const filtered = this.trendingProds.filter(product => product.categories.includes(this.selectedCategory));
             return this.reorderProducts(filtered);
         },
+        // Metodo per riordinare i prodotti in base alla categoria
         reorderProducts(products) {
             if (this.selectedCategory === 'Apple') {
                 const order = ['Fress Apple', 'Organic Juice', 'Fresh Blueberries', 'Naga pepper'];
@@ -148,23 +150,22 @@ export default {
             return products;
         }
     }
-
 }
 </script>
 
 <template>
     <main>
+        <!-- Sezione Jumbotron -->
         <section>
             <JumbotronMini />
         </section>
-        <section>
-            <HealthIsWealth 
-            imageSrc="src/assets/image1project.jpg" 
-            />
-        </section>
         
+        <!-- Sezione HealthIsWealth -->
+        <section>
+            <HealthIsWealth imageSrc="src/assets/image1project.jpg" />
+        </section>
 
-        <!-- LIST ITEMS -->
+        <!-- Sezione Lista Articoli -->
         <section>
             <div class="container img_bg">
                 <div class="section_title">
@@ -198,43 +199,45 @@ export default {
             </div>
         </section>
 
-        <!-- Organic Fruits and Vegetables -->
-         <section>
+        <!-- Sezione Prodotti Organici -->
+        <section>
             <OrganicProds />
-         </section>
+        </section>
 
+        <!-- Sezione HealthIsWealth Inverso -->
         <section>
             <div class="container_80">
-            <HealthIsWealth 
-            imageSrc="src/assets/image2project.jpg" 
-            :inverse="true"
-            :showContactInfo="false"
-            />
-
+                <HealthIsWealth 
+                    imageSrc="src/assets/image2project.jpg" 
+                    :inverse="true"
+                    :showContactInfo="false"
+                />
             </div>
         </section>
 
-        <!-- features list -->
-         <section>
-            <FeatureLists/>
-         </section>
-
+        <!-- Sezione Liste delle Caratteristiche -->
         <section>
-            <CarouselTestimonial/>  
+            <FeatureLists />
+        </section>
+
+        <!-- Sezione Carousel Testimonial -->
+        <section>
+            <CarouselTestimonial />  
         </section>
         
-        <!-- COUNTER -->
+        <!-- Sezione Contatore -->
         <section>
             <div class="container_90">
-                <Counter  backgroundClass="about-counter"  labelTextColor="#000"/>
+                <Counter backgroundClass="about-counter" labelTextColor="#000" />
             </div>
-           
         </section>
 
+        <!-- Sezione Best Sale -->
         <section>
             <BestSale25 />
         </section>
         
+        <!-- Sezione Form Maps -->
         <section>
             <FormMaps />
         </section>
@@ -242,7 +245,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
-@use'/src/style/partials/variables' as*;
+@use '/src/style/partials/variables' as *;
 
 section {
     margin-bottom: 100px;
@@ -257,7 +260,6 @@ section {
             justify-content: space-between;
             gap: 25px;
             align-items: center;
-
         }
 
         .section_title {
@@ -266,21 +268,23 @@ section {
             padding: 20px;
             position: relative;
             font-weight: 600;
-                &::after {
-                    content: url('../assets/title-shap.png');
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
-                h4 {
-                    font-size: 30px;
-                }
-                h3 {
-                    font-size: 40px;
-                }
-        }
 
+            &::after {
+                content: url('../assets/title-shap.png');
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            h4 {
+                font-size: 30px;
+            }
+
+            h3 {
+                font-size: 40px;
+            }
+        }
     }
 
     .img_bg {
@@ -309,19 +313,16 @@ section {
                 &:hover {
                     color: $orange;
                 }
-                }
-                }
-                #btn_allproduct{
-                transition: background-color $time;
-                &:hover{
-                background-color: $green;
-                }
-                }
+            }
+        }
 
+        #btn_allproduct {
+            transition: background-color $time;
+
+            &:hover {
+                background-color: $green;
+            }
+        }
     }
 }
-
-
-
-
 </style>
