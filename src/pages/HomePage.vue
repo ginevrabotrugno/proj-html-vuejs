@@ -437,7 +437,7 @@ section {
         content: url("../assets/fe-shap1-1.png");
         position: absolute;
         top: 0;
-        right: -50px;
+        right: -170px;
         animation: float 3s ease-in-out infinite;
     }
 
