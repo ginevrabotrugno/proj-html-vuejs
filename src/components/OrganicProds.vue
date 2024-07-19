@@ -50,7 +50,7 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="container_70">
         <div class="row">
             <div class="col_30">
                 <h2>Our organic <span class="orange_txt">fruits</span> & <span class="orange_txt">vegetable</span></h2>
