@@ -56,11 +56,12 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
   height: 300px;
   background-color: #FBF4E6;
   padding: 20px;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .feature-list {
