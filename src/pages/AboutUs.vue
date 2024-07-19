@@ -156,11 +156,7 @@ export default {
 
         <!-- features list -->
          <section>
-
-            <div class="container">
-                <FeatureLists/>
-            </div>
-
+            <FeatureLists/>
          </section>
 
         <section>
