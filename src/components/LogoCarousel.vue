@@ -113,9 +113,14 @@ export default {
 }
 
 .carousel img {
-  width: 100%;
   height: auto;
   display: block;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .carousel-button {
@@ -124,25 +129,30 @@ export default {
   color: white;
   padding: 10px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
   transition: opacity 0.3s;
+  opacity: 0; 
 }
 
-.carousel-button:hover {
-  opacity: 1;
+.carousel-container:hover .carousel-button {
+  opacity: 1; 
 }
 
 .carousel-button.prev {
-  left: 8rem;
+  left: 6rem;
+  width: 50px;
+  height: 50px;
   background-color: #ffa500;
 }
 
 .carousel-button.next {
-  right: 8rem;
+  right: 6rem;
   background-color: #ffa500;
+  width: 50px;
+  height: 50px;
 }
 </style>
