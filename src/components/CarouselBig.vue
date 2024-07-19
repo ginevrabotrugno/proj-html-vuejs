@@ -1,17 +1,23 @@
 <script>
-
-
 export default {
   name: 'CarouselBig',
   data() {
     return {
       currentSlide: 0,
       slides: [
-        {  image: '/src/assets/slider.jpg' },
-        {  image: '/src/assets/H3-slider3.jpg' },
+        {  
+          image: '/src/assets/slider.jpg',
+          id: 1
+        },
+        {  
+          image: '/src/assets/H3-slider3.jpg',
+          id: 2
+        },
       ],
       isHovered: false,
       isNavigating: false,
+      isAboutUsHovered: false,
+      isOurHistoryHovered: false,
       autoSlideInterval: null,
       hoverTimeout: null,
       navigateTimeout: null,
@@ -21,13 +27,11 @@ export default {
     this.startAutoSlide(6000);
   },
   beforeDestroy() {
-    clearInterval(this.autoSlideInterval);
-    clearTimeout(this.hoverTimeout);
-    clearTimeout(this.navigateTimeout);
+    this.clearAllTimers();
   },
   methods: {
     startAutoSlide(interval) {
-      clearInterval(this.autoSlideInterval);
+      this.clearAutoSlideTimer();
       this.autoSlideInterval = setInterval(() => {
         if (!this.isNavigating) {
           this.nextSlide();
@@ -35,7 +39,7 @@ export default {
       }, interval);
     },
     resetAutoSlideTimer(interval) {
-      clearInterval(this.autoSlideInterval);
+      this.clearAutoSlideTimer();
       this.startAutoSlide(interval);
     },
     handleMouseOver() {
@@ -56,28 +60,59 @@ export default {
     },
     handleNavigation() {
       this.isNavigating = true;
-      clearTimeout(this.navigateTimeout);
+      this.clearNavigateTimeout();
       this.navigateTimeout = setTimeout(() => {
         this.isNavigating = false;
         this.resetAutoSlideTimer(this.isHovered ? 8000 : 6000);
       }, 10000);
     },
     goToAboutUs() {
-    console.log('Navigating to About Us');
-    this.$router.push({ name: 'About' });
-  },
-  goToOurHistory() {
-    console.log('Navigating to Our History');
-    this.$router.push({ name: 'Contact' });
+      console.log('Navigating to About Us');
+      this.$router.push({ name: 'About' });
+    },
+    goToOurHistory() {
+      console.log('Navigating to Our History');
+      this.$router.push({ name: 'Contact' });
+    },
+    clearAutoSlideTimer() {
+      if (this.autoSlideInterval) {
+        clearInterval(this.autoSlideInterval);
+        this.autoSlideInterval = null;
+      }
+    },
+    clearNavigateTimeout() {
+      if (this.navigateTimeout) {
+        clearTimeout(this.navigateTimeout);
+        this.navigateTimeout = null;
+      }
+    },
+    clearAllTimers() {
+      this.clearAutoSlideTimer();
+      if (this.hoverTimeout) {
+        clearTimeout(this.hoverTimeout);
+        this.hoverTimeout = null;
+      }
+      this.clearNavigateTimeout();
+    },
+    handleAboutUsMouseOver() {
+      this.isAboutUsHovered = true;
+    },
+    handleAboutUsMouseLeave() {
+      this.isAboutUsHovered = false;
+    },
+    handleOurHistoryMouseOver() {
+      this.isOurHistoryHovered = true;
+    },
+    handleOurHistoryMouseLeave() {
+      this.isOurHistoryHovered = false;
+    }
   }
-}
 };
 </script>
 
-<!-- CAROUSELBIG -->
 <template>
   <div class="carousel-container" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
-    <div class="carousel-slide" v-for="(slide, index) in slides" :key="index" :style="{ backgroundImage: `url(${slide.image})`, opacity: index === currentSlide ? 1 : 0 }">
+    <div class="carousel-slide" v-for="(slide, index) in slides" :key="slide.id" :style="{ backgroundImage: `url(${slide.image})`, opacity: index === currentSlide ? 1 : 0 }">
       <div class="carousel-content">
         <h2 class="carousel-subtitle">GOGRIN ORGANIC FOOD STORE</h2>
         <h1 class="carousel-title">
@@ -85,8 +120,16 @@ export default {
           always be healthy.
         </h1>
         <div class="buttons">
-          <button class="button orange_bg" @click="goToAboutUs">About Us</button>
-          <button class="button green_bg" @click="goToOurHistory">Our History</button>
+          <button class="button orange_bg" 
+                  @click="goToAboutUs" 
+                  @mouseover="handleAboutUsMouseOver" 
+                  @mouseleave="handleAboutUsMouseLeave"
+                  :class="{ hover: isAboutUsHovered }">About Us</button>
+          <button class="button green_bg" 
+                  @click="goToOurHistory" 
+                  @mouseover="handleOurHistoryMouseOver" 
+                  @mouseleave="handleOurHistoryMouseLeave"
+                  :class="{ hover: isOurHistoryHovered }">Our History</button>
         </div>
       </div>
       <button class="nav-button prev" @mousedown="prevSlide" @touchstart="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
@@ -95,12 +138,10 @@ export default {
   </div>
 </template>
 
-
 <style scoped lang="scss">
 @use '/src/style/general.scss' as *;
 @import '/src/style/partials/variables';
 
-// General container
 .carousel-container {
   position: relative;
   width: 100vw;
@@ -108,7 +149,6 @@ export default {
   overflow: hidden;
 }
 
-// Slide styles
 .carousel-slide {
   position: absolute;
   top: 0;
@@ -143,39 +183,43 @@ export default {
   font-weight: bold;
 }
 
-// Section buttons
 .buttons {
   display: flex;
   justify-content: center;
   gap: 30px; 
   margin-top: 30px;
 
-  button{
+  button {
     transition: background-color $time;
 
-    &.orange_bg:hover{
+    &.orange_bg {
+      background-color: $orange;
+    }
+
+    &.green_bg {
       background-color: $green;
     }
 
-    &.green_bg:hover{
+    &.hover {
+      background-color: $green;
+    }
+
+    &.green_bg.hover {
       background-color: $orange;
     }
   }
 }
 
-// Navigation buttons
 .nav-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  margin-top: -25px;
   background-color: rgba(0, 0, 0, 0.0);
   color: white;
   border: none;
   padding: 20px;
   cursor: pointer;
   font-size: 2rem; 
-  line-height: 1;
   z-index: 1;
   transition: all 0.7s ease;
   border-radius: 10%; 
@@ -195,9 +239,6 @@ export default {
   right: 30px; 
 }
 
-// Responsive styles 
-
-// MEDIA Q DESKTOP 
 @media (max-width: 1200px) {
   .carousel-title {
     font-size: 3rem;
@@ -217,8 +258,6 @@ export default {
     font-size: 1.5rem;
   }
 }
-
-// MEDIA Q SCHERMI TABLET
 
 @media (max-width: 768px) {
   .carousel-title {
@@ -241,7 +280,6 @@ export default {
   }
 }
 
-// MEDIA Q SCHERMI PICCOLI 
 @media (max-width: 480px) {
   .carousel-title {
     font-size: 1.5rem;
@@ -261,5 +299,4 @@ export default {
     font-size: 1rem;
   }
 }
-
 </style>
