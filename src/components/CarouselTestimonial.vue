@@ -142,7 +142,7 @@ export default {
   text-align: center;
   padding: 20px;
   background: url('/src/assets/testi-icon.png') no-repeat;
-  background-position: 90% center;
+  background-position: 100% center;
   background-size: 50% contain; 
  
 }

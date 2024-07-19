@@ -1,4 +1,3 @@
-
 <script>
 export default {
   name: 'Counter',
@@ -48,9 +47,11 @@ export default {
           let increment;
 
           if (counter.id === 'counter3') {
-            increment = (target * 1000) / speeds[counter.id]; 
+            increment = (target * 1000) / speeds[counter.id] / 100; // Dividere per 1000 per contatore K
+          } else if (counter.id === 'counter2') {
+            increment = (target / speeds[counter.id]) * 100;
           } else {
-            increment = (target / speeds[counter.id]) * 100; 
+            increment = (target / speeds[counter.id]) * 100;
           }
 
           if (count < target) {
@@ -61,6 +62,8 @@ export default {
           }
         };
 
+        // Reset contatore a 0 prima di iniziare l'aggiornamento
+        counter.innerText = '0' + (counter.id === 'counter3' ? 'K' : '+');
         updateCount();
       });
     }
@@ -69,12 +72,12 @@ export default {
 </script>
 
 <template>
-   <div class="banner" :class="backgroundClass">
+  <div class="banner" :class="backgroundClass">
     <div class="counter-container">
       <div class="counter" id="counter1" data-target="29" :style="{ color: '#ef9e03' }">0+</div>
       <div class="label" :style="{ color: labelTextColor }">Years of Experienced</div>
     </div>
-    <img class="separator" src="/src/assets/counter-shap1.png" alt="separator">
+      <img class="separator" src="/src/assets/counter-shap1.png" alt="separator">
     <div class="counter-container">
       <div class="counter" id="counter2" data-target="200" :style="{ color: '#ef9e03' }">0+</div>
       <div class="label" :style="{ color: labelTextColor }">Everyday Online Delivery</div>
@@ -92,10 +95,8 @@ export default {
   </div>
 </template>
 
-
 <style scoped lang="scss">
 @use '../style/partials/variables' as *;
-
 
 .banner {
   display: flex;
@@ -107,12 +108,12 @@ export default {
 
 .home-counter {
   background-image: url('src/assets/milesim-bg.jpg');
-  color: #ef9e03; /* Colore arancione per il testo */
+  color: #ef9e03;
 }
 
 .about-counter {
   background-color: #fff;
-  color: #ef9e03; /* Colore arancione per il testo */
+  color: #ef9e03; 
 }
 
 .counter-container {
@@ -139,5 +140,4 @@ export default {
   width: 20px;
   margin: 0 10px;
 }
-
 </style>
