@@ -107,7 +107,6 @@ export default {
 
                 h2 {
                     font-size: 3.5rem;
-                    font-weight: bold;
                     line-height: 58px;
                     transition: font-size 0.8s ease;
 
