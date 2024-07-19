@@ -209,7 +209,7 @@ export default {
 }
 
 .carousel-button.prev {
-  left: 150px;
+  left: 120px;
   background-color: $orange;
   width: 50px;
   height: 50px;
@@ -221,7 +221,7 @@ export default {
 }
 
 .carousel-button.next {
-  right: 150px;
+  right: 120px;
   background-color: $orange;
   width: 50px;
   height: 50px;

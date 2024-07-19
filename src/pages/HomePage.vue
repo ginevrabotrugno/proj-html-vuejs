@@ -178,7 +178,7 @@ export default {
                         </li>
                     </ul>
                 </nav>
-                <div class="row">
+                <div class="row small">
                     <ProductCard :info="product" :cardClass="cardClass1" v-for="(product, i) in filteredProducts()" :key="i" />
                 </div>
                 <a href="#" id="btn_allproduct" class="button orange_bg" @click.prevent="selectCategory('All Products')">ALL PRODUCTS</a>
@@ -240,7 +240,7 @@ export default {
                     <h3 class="green_txt">TOP <span class="orange_txt">TRENDING</span> ORGANIC FOOD</h3>
                 </div>
 
-                <div class="row">
+                <div class="row small">
                     <ProductCard :info="product" :cardClass="cardClass2" v-for="(product, i) in trendingProds.slice(0, 4)" :key="i" />
                 </div>
             </div>
@@ -258,7 +258,7 @@ export default {
                     <h3 class="green_txt">GOGRIN LATEST<span class="orange_txt">NEWS</span> FEED</h3>
                 </div>
 
-                <div class="row">
+                <div class="row small">
                     <NewsCard :info="news" v-for="(news, i) in newsFeed" :key="i" />
                 </div>
             </div>
