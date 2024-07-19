@@ -97,6 +97,7 @@ export default {
 @use '/src/style/general.scss' as *;
 @use '/src/style/partials/variables' as *;
 
+// GENERAL CONTAINER
 .carousel-container {
   position: relative;
   display: flex;
@@ -104,6 +105,7 @@ export default {
   justify-content: center;
   width: 100%;
   margin: 20px 0;
+  overflow: hidden;
   &:hover .carousel-button {
     opacity: 1;
   }
@@ -121,7 +123,9 @@ export default {
 }
 
 .carousel-item {
-  flex: 0 0 25%;
+  flex: 0 0 25%; 
+  padding: 0 10px; 
+  box-sizing: border-box;
   position: relative;
   transition: transform 0.3s ease-in-out;
 }
@@ -137,6 +141,8 @@ export default {
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
 }
+
+// SECTION OVERLAY
 
 .overlay {
   position: absolute;
@@ -182,6 +188,8 @@ export default {
   color: $orange;
 }
 
+// SECTION BUTTONS
+
 .carousel-button {
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
@@ -194,7 +202,6 @@ export default {
   z-index: 1;
   transition: opacity 0.3s, padding 0.3s, font-size 0.3s;
   opacity: 0;
-  
 }
 
 .carousel-button.prev {
@@ -204,7 +211,7 @@ export default {
   height: 50px;
   transition: background-color $time;
 
-  &:hover{
+  &:hover {
     background-color: $green;
   }
 }
@@ -216,12 +223,14 @@ export default {
   height: 50px;
   transition: background-color $time;
 
-  &:hover{
+  &:hover {
     background-color: $green;
   }
 }
 
 // Stili responsivi
+
+// media q per schermi desktop
 @media (max-width: 1200px) {
   .carousel-item {
     flex: 1 0 33.33%;
@@ -232,14 +241,14 @@ export default {
     padding: 15px;
   }
 }
-
+// media q per schermi medio piccoli come tablet
 @media (max-width: 768px) {
   .carousel {
     width: 90%;
   }
 
   .carousel-item {
-    flex: 1 0 50%;
+    flex: 1 0 50%; 
   }
 
   .carousel-button {
@@ -249,7 +258,7 @@ export default {
     right: -40px;
   }
 }
-
+// media query per schermi piccoli
 @media (max-width: 480px) {
   .carousel {
     width: 100%;
