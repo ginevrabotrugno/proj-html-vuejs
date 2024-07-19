@@ -128,12 +128,25 @@ export default {
   box-sizing: border-box;
   position: relative;
   transition: transform 0.3s ease-in-out;
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+
+  &:hover .overlay {
+    width: calc(100% - 10px);
+    margin: 0 auto;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+  }
+
 }
 
-.carousel-item:hover {
-  transform: scale(1.05);
+// .carousel-item:hover {
+//   transform: scale(1.05);
   
-}
+// }
 
 .carousel img {
   width: 100%;
@@ -148,14 +161,13 @@ export default {
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 10px;
-  width: calc(100% - 20px);
-  margin: 0 auto;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out, top 0.3s ease-in-out, left 0.3s ease-in-out;
+  transform: translate(-50%, -50%);
 }
 
 .carousel-item:hover .overlay {
