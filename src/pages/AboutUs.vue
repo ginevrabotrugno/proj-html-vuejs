@@ -23,7 +23,7 @@ export default {
         HealthIsWealth,
         OrganicProds,
     },
-    data(){
+    data() {
         return {
             trendingProds: [
                 {
@@ -31,7 +31,8 @@ export default {
                     title: 'Fress Apple',
                     price: '$18',
                     sale: false,
-                    categories: ['Apple']
+                    categories: ['Apple'],
+                    id: 1
                 },
                 {
                     img: 's2.jpg',
@@ -39,16 +40,16 @@ export default {
                     price: '$18',
                     discount: '$17',
                     sale: true,
-                    categories: ['Vegetable']
-
+                    categories: ['Vegetable'],
+                    id: 2
                 },
                 {
                     img: 's8.jpg',
                     title: 'Fresh Watermelon',
                     price: '$15',
                     sale: false,
-                    categories: ['Food', 'Orange']
-
+                    categories: ['Food', 'Orange'],
+                    id: 3
                 },
                 {
                     img: 's1.jpg',
@@ -56,15 +57,17 @@ export default {
                     price: '$20',
                     discount: '$15',
                     sale: true,
-                    categories: ['Apple', 'Orange']
+                    categories: ['Apple', 'Orange'],
+                    id: 4
                 },
                 {
                     img: 's4.jpg',
                     title: 'Fresh Blueberries',
                     price: '$19',
-                    discount:'$14',
+                    discount: '$14',
                     sale: true,
-                    categories: ['Apple', 'Food']
+                    categories: ['Apple', 'Food'],
+                    id: 5
                 },
                 {
                     img: 's10.jpg',
@@ -72,7 +75,8 @@ export default {
                     price: '$18',
                     discount: '$23',
                     sale: false,
-                    categories: ['Food', 'Vegetable']
+                    categories: ['Food', 'Vegetable'],
+                    id: 6
                 },
                 {
                     img: 's9.jpg',
@@ -80,36 +84,68 @@ export default {
                     price: '$28',
                     discount: '$26',
                     sale: true,
-                    categories: ['Food', 'Vegetable']
+                    categories: ['Food', 'Vegetable'],
+                    id: 7
                 },
                 {
                     img: 's7.jpg',
                     title: 'Naga pepper',
                     price: '$21',
                     sale: false,
-                    categories: ['Apple', 'Orange']
+                    categories: ['Apple', 'Orange'],
+                    id: 8
                 },
             ],
             prodCategories: ['All Products', 'Apple', 'Food', 'Orange', 'Vegetable'],
             selectedCategory: 'All Products',
-            cardClass1: 'list_items',
+            newsFeed: [
+                {
+                    img: 'blo1-390x250.jpg',
+                    resp: 'Gogrin',
+                    date: '17 Dec 2022',
+                    tite: 'Where I live, I am surrounded by fresh, organic food, so I eat really well.',
+                },
+                {
+                    img: 'blo2-390x250.jpg',
+                    resp: 'Gogrin',
+                    date: '16 Dec 2022',
+                    tite: 'What we get at home is 100% organic food. We are also 90% vegetarian.',
+                },
+                {
+                    img: 'blo3-390x250.jpg',
+                    resp: 'Gogrin',
+                    date: '15 Dec 2022',
+                    tite: 'If we as a society are willing to have a preference for organic food farmer',
+                },
 
+            ],
+            cardClass1: 'list_items',
+            cardClass2: 'trending_products'
         }
     },
     methods: {
         returnImagePath(imgPath){
             return new URL (imgPath, import.meta.url).href;
         },
-        // Metodo per aggiornare la categoria selezionata
         selectCategory(category) {
             this.selectedCategory = category;
         },
-        // Metodo per filtrare i prodotti in base alla categoria selezionata
         filteredProducts() {
             if (this.selectedCategory === 'All Products') {
                 return this.trendingProds;
             }
-            return this.trendingProds.filter(product => product.categories.includes(this.selectedCategory));
+            const filtered = this.trendingProds.filter(product => product.categories.includes(this.selectedCategory));
+            return this.reorderProducts(filtered);
+        },
+        reorderProducts(products) {
+            if (this.selectedCategory === 'Apple') {
+                const order = ['Fress Apple', 'Organic Juice', 'Fresh Blueberries', 'Naga pepper'];
+                return order.map(title => products.find(product => product.title === title)).filter(Boolean);
+            } else if (this.selectedCategory === 'Orange') {
+                const order = ['Fresh Watermelon', 'Organic Juice', 'Naga pepper'];
+                return order.map(title => products.find(product => product.title === title)).filter(Boolean);
+            }
+            return products;
         }
     }
 
@@ -144,9 +180,20 @@ export default {
                         </li>
                     </ul>
                 </nav>
-                <div class="row small">
-                    <ProductCard :info="product" :cardClass="cardClass1" v-for="(product, i) in filteredProducts()" :key="i" />
-                </div>
+                <transition-group
+                    name="list"
+                    tag="div"
+                    class="row small"
+                    enter-active-class="animate__animated animate__rotateIn animate__fadeIn"
+                    leave-active-class="animate__animated animate__rotateOut animate__fadeOut"
+                >
+                    <ProductCard 
+                        v-for="(product, i) in filteredProducts()" 
+                        :key="product.id" 
+                        :info="product" 
+                        :cardClass="cardClass1"
+                    />
+                </transition-group>
                 <a href="#" id="btn_allproduct" class="button orange_bg" @click.prevent="selectCategory('All Products')">ALL PRODUCTS</a>
             </div>
         </section>
@@ -157,11 +204,14 @@ export default {
          </section>
 
         <section>
+            <div class="container_80">
             <HealthIsWealth 
             imageSrc="src/assets/image2project.jpg" 
             :inverse="true"
             :showContactInfo="false"
             />
+
+            </div>
         </section>
 
         <!-- features list -->

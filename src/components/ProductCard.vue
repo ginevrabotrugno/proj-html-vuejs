@@ -130,7 +130,7 @@ export default {
 
     .sale {
         top: 25px;
-        right: 45px;
+        right: 25px;
     }
 
 
