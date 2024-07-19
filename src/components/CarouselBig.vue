@@ -130,15 +130,16 @@ export default {
 }
 
 .carousel-title {
-  font-size: 4rem; 
+  font-size: 6rem; 
   margin-bottom: 30px; 
   line-height: 1.2;
+  font-weight: 600;
 }
 
 .carousel-subtitle { 
   font-size: 1.5rem;
   margin-bottom: 10px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 // Section buttons
@@ -149,7 +150,10 @@ export default {
   margin-top: 30px;
 
   button{
-    transition: background-color $time;
+    padding: 18px 60px;
+    font-weight: 600;
+    font-size: 20px;
+    transition:  $time;
 
     &.orange_bg:hover{
       background-color: $green;
