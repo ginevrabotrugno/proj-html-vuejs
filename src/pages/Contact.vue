@@ -1,6 +1,6 @@
 <script>
-import FormMaps from "../components/others/FormMaps.vue";
-import JumbotronMini from "../components/others/JumbotronMini.vue";
+import FormMaps from "../components/FormMaps.vue";
+import JumbotronMini from "../components/JumbotronMini.vue";
 
 export default {
     name: 'Contact',

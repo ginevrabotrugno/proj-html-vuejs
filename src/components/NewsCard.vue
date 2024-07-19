@@ -42,7 +42,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
-@use '/src/style/partials/variables' as *;
+@use '../style/partials/variables' as *;
 
 .news_card {
     width: calc((100% / 2) - 30px);

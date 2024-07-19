@@ -1,13 +1,13 @@
 <script>
-import CarouselTestimonial from "../components/carousel/CarouselTestimonial.vue";
-import FormMaps from "../components/others/FormMaps.vue";
-import BestSale25 from "../components/others/BestSale25.vue";
-import JumbotronMini from "../components/others/JumbotronMini.vue";
-import ProductCard from "../components/others/ProductCard.vue";
+import CarouselTestimonial from "../components/CarouselTestimonial.vue";
+import FormMaps from "../components/FormMaps.vue";
+import BestSale25 from "../components/BestSale25.vue";
+import JumbotronMini from "../components/JumbotronMini.vue";
+import ProductCard from "../components/ProductCard.vue";
 import FeatureLists from "../components/FeatureLists.vue";
-import Counter from '../components/others/Counter.vue';
-import HealthIsWealth from '../components/others/HealthIsWealth.vue';
-import OrganicProds from "../components/others/OrganicProds.vue";
+import Counter from '../components/Counter.vue';
+import HealthIsWealth from '../components/HealthIsWealth.vue';
+import OrganicProds from "../components/OrganicProds.vue";
 
 
 export default {

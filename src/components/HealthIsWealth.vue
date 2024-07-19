@@ -71,7 +71,7 @@ export default {
 
 <style scoped lang="scss">
 @use '/src/style/general.scss' as *;
-@use '/src/style/partials/variables' as *;
+@use '../style/partials/variables' as *;
 
 .container {
     .row {

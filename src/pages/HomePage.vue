@@ -1,12 +1,12 @@
 <script>
-import CarouselBig from '../components/carousel/CarouselBig.vue';
-import ImageSmallCarousel from '../components/carousel/ImageSmallCarousel.vue';
-import BestSale25 from '../components/others/BestSale25.vue';
-import LogoCarousel from '../components/carousel/LogoCarousel.vue';
-import ProductCard from '../components/others/ProductCard.vue';
-import CarouselTestimonial from '../components/carousel/CarouselTestimonial.vue';
-import Counter from '../components/others/Counter.vue';
-import NewsCard from '../components/others/NewsCard.vue';
+import CarouselBig from '../components/CarouselBig.vue';
+import ImageSmallCarousel from '../components/ImageSmallCarousel.vue';
+import BestSale25 from '../components/BestSale25.vue';
+import LogoCarousel from '../components/LogoCarousel.vue';
+import ProductCard from '../components/ProductCard.vue';
+import CarouselTestimonial from '../components/CarouselTestimonial.vue';
+import Counter from '../components/Counter.vue';
+import NewsCard from '../components/NewsCard.vue';
 
 export default {
     name: 'HomePage',

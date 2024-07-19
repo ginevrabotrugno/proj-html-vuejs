@@ -70,7 +70,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
-@use '/src/style/partials/variables' as *;
+@use '../style/partials/variables' as *;
 
 .row {
     display: flex;
