@@ -294,7 +294,7 @@ section {
     margin-bottom: 100px;
     // da rivedere per togliere la sporcatura orizzontale
     overflow-x: hidden;
-    padding-bottom: 50px;
+    // padding-bottom: 50px;
 
     .container {
         width: 80%;

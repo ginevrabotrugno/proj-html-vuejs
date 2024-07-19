@@ -156,8 +156,7 @@ export default {
 }
 
 .quote-text {
-  font-size: 1.7rem;
-  margin: 10px 20px; 
+  font-size: 2rem;
   max-width: 100%;
   font-weight: 600; 
 }
@@ -205,6 +204,8 @@ export default {
 
 .prev {
   left: 5px;
+  width: 60px;
+  height: 60px;
   background-color: $orange;
   transition: background-color $time;
 
@@ -215,6 +216,8 @@ export default {
 
 .next {
   right: 5px;
+  width: 60px;
+  height: 60px;
   background-color: $orange;
   transition: background-color $time;
 
