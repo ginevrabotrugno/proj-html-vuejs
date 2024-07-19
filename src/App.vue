@@ -14,8 +14,6 @@ export default {
     AppHeader,
     AppFooter,
     FormMaps
-
-   
   }
 }
 
