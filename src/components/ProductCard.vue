@@ -51,7 +51,7 @@ export default {
     padding: 20px;
     position: relative;
     margin-top: 20px;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
 
     img{
         cursor: pointer;
