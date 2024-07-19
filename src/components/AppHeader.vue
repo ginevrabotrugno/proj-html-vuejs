@@ -5,35 +5,35 @@ export default {
     name: 'AppHeader',
     data() {
         return {
-            routes: router.options.routes.slice(0, 3),
-            isScrolled: false,
-            showScrollToTop: false,
+            routes: router.options.routes.slice(0, 3), // Le prime 3 rotte del router
+            isScrolled: false, // Controlla se la pagina è scorsa
+            showScrollToTop: false, // Mostra il pulsante "scroll to top"
         };
     },
     mounted() {
-        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('scroll', this.handleScroll); // Aggiungi l'evento scroll
     },
     beforeUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('scroll', this.handleScroll); // Rimuovi l'evento scroll
     },
     methods: {
         handleScroll() {
-            this.isScrolled = window.scrollY > 50;
-            this.showScrollToTop = window.scrollY > 200;
+            this.isScrolled = window.scrollY > 50; // Verifica se la pagina è scorsa più di 50px
+            this.showScrollToTop = window.scrollY > 200; // Mostra il pulsante "scroll to top" se scorsi più di 200px
         },
         scrollToTop() {
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth'
+                behavior: 'smooth' // Scrolla in modo fluido
             });
         }
     }
-
 }
 </script>
 
 <template>
     <header>
+        <!-- Sezione superiore -->
         <section class="green_bg">
             <div class="container_90">
                 <div>
@@ -67,10 +67,9 @@ export default {
             </div>
         </section>
 
+        <!-- Sezione principale del menu -->
         <section :class="{ fixed: true, scrolled: isScrolled }">
-
             <div class="container_90">
-                    
                 <nav>
                     <a href="#">
                         <img src="../assets/logo.png" alt="logo">
@@ -81,7 +80,6 @@ export default {
                         </li>
                     </ul>
                 </nav>
-
                 <div class="shop">
                     <a href="#" class="header_i">
                         <i class="fa-solid fa-magnifying-glass orange_bg"></i>
@@ -92,14 +90,13 @@ export default {
                     <a href="#" class="button orange_bg">ORDER NOW</a>
                 </div>
             </div>
-
         </section>
 
+        <!-- Pulsante "scroll to top" -->
         <a href="#" id="scroll-to-top" class="orange_bg" @click.prevent="scrollToTop" v-if="showScrollToTop">
             <i class="fa-solid fa-chevron-up"></i>
         </a>
     </header>
-
 </template>
 
 <style scoped lang="scss">
@@ -129,14 +126,14 @@ header {
             align-items: center;
 
             .header_i {
-                padding: 0 10px
+                padding: 0 10px;
             }
 
             nav {
                 display: flex;
                 align-items: center;
                 gap: 20px;
-                
+
                 ul {
                     margin-left: 50px;
                     display: flex;
@@ -147,12 +144,11 @@ header {
                         font-size: 18px;
                         transition: color $time;
 
-                        &:hover{
+                        &:hover {
                             color: $orange;
                         }
                     }
                 }
-
             }
 
             .fa-magnifying-glass {
@@ -183,30 +179,25 @@ header {
                 }
             }
 
-            .shop{
-
-                & a:last-child{
+            .shop {
+                & a:last-child {
                     transition: background-color $time;
 
-                    &:hover{
+                    &:hover {
                         background-color: $green;
                     }
                 }
             }
 
-            .fa-brands{
+            .fa-brands {
                 transition: color $time;
 
-                &:hover{
+                &:hover {
                     color: black;
                 }
             }
-
-
         }
-
     }
-
 
     .fixed {
         width: 100%;
@@ -222,6 +213,4 @@ header {
         }
     }
 }
-
-
 </style>
