@@ -106,6 +106,8 @@ export default {
 
     .rowUp {
         background-image: url('src/assets/milesim-bg.jpg');
+        background-size: cover;
+        background-position: center;
         width: 60%;
         position: absolute;
         top: -13%;
@@ -130,7 +132,7 @@ export default {
             
 
             div.email {
-                width: 400px;
+                width: 500px;
                 // flex
                 display: flex;
                 flex-wrap: wrap;
@@ -140,6 +142,7 @@ export default {
                     min-width: 220px;
                     font-size: 0.9rem;
                     padding: 15px 120px 15px 30px;
+                    color: #8e8e8e;
                 }
 
                 div#button {
