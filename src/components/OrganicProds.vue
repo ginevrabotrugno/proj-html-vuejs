@@ -84,7 +84,7 @@ export default {
 
         h2 {
             font-size: 50px;
-            font-weight: 900;
+            font-weight: 600;
         }
 
         p {
@@ -119,6 +119,7 @@ export default {
                 cursor: pointer;
                 font-size: 18px;
                 transition: $time;
+                font-weight: 400;
 
                 &:hover {
                     color: $orange;

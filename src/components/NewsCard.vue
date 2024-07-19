@@ -104,7 +104,7 @@ export default {
 
     h4 {
         font-size: 25px;
-        font-weight: 900;
+        font-weight: 600;
         margin: 20px 0;
         cursor: pointer;
         transition: color 0.3s ease-in-out;
@@ -120,7 +120,7 @@ export default {
     }
 
     a {
-        font-weight: 900;
+        font-weight: 600;
         font-size: 20px;
         transition: color 0.3s ease-in-out;
 

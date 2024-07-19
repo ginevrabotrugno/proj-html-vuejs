@@ -31,7 +31,7 @@ img {
 .button {
     padding: 15px 30px;
     border-radius: 0 20px;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 button {
@@ -45,24 +45,12 @@ button {
 .green_bg {
     background-color: $green;
     color: $white;
-
-    // &:hover {
-    //     background-color: $orange;
-    //     transition-duration: 0.8s;
-    // }
 }
 
 .orange_bg {
     background-color: $orange;
     color: $white;
-
-    // &:hover {
-    //     background-color: $green;
-    //     transition-duration: 0.8s;
-    // }
 }
-
-
 
 .green_txt {
     color: $green;
@@ -72,6 +60,21 @@ button {
     color: $orange;
 }
 
-.d_block {
-    display: block;
+.container {
+    width: 100%;
+}
+
+.container_90 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.container_80 {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container_70 {
+    width: 70%;
+    margin: 0 auto;
 }

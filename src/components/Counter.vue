@@ -100,7 +100,7 @@ export default {
 
 .banner {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 300px;
@@ -121,18 +121,19 @@ export default {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 25px 30px;
 }
 
 .counter {
-  font-size: 6rem;
-  font-weight: bolder;
+  font-size: 4rem;
+  font-weight: 600;
   text-align: center;
 }
 
 .label {
   margin-top: 10px;
-  font-size: 2.2rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .separator {

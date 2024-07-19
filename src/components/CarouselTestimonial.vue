@@ -159,20 +159,20 @@ export default {
   font-size: 1.7rem;
   margin: 10px 20px; 
   max-width: 100%;
-  font-weight: bolder; 
+  font-weight: 600; 
 }
 
 .author {
 
   text-align: center;
   margin-top:10px;
-  font-weight: bolder;
+  font-weight: 600;
  
 }
 
 .name {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weigth: 600;
   color: #333;
   margin-bottom: 5px;
   
