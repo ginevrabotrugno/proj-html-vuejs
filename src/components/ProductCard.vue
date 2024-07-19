@@ -75,8 +75,9 @@ export default {
 
     .sale {
         font-weight: 600;
-        padding: 5px 15px;
+        padding: 3px 12px;
         position: absolute;
+        font-size: 12px;
     }
     
     .icons {
