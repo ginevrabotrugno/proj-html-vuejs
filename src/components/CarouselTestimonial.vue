@@ -86,8 +86,8 @@ export default {
         </div>
       </div>
     </div>
-    <button class="nav-button prev" @mousedown="prevTestimonial" @touchstart="prevTestimonial">&#9664;</button>
-    <button class="nav-button next" @mousedown="nextTestimonial" @touchstart="nextTestimonial">&#9654;</button>
+    <button class="nav-button prev" @mousedown="prevTestimonial" @touchstart="prevTestimonial"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="nav-button next" @mousedown="nextTestimonial" @touchstart="nextTestimonial"><i class="fa-solid fa-chevron-right"></i></button>
   </div>
 </template>
 
@@ -95,16 +95,17 @@ export default {
 
   @import '/src/style/partials/variables';
 
- .carousel-container {
+  .carousel-container {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 80vw; 
+  height: 50vh; 
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #fff;
   color: #333;
+  margin: 0 auto; 
 }
 
 .carousel-slide {
@@ -132,8 +133,8 @@ export default {
 }
 
 .carousel-content {
-  width: 100%;
-  height: 100%;
+  width: 80%; 
+  height: auto; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -142,37 +143,44 @@ export default {
   padding: 20px;
   background: url('/src/assets/testi-icon.png') no-repeat;
   background-position: 90% center;
-  background-size: 70% contain;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-size: 50% contain; 
+ 
 }
 
 .quote-icon {
-  width: 200px; 
-  height: 200px; 
+  width: 100px; 
+  height: 100px; 
   background-image: url('/src/assets/iconCarouselTestimonial.png');
   background-size: contain; 
   background-repeat: no-repeat; 
 }
 
 .quote-text {
-  font-size: 2rem;
-  margin: 20px 80px 200px;
-  max-width: 80%;
+  font-size: 1.7rem;
+  margin: 10px 20px; 
+  max-width: 100%;
+  font-weight: bolder; 
 }
 
 .author {
+
   text-align: center;
+  margin-top:10px;
+  font-weight: bolder;
+ 
 }
 
 .name {
+  font-size: 1.5rem;
   font-weight: bold;
   color: #333;
-  font-size: 1.5rem;
+  margin-bottom: 5px;
+  
 }
 
 .position {
   color: $orange;
-  font-size: 1.2rem;
+  font-size: 0.875rem; 
 }
 
 .nav-button {
@@ -182,9 +190,9 @@ export default {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  padding: 20px;
+  padding: 10px; 
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 2rem; 
   line-height: 1;
   z-index: 1;
   opacity: 0;
@@ -206,7 +214,7 @@ export default {
 }
 
 .next {
-  right: 30px;
+  right: 5px;
   background-color: $orange;
   transition: background-color $time;
 
@@ -216,76 +224,23 @@ export default {
 }
 
 @media (max-width: 1200px) {
+  .carousel-container {
+    width: 90vw;
+    height: 40vh;
+  }
+
   .carousel-content {
     padding: 15px;
   }
 
   .quote-icon {
-    width: 150px;
-    height: 150px;
+    width: 40px;
+    height: 40px;
   }
 
   .quote-text {
-    font-size: 1.5rem;
-    margin: 15px 60px 150px;
-  }
-
-  .name {
-    font-size: 1.25rem;
-  }
-
-  .position {
-    font-size: 1rem;
-  }
-
-  .nav-button {
-    padding: 15px;
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .carousel-content {
-    padding: 10px;
-  }
-
-  .quote-icon {
-    width: 100px;
-    height: 100px;
-  }
-
-  .quote-text {
-    font-size: 1.25rem;
-    margin: 10px 40px 100px;
-  }
-
-  .name {
-    font-size: 1rem;
-  }
-
-  .position {
     font-size: 0.875rem;
-  }
-
-  .nav-button {
-    padding: 10px;
-    font-size: 1.25rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-content {
-    padding: 5px;
-  }
-
-  .quote-icon {
-    width: 75px;
-    height: 75px;
-  }
-
-  .quote-text {
-    font-size: 1rem;
-    margin: 5px 20px 75px;
+    margin: 15px 15px;
   }
 
   .name {
@@ -297,8 +252,76 @@ export default {
   }
 
   .nav-button {
+    padding: 10px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 100vw;
+    height: 30vh;
+  }
+
+  .carousel-content {
+    padding: 10px;
+  }
+
+  .quote-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .quote-text {
+    font-size: 0.75rem;
+    margin: 10px 10px;
+  }
+
+  .name {
+    font-size: 0.75rem;
+  }
+
+  .position {
+    font-size: 0.625rem;
+  }
+
+  .nav-button {
     padding: 8px;
-    font-size: 1rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    width: 100vw;
+    height: 20vh;
+  }
+
+  .carousel-content {
+    padding: 5px;
+  }
+
+  .quote-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .quote-text {
+    font-size: 0.625rem;
+    margin: 5px 5px;
+  }
+
+  .name {
+    font-size: 0.625rem;
+  }
+
+  .position {
+    font-size: 0.5rem;
+  }
+
+  .nav-button {
+    padding: 5px;
+    font-size: 0.625rem;
   }
 }
 </style>
