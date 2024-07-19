@@ -7,6 +7,7 @@ import ProductCard from "../components/ProductCard.vue";
 import FeatureLists from "../components/FeatureLists.vue";
 import Counter from '../components/Counter.vue';
 import HealthIsWealth from '../components/HealthIsWealth.vue';
+import OrganicProds from "../components/OrganicProds.vue";
 
 
 export default {
@@ -19,7 +20,8 @@ export default {
         ProductCard,
         FeatureLists,
         Counter,
-        HealthIsWealth
+        HealthIsWealth,
+        OrganicProds,
     },
     data(){
         return {
@@ -95,6 +97,9 @@ export default {
         }
     },
     methods: {
+        returnImagePath(imgPath){
+            return new URL (imgPath, import.meta.url).href;
+        },
         // Metodo per aggiornare la categoria selezionata
         selectCategory(category) {
             this.selectedCategory = category;
@@ -146,6 +151,11 @@ export default {
             </div>
         </section>
 
+        <!-- Organic Fruits and Vegetables -->
+         <section>
+            <OrganicProds />
+         </section>
+
         <section>
             <HealthIsWealth 
             imageSrc="src/assets/image2project.jpg" 
@@ -156,11 +166,7 @@ export default {
 
         <!-- features list -->
          <section>
-
-            <div class="container">
-                <FeatureLists/>
-            </div>
-
+            <FeatureLists/>
          </section>
 
         <section>

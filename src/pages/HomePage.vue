@@ -261,7 +261,9 @@ export default {
         </section>
 
         <section>
+            <div class="container">
             <LogoCarousel />
+            </div>
         </section>
 
 
