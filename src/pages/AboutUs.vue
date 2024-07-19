@@ -147,7 +147,7 @@ export default {
                 <div class="row">
                     <ProductCard :info="product" :cardClass="cardClass1" v-for="(product, i) in filteredProducts()" :key="i" />
                 </div>
-                <a href="#" class="button orange_bg" @click.prevent="selectCategory('All Products')">ALL PRODUCTS</a>
+                <a href="#" id="btn_allproduct" class="button orange_bg" @click.prevent="selectCategory('All Products')">ALL PRODUCTS</a>
             </div>
         </section>
 
@@ -254,12 +254,19 @@ section {
 
             li {
                 font-size: 20px;
+                transition: color $time;
 
                 &:hover {
                     color: $orange;
                 }
-            }
-        }
+                }
+                }
+                #btn_allproduct{
+                transition: background-color $time;
+                &:hover{
+                background-color: $green;
+                }
+                }
 
     }
 }

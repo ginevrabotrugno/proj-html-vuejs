@@ -50,7 +50,11 @@ export default {
     // box-shadow: 1px 1px 1px 2px rgba($color: #000000, $alpha: 0.2);
     padding: 20px;
     position: relative;
-    cursor: pointer;    
+
+    img{
+        cursor: pointer;
+    }
+        
 
     a {
         font-size: 30px;

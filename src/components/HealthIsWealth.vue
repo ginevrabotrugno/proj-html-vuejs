@@ -14,6 +14,25 @@ export default {
             type: Boolean,
             default: true
         }
+    },
+    data() {
+        return {
+            isAnimated: false
+        };
+    },
+    mounted() {
+        this.animateHeading();
+    },
+    methods: {
+        animateHeading() {
+            this.isAnimated = true;
+            setTimeout(() => {
+                this.isAnimated = false;
+            }, 100);
+        },
+        goToAboutUs() {
+            
+        }
     }
 }
 </script>
@@ -24,7 +43,7 @@ export default {
             <div class="col" :class="{ 'inverse-row': inverse }">
                 <div class="box">
                     <span>Running week top selling</span>
-                    <h2>Health is wealth - eat <span>natural,</span> eat <span>organic,</span> be healthy.</h2>
+                    <h2 :class="{ animate: isAnimated }">Health is wealth - eat <span>natural,</span> eat <span>organic,</span> be healthy.</h2>
                     <p>Organic is loaded with a sense of rightness, with a set of rules. I would much rather someone bought food that was local and sustainable but not organic than bought organic food that had to be shipped across the world.</p>
                     <div class="d-flex">
                         <div>
@@ -90,7 +109,11 @@ export default {
                     font-size: 3.5rem;
                     font-weight: bold;
                     line-height: 58px;
+                    transition: font-size 0.8s ease;
 
+                }
+                .animate {
+                    font-size: 1.5rem;
                 }
 
                 p {
