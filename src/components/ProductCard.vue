@@ -50,6 +50,7 @@ export default {
     // box-shadow: 1px 1px 1px 2px rgba($color: #000000, $alpha: 0.2);
     padding: 20px;
     position: relative;
+    
 
     a {
         font-size: 30px;
@@ -75,17 +76,21 @@ export default {
         padding: 5px 15px;
         position: absolute;
     }
-
+    
     .icons {
-        display: none;
+        // display: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity $time, visibility $time;
         width: 100%;
         text-align: center;
         position: absolute;
         top: 55%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, 70%);
+        transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
         color: #000000;
-
+        
         i {
             display: inline-block;
             border-radius: 50%;
@@ -93,17 +98,20 @@ export default {
             padding: 10px;
             margin-right: 10px;
             box-shadow: 3px 3px 15 rgba($color: #000000, $alpha: 0.3);
-
+            transition: $time;
             &:hover {
                 background-color: $orange;
                 color: $white;
             }
         }
     }
-
+    
     &:hover {
+        transition: $time;
         .icons {
-            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%);
         }
     }
 
