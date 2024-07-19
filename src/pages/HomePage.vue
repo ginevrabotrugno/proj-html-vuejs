@@ -432,6 +432,9 @@ section {
 
 .floating_img {
     position: relative;
+    width: 70%;
+    margin:0 auto;
+    overflow-x: visible;
 
     &::after {
         content: url("../assets/fe-shap1-1.png");
