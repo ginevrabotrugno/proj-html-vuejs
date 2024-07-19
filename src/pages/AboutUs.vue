@@ -144,7 +144,7 @@ export default {
                         </li>
                     </ul>
                 </nav>
-                <div class="row">
+                <div class="row small">
                     <ProductCard :info="product" :cardClass="cardClass1" v-for="(product, i) in filteredProducts()" :key="i" />
                 </div>
                 <a href="#" id="btn_allproduct" class="button orange_bg" @click.prevent="selectCategory('All Products')">ALL PRODUCTS</a>
