@@ -19,8 +19,6 @@ export default {
   }
 }
 
-// alert per avvisarci XD
-window.alert("---> PULLATE SEMPRE APPENA ENTRATE XD <---")
 
 </script>
 
