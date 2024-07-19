@@ -58,13 +58,13 @@ export default {
 
     a {
         font-size: 30px;
-        font-weight: 700;
+        font-weight: 600;
     }
 
     .price {
         font-size: 20px;
         margin-right: 10px;
-        font-weight: 900;
+        font-weight: 400;
     }
 
     .discount {
@@ -72,7 +72,7 @@ export default {
     }
 
     .sale {
-        font-weight: 900;
+        font-weight: 600;
         padding: 5px 15px;
         position: absolute;
     }

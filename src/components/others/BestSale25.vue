@@ -31,7 +31,7 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="container_90">
         <div class="row" :style="backgroundImageStyle">
             <div class="col">
                 <span>HERE YOU CAN GET 100% FRESH ORGANIC FOOD</span>
@@ -57,10 +57,8 @@ export default {
 <style scoped lang="scss">
 @use '/src/style/partials/variables' as *;
 
-.container{
-    width: 80%;
-    margin: 0 auto;
-
+.container_90{
+    
     .row{
         background-size: cover;
         background-position: center;
@@ -86,7 +84,7 @@ export default {
 
             span{
                 font-size: 1.2rem;
-                font-weight: bold;
+                font-weight: 600;
             }
 
             h2{
@@ -114,7 +112,7 @@ export default {
 
                 &:nth-child(2){
                     background-color: $green;
-                    font-weight: bold;
+                    font-weight: 600;
                     cursor: pointer;
                     padding: 15px 25px;
                     border-radius: 5px;

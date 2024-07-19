@@ -38,7 +38,7 @@ export default {
         width: 100%;
         background-size: cover;
         background-position: center;
-        color: white;
+        color: $white;
 
         // flex
         display: flex;
@@ -48,7 +48,7 @@ export default {
             div{
                 text-align: center;
                 font-size: 2rem;
-                font-weight: bold;
+                font-weight: 600;
                 margin-bottom: 10px;
             }
             ul {
@@ -72,7 +72,7 @@ export default {
                 &:nth-child(2)::before, &:nth-child(3)::before {
                     content: "\f105"; 
                     font-family: "Font Awesome 5 Free"; 
-                    font-weight: 900;
+                    font-weight: 600;
                     padding-right: 8px;
                 }
             }

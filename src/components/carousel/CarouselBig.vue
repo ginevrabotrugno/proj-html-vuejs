@@ -172,15 +172,16 @@ export default {
 }
 
 .carousel-title {
-  font-size: 4rem; 
+  font-size: 6rem; 
   margin-bottom: 30px; 
   line-height: 1.2;
+  font-weight: 600;
 }
 
 .carousel-subtitle { 
   font-size: 1.5rem;
   margin-bottom: 10px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .buttons {
@@ -189,7 +190,10 @@ export default {
   gap: 30px; 
   margin-top: 30px;
 
-  button {
+  button{
+    padding: 18px 60px;
+    font-weight: 600;
+    font-size: 20px;
     transition: background-color $time;
 
     &.orange_bg {

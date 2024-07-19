@@ -151,7 +151,8 @@ export default {
                             <p class="top">
                                 I have a need to make these sorts of connections literal sometimes, and a vehicle often helps to do that. I have a relationship to hosting culture. <span class="orange_txt">It isn't really about it helps to do that. I have a relationship to hosting culture.</span>
                             </p>
-                            <p class="bottom">
+                            
+                            <p>
                                 Need to make these sorts of connections literal sometimes, and a vehicle often helps to do that. I have a relationship to hosting culture. 
                             </p>
                         </div>
@@ -224,7 +225,11 @@ export default {
         
         <!-- COUNTER -->
         <section>
-            <Counter backgroundClass="home-counter" labelTextColor="#fff"  />
+            <div class="container_90">
+
+                <Counter backgroundClass="home-counter" labelTextColor="#fff"  />
+  
+            </div>
         </section>
 
         <!-- TOP TRENDING -->
@@ -290,6 +295,7 @@ section {
     margin-bottom: 100px;
     // da rivedere per togliere la sporcatura orizzontale
     overflow-x: hidden;
+    padding-bottom: 50px;
 
     .container {
         width: 80%;
@@ -308,7 +314,7 @@ section {
 
                 h2 {
                     font-size: 50px;
-                    font-weight: 900;
+                    font-weight: 600;
                 }
 
                 .text-container {
@@ -316,15 +322,14 @@ section {
                     flex-direction: column;
                     justify-content: space-evenly;
                     flex: 1; 
-                    font-size: 20px;
+                    line-height: 1.5;
+                    padding-right: 20px;
 
                     .top {
-                        align-self: flex-start;
+                        margin-bottom: 30px;
                     }
 
-                    .bottom {
-                        align-self: flex-end;
-                    }
+                    
                 }
 
                 .left {
@@ -342,7 +347,7 @@ section {
                     padding: 20px;
                     color: $white;
                     position: relative;
-                    font-weight: bold;
+                    font-weight: 600;
 
                     a {
                         position: absolute;
@@ -359,6 +364,7 @@ section {
                     h3 {
                         max-width: 80%;
                         font-size: 40px;
+                        font-weight: 600;
                     }
                 }
             }
@@ -370,7 +376,7 @@ section {
             line-height: 1.5;
             padding: 20px;
             position: relative;
-            font-weight: 900;
+            font-weight: 600;
                 &::after {
                     content: url('../assets/title-shap.png');
                     position: absolute;
@@ -397,13 +403,14 @@ section {
         .row {
             padding: 20px;
             flex-wrap: wrap;
+            justify-content: flex-start;
         }
 
         ul {
             margin: 25px 0;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 40px;
             align-items: center;
 
             li {
@@ -436,7 +443,7 @@ section {
     }
 
     .container {
-        width: 60%;
+        margin-bottom: 50px;
     }
 }
 </style>

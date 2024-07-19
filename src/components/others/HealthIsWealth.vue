@@ -102,11 +102,12 @@ export default {
 
                 span {
                     color: $orange;
-                    font-weight: bold;
+                    font-weight: 600;
                 }
 
                 h2 {
                     font-size: 3.5rem;
+                    font-weight: 600;
                     line-height: 58px;
                     transition: font-size 0.8s ease;
 

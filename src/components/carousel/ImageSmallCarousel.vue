@@ -149,8 +149,9 @@ export default {
 .overlay {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 10px;
+  width: calc(100% - 20px);
+  margin: 0 auto;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s ease-in-out;
@@ -172,7 +173,7 @@ export default {
   transform: translateY(100%);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: flex-start;

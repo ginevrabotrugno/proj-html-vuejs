@@ -175,7 +175,7 @@ export default {
         
         <!-- COUNTER -->
         <section>
-            <div class="container">
+            <div class="container_90">
                 <Counter  backgroundClass="about-counter"  labelTextColor="#000"/>
             </div>
            
@@ -215,7 +215,7 @@ section {
             line-height: 1.5;
             padding: 20px;
             position: relative;
-            font-weight: 900;
+            font-weigth: 600;
                 &::after {
                     content: url('../assets/title-shap.png');
                     position: absolute;
