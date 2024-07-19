@@ -35,7 +35,7 @@ export default {
 <template>
     <header>
         <section class="green_bg">
-            <div class="container">
+            <div class="container_90">
                 <div>
                     <a href="#" class="header_i">
                         <i class="fa-solid fa-location-dot"></i>
@@ -69,7 +69,7 @@ export default {
 
         <section :class="{ fixed: true, scrolled: isScrolled }">
 
-            <div class="container">
+            <div class="container_90">
                     
                 <nav>
                     <a href="#">
@@ -121,11 +121,9 @@ header {
     }
 
     section {
-        padding: 20px 0;
+        padding: 10px 0;
 
-        .container {
-            width: 90%;
-            margin: 0 auto;
+        .container_90 {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -140,11 +138,13 @@ header {
                 gap: 20px;
                 
                 ul {
+                    margin-left: 50px;
                     display: flex;
-                    gap: 10px;
+                    gap: 20px;
 
                     li {
                         text-transform: uppercase;
+                        font-size: 18px;
                         transition: color $time;
 
                         &:hover{
