@@ -74,22 +74,22 @@ export default {
 <template>
   <div class="banner" :class="backgroundClass">
     <div class="counter-container">
-      <div class="counter" id="counter1" data-target="29" :style="{ color: '#ef9e03' }">0+</div>
+      <div class="counter" id="counter1" data-target="29" :style="{ color: '$orange' }">0+</div>
       <div class="label" :style="{ color: labelTextColor }">Years of Experienced</div>
     </div>
       <img class="separator" src="/src/assets/counter-shap1.png" alt="separator">
     <div class="counter-container">
-      <div class="counter" id="counter2" data-target="200" :style="{ color: '#ef9e03' }">0+</div>
+      <div class="counter" id="counter2" data-target="200" :style="{ color: '$orange' }">0+</div>
       <div class="label" :style="{ color: labelTextColor }">Everyday Online Delivery</div>
     </div>
     <img class="separator" src="/src/assets/counter-shap1.png" alt="separator">
     <div class="counter-container">
-      <div class="counter" id="counter3" data-target="20" :style="{ color: '#ef9e03' }">0k</div>
+      <div class="counter" id="counter3" data-target="20" :style="{ color: '$orange' }">0k</div>
       <div class="label" :style="{ color: labelTextColor }">Client Satisfaction</div>
     </div>
     <img class="separator" src="/src/assets/counter-shap1.png" alt="separator">
     <div class="counter-container">
-      <div class="counter" id="counter4" data-target="30" :style="{ color: '#ef9e03' }">0+</div>
+      <div class="counter" id="counter4" data-target="30" :style="{ color: '$orange' }">0+</div>
       <div class="label" :style="{ color: labelTextColor }">Award Winning</div>
     </div>
   </div>
@@ -108,12 +108,12 @@ export default {
 
 .home-counter {
   background-image: url('src/assets/milesim-bg.jpg');
-  color: #ef9e03;
+  color: $orange;
 }
 
 .about-counter {
   background-color: #fff;
-  color: #ef9e03; 
+  color: $orange; 
 }
 
 .counter-container {

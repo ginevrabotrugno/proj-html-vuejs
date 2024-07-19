@@ -96,6 +96,10 @@ export default {
             cursor: pointer;
         }
 
+        &:last-child{
+            cursor: default;
+        }
+
         i{
             cursor: pointer;
         }

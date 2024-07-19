@@ -123,7 +123,7 @@ export default {
     }
 
     .discount {
-        color: #ef9c03a0
+        color: $orange;
     }
 
     .sale {
