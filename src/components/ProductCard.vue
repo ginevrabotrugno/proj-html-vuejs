@@ -137,7 +137,7 @@ export default {
 }
 
 .trending_products {
-    box-shadow: 0px 0px 10px 0px rgba($color: #677a9d, $alpha: 0.2);
+    box-shadow: 0px 0px 10px 0px rgba($color: #97afdc, $alpha: 0.2);
 
     a {
         transition: $time;
