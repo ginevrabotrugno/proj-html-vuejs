@@ -289,10 +289,12 @@ section {
 
     .img_bg {
         background-image: url('../assets/shop-bg-img.jpg');
-        background-position: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         color: $white;
         text-align: center;
         padding: 20px 0 100px;
+        margin-top: 150px;
 
         .row {
             padding: 20px;
